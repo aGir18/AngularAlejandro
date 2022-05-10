@@ -1,25 +1,70 @@
-<div id="contenedorFila">
+<main>
   <div class="container-fluid" id="contenedorFormulario">
     <div class="row">
       <div class="col-sm-1"></div>
-        <div class="col-sm-1">
-          <div class="ocultar-div2">
-            <!-- Esta clase carga la pastilla que da vueltas y tiene un mensaje, se ha recuperado de la web https://codepen.io -->
-            <div class="absCenter" id="pastillita">
-              <div class="loaderPill">
-                <div class="loaderPill-anim">
-                  <div class="loaderPill-anim-bounce">
-                    <div class="loaderPill-anim-flop">
-                      <div class="loaderPill-pill"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="loaderPill-floor">
-                <div class="loaderPill-floor-shadow"></div>
-            </div>
-            <div class="loaderPill-text">Cree su <br> nuevo negocio</div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-6">
+        <!-- Se utiliza Bootstrap para validar los valores que se introducen en el formulario -->
+        <form class="was-validated">
+          <!-- Etiqueta que introduce formulario -->
+          <div class="form-group">
+            <!-- Esta etiqueta explicará lo que hay que rellenar en el formulario -->
+            <label for="tipoNegocio">Elija el tipo de negocio  </label>
+            <!-- Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -->
+            <select name="select" id="tipoNegocio2">
+                <!-- Farmacia sale seleccionada por defecto -->
+                <option value="blanco" selected>---</option>
+                <option value="farmacia" id="formFarmacia">Farmacia</option>
+                <option value="optica" id="formOptica">Optica</option>
+            </select>
           </div>
-        </div>
+          <div class="form-group">
+            <label for="nombreNegocio">Introduzca el nombre del negocio:</label>
+            <!-- La entrada será de tipo texto, lo que se verá si no está relleno es el placeholder y este campo es obligatorio por el atributo required -->
+            <input type="text" class="form-control" id="nombre" placeholder="P ej, Farmacia Moncloa" name="nombre" required>
+              <!-- Especifica el mensaje que saldrá si se ha rellenado este campo, además saldrá en verde porque es del tipo válido -->
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+              <!-- Especifica el mensaje que saldrá si NO se ha rellenado este campo, además saldrá en rojo porque es del tipo no válido -->
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          </div>
+          <div class="form-group">
+            <label for="nifNegocio">Introduzca el NIF del negocio:</label>
+            <input type="text" class="form-control" id="nif" placeholder="Por ejemplo 58798754K" name="nombre" required>
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          </div>
+          <div class="form-group" id="selectorFarmacia" >
+            <!-- Más adelante, con JavaScript, se definirá que si selecciono óptica este campo se oculte, el siguiente, de la misma manera,
+            si selecciono farmacia se ocultará -->
+            <label for="puntosSigre">Introduzca el número de puntos SIGRE de la farmacia:</label>
+            <!-- Aquí la entrada son números, se define un máximo y un mínimo, el campo tendrá unas flechitas
+            con las que poder aumentar/reducir dicho número -->
+            <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="puntosSigre" name="puntosSigre" required>
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          </div>
+          <div class="form-group" id="selectorOptica" >
+            <label for="puntosSigre">Introduzca el número de autorefractometros de la óptica:</label>
+            <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="autorefractometros" name="autorefractometros" required>
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9" id="botonRegistro">
+              <!-- Botón que sirve para enviar el formulario, con JavaScript se le dará funcionalidad -->
+              <input class="btn btn-success" type="submit" value="Registrar negocio" onclick="escribirTextoArchivo();"/>
+            </div>
+            <div class="col-sm-3" id="botonRegistro2">
+              <!-- Botón que sirve para borrar todos los campos del formulario para reiniciarlo -->
+              <input class="btn btn-danger" type="reset" title="¡CUIDADO! Se borrará todo" value="Borrar formulario" onclick="escribirTextoArchivo2()"/>
+            </div>
+          </div>
+        </form>
       </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+    </div>
   </div>
-</div>
+</main>

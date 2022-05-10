@@ -6,12 +6,16 @@
 }
 
 .footer {
-  padding: 5px;
-  padding-top: 10px;
-  margin-top: 100px;
+  padding: 50px;
   margin-bottom: 10px;
   height: 150px;
+  margin-top: 0em;
+  border-top: 10em;
+  padding-top: 7.5em;
+  border-top: 0em;
+  border-top-color: var(--verdePrincipal);
   text-align:center;
+  border-color: var(--verdePrincipal);
   background-color: var(--verdePrincipal);
   color: var(--amarillo);
 }

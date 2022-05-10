@@ -5,18 +5,18 @@
   --blanco: #F5F5F5;
 }
 
-body {
+main {
+  border-bottom: 500px;
   background-color: var(--verdePrincipal);
 }
 
-#contenedorFila{
-  background-color: var(--verdePrincipal);
+body {
+  margin-bottom: 250px;
 }
 
 #contenedorFormulario {
   margin-top: 150px;
-  margin-bottom: 50px;
-  background-color: var(--verdePrincipal);
+  margin-bottom: 0px;
   color: var(--amarillo);
 }
 
