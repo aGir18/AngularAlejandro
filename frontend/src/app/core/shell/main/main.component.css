@@ -1,0 +1,14 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+main {
+  background-color: var(--verdePrincipal);
+}
+
+body {
+  background-color: var(--verdePrincipal);
+}

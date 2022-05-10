@@ -1,0 +1,30 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+.footer {
+  padding: 5px;
+  padding-top: 10px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  height: 150px;
+  text-align:center;
+  background-color: var(--verdePrincipal);
+  color: var(--amarillo);
+}
+
+.enlacesFooter {
+  color: var(--amarillo);
+}
+
+.enlacesFooter:hover {
+  color: var(--blanco);
+}
+
+address {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
