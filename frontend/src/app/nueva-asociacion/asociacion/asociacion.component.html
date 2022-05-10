@@ -1,0 +1,39 @@
+<main>
+  <div class="container-fluid" id="contenedorFormulario">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-6">
+        <!-- Se utiliza Bootstrap para validar los valores que se introducen en el formulario -->
+        <form class="was-validated">
+          <!-- Etiqueta que introduce formulario -->
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+            <label for="nombreAsociacion">Introduzca el nombre de la asociación:</label>
+            <!-- La entrada será de tipo texto, lo que se verá si no está relleno es el placeholder y este campo es obligatorio por el atributo required -->
+            <input type="text" class="form-control" id="nombre" placeholder="P ej, Asociación Madrid" name="nombre" required>
+              <!-- Especifica el mensaje que saldrá si se ha rellenado este campo, además saldrá en verde porque es del tipo válido -->
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+              <!-- Especifica el mensaje que saldrá si NO se ha rellenado este campo, además saldrá en rojo porque es del tipo no válido -->
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          </div>
+          <div class="row">
+            <div class="col-sm-9" id="botonRegistro">
+              <!-- Botón que sirve para enviar el formulario, con JavaScript se le dará funcionalidad -->
+              <input class="btn btn-success" type="submit" value="Registrar negocio" onclick="escribirTextoArchivo();"/>
+            </div>
+            <div class="col-sm-3" id="botonRegistro2">
+              <!-- Botón que sirve para borrar todos los campos del formulario para reiniciarlo -->
+              <input class="btn btn-danger" type="reset" title="¡CUIDADO! Se borrará todo" value="Borrar formulario" onclick="escribirTextoArchivo2()"/>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+      <div class="col-sm-1"></div>
+    </div>
+  </div>
+</main>

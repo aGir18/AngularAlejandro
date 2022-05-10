@@ -50,6 +50,17 @@
               <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
               <div class="invalid-feedback">Por favor, rellene este campo.</div>
           </div>
+
+          <div class="form-group" id="selectorAsociacion" hidden>
+          <label for="tipoNegocio">Elija su asociación</label>
+            <!-- Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -->
+            <select name="select" id="nombreAsociacion">
+                <!-- Farmacia sale seleccionada por defecto -->
+                <option value="blanco" selected>---</option>
+                <option value="farmacia" id="pepe">Asociación Pepe</option>
+                <option value="optica" id="paco">Asociación Paco</option>
+            </select>
+          </div>
           <div class="row">
             <div class="col-sm-9" id="botonRegistro">
               <!-- Botón que sirve para enviar el formulario, con JavaScript se le dará funcionalidad -->
