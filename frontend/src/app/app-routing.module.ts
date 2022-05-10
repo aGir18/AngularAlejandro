@@ -12,11 +12,14 @@ const routes: Routes = [
   },
   {
     path: 'negocios',
-    component: NegocioComponent,
+    //component: NegocioComponent,
+    loadChildren: () => import("./nuevo-negocio/nuevo-negocio.module").then((m) => m.NuevoNegocioModule),
   },
   {
     path: 'asociaciones',
-    component: AsociacionComponent,
+    //component: AsociacionComponent,
+    //loadChildren: '.nueva-asociacion/asociacion.module#AsociacionModule'
+    loadChildren: () => import("./nueva-asociacion/nueva-asociacion.module").then((m) => m.NuevaAsociacionModule),
   },
   {
     path: 'not-found',
