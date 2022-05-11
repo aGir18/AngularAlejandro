@@ -45,6 +45,14 @@
   margin-top: 60px;
 }
 
+.principal {
+  border-radius: 20px;
+  width: 1000px;
+  height: 550px;
+  margin-top: 4em;
+  margin-left: 15em;
+}
+
 .img-fluid {
   border-radius: 20px;
   width: 400px;
@@ -63,6 +71,11 @@ main {
 .embed-responsive {
   height: 244px;
   width: 350px;
+}
+
+#logotipo {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Cargado para usar la pastilla que da vueltas INICIO*/
