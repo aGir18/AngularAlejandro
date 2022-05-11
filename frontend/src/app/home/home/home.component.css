@@ -55,8 +55,15 @@ main {
   color: var(--amarillo)
 }
 
+#enlacesYouTube {
+  margin-top: 125px;
+  padding-bottom: 50px;
+}
 
-
+.embed-responsive {
+  height: 244px;
+  width: 350px;
+}
 
 /* Cargado para usar la pastilla que da vueltas INICIO*/
 @use postcss-cssnext;

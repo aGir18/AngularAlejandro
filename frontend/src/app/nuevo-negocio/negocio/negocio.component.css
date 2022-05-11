@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 :root {
   --verdePrincipal: #062C30;
   --verdeClaro:#05595B;
@@ -32,6 +34,13 @@ div {
   margin-bottom: 100px;
 }
 
+/* Con este estilo la pastilla se ocultará cuando se le esté visualizando desde una pantalla de 700px o menos */
+@media screen and (max-width: 700px) {
+  .ocultar-div{
+      display:none;
+  }
+}
+
 /* Con este estilo la pastilla se ocultará cuando se le esté visualizando desde una pantalla de 1000px o menos, se utiliza en la página de Creación de negocio */
 @media screen and (max-width: 1000px) {
   .ocultar-div2{
@@ -59,23 +68,24 @@ div {
 
 /* Cargado para usar la pastilla que da vueltas INICIO*/
 @use postcss-cssnext;
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 :root {
-    --EASE_INOUT_QUAD: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-    --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-    --COLOR_UI_PHARMACY: var(--amarillo);
-    --loaderPill_DURATION: 6000ms;
+  --EASE_INOUT_QUAD: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --COLOR_UI_PHARMACY: var(--amarillo);
+  --loaderPill_DURATION: 6000ms;
 }
 
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .absCenter {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position:absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%, -50%);
 }
 
 .loaderPill {
@@ -102,7 +112,7 @@ div {
     height: 30px;
     border-radius: 15px;
     border: 1px solid var(--COLOR_UI_PHARMACY);
-    background-image: linear-gradient(to right, var(--COLOR_UI_PHARMACY) 50%, var(--blanco) 50%);
+    background-image: linear-gradient(to right, var(--amarillo) 50%, var(--blanco) 50%);
 }
 
 .loaderPill-floor {
@@ -111,7 +121,7 @@ div {
 }
 
 .loaderPill-floor-shadow {
-    display: inline-block;
+    display:inline-block;
     width: 70px;
     height: 7px;
     border-radius: 50%;
@@ -122,7 +132,7 @@ div {
 
 .loaderPill-text {
     font-weight: bold;
-    color: var(--COLOR_UI_PHARMACY);
+    color: var(--amarillo);
     text-transform: uppercase;
 }
 
@@ -192,14 +202,13 @@ div {
 /* Cargado para minion INICIO */
 
 .minion{
-    position:absolute;
     background-color: var(--amarillo);
     height: 360px;
     width: 218px;
     border-radius: 218px 218px 130px 130px;
     position:absolute;
-    left:50%;
-    top:50%;
+    left:88%;
+    top:40%;
     margin:-180px 0 0 -109px;
 }
 
