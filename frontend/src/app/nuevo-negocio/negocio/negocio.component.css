@@ -22,16 +22,16 @@ div {
 }
 
 #contenedorFormulario {
-  margin-top: 150px;
+  margin-top: 7.5em;
   margin-bottom: 0px;
   color: var(--amarillo);
 }
 
 #pastillita {
-  width: 400px;
-  height: 225px;
-  margin-top: 0px;
-  margin-bottom: 100px;
+  width: 40em;
+  height: 0em;
+  margin-top: 0em;
+  margin-bottom: 10em;
 }
 
 /* Con este estilo la pastilla se ocultará cuando se le esté visualizando desde una pantalla de 700px o menos */
@@ -83,7 +83,7 @@ body {
 
 .absCenter {
   position:absolute;
-  top: 50%;
+  top: 40%;
   left: 10%;
   transform: translate(-50%, -50%);
 }
@@ -208,7 +208,7 @@ body {
     border-radius: 218px 218px 130px 130px;
     position:absolute;
     left:88%;
-    top:40%;
+    top:17.5em;
     margin:-180px 0 0 -109px;
 }
 
