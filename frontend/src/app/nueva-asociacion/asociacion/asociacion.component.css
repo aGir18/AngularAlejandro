@@ -19,24 +19,11 @@ div {
   margin-top: .5em;
 }
 
-/*#contenedorFormulario {
-  margin-top: 150px;
-  margin-bottom: 0px;
-  color: var(--amarillo);
-}*/
-
 #contenedorFormulario {
   margin-top: 7.5em;
   margin-bottom: 0px;
   color: var(--amarillo);
 }
-
-/*#pastillita {
-  width: 400px;
-  height: 225px;
-  margin-top: 0px;
-  margin-bottom: 100px;
-}*/
 
 #pastillita {
   width: 40em;

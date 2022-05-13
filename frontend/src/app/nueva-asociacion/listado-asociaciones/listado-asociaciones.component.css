@@ -1,0 +1,27 @@
+/* USADO */
+.list-group {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+/* USADO */
+.list-group-item {
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+}
+/* USADO */
+.list-group-item:hover {
+  color: var(--blanco);
+  background-color: var(--verdePrincipal);
+  border-color: var(--blanco);
+}
+
+#columnaCentral {
+  margin-top: 10em;
+  margin-bottom: -5em;
+}
+
+.creacion{
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
