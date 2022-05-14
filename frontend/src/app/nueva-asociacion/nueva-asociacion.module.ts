@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { NuevaAsociacionRoutingModule } from './nueva-asociacion-routing.module';
 import { AsociacionComponent } from './asociacion/asociacion.component';
 import { ListadoAsociacionesComponent } from './listado-asociaciones/listado-asociaciones.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ListadoAsociacionesComponent } from './listado-asociaciones/listado-aso
   ],
   imports: [
     CommonModule,
-    NuevaAsociacionRoutingModule
+    NuevaAsociacionRoutingModule,
+    FontAwesomeModule
   ]
 })
 export class NuevaAsociacionModule { }

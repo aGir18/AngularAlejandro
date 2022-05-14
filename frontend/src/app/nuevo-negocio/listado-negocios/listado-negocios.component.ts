@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCirclePlus, faEye, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-listado-negocios',
@@ -11,5 +12,10 @@ export class ListadoNegociosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  pencil=faPencil;
+  eye=faEye;
+  trash=faTrashCan;
+  plus=faCirclePlus;
 
 }

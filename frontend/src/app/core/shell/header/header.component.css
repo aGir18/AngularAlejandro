@@ -51,3 +51,7 @@ h1 {
   display:none;
   }
 }
+
+a {
+  text-decoration-line: none;
+}

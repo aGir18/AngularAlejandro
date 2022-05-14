@@ -10,35 +10,69 @@
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
           <!-- Clase introducida con Bootstrap -->
           <div class="d-flex w-100 justify-content-between">
-          <!-- Clase introducida con Bootstrap -->
-          <h5 class="mb-1">Asociación Félix González García</h5>
-            <!-- Con esta etiqueta se baja el valor de la fuente del texto -->
+            <!-- Clase introducida con Bootstrap -->
+            <h5 class="mb-1">Asociación Félix González García</h5>
+            <a routerLink="/asociaciones">
+              <fa-icon [icon]="eye"></fa-icon>
+            </a>
+            <a routerLink="/asociaciones">
+              <fa-icon [icon]="pencil"></fa-icon>
+            </a>
+            <a routerLink="/asociaciones">
+              <fa-icon [icon]="trash"></fa-icon>
+            </a>
           </div>
+          <!-- Con esta etiqueta se baja el valor de la fuente del texto -->
           <small>Tiene un total de X negocios.</small>
           </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between" >
               <h5 class="mb-1">Asociación Alberto Núñez Morcillo</h5>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="eye"></fa-icon>
+              </a>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="pencil"></fa-icon>
+              </a>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="trash"></fa-icon>
+              </a>
             </div>
             <small>Tiene un total de X negocios.</small>
             </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Asociación Antonio Pisón Saravia</h5>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="eye"></fa-icon>
+              </a>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="pencil"></fa-icon>
+              </a>
+              <a routerLink="/asociaciones">
+                <fa-icon [icon]="trash"></fa-icon>
+              </a>
             </div>
             <small>Tiene un total de X negocios.</small>
             </a>
           <div href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Asociación Eduardo Ríos Sasiaín</h5>
-              <small>AQUÍ METER LOS ICONITOS DE FONT-AWESOME CON ETIQUETAS ANCLAS!!</small>
+                <a routerLink="/asociaciones">
+                  <fa-icon [icon]="eye"></fa-icon>
+                </a>
+                <a routerLink="/asociaciones">
+                  <fa-icon [icon]="pencil"></fa-icon>
+                </a>
+                <a routerLink="/asociaciones">
+                  <fa-icon [icon]="trash"></fa-icon>
+                </a>
             </div>
             <small>Tiene un total de X negocios.</small>
           </div>
-
         </div>
-        <div class="d-grid gap-2">
-          <button class="creacion btn btn-primary" type="button" routerLink="negocios">Crear nuevo negocio</button>
+        <div class="d-grid gap-2" id="sumarAsociacion">
+          <button class="creacion btn btn-primary" type="button" routerLink="/asociaciones"><fa-icon [icon]="plus"></fa-icon> Crear nueva asociación</button>
         </div>
       </div>
       <div class="col-sm-3">

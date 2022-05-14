@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-negocio',
@@ -11,6 +12,8 @@ export class NegocioComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  pencil=faPencil;
 
 }
 
