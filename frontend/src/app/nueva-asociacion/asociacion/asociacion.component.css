@@ -198,17 +198,6 @@ body {
 
 /* Cargado para minion INICIO */
 
-/*.minion{
-  background-color: var(--amarillo);
-  height: 360px;
-  width: 218px;
-  border-radius: 218px 218px 130px 130px;
-  position:absolute;
-  left:88%;
-  top:35%;
-  margin:-180px 0 0 -109px;
-}*/
-
 .minion{
   background-color: var(--amarillo);
   height: 360px;
