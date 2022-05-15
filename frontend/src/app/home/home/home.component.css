@@ -56,7 +56,7 @@
   width: 50em;
   height: 35em;
   margin-top: 4em;
-  margin-left: 15em;
+  margin-left: 10em;
 }
 
 @media screen and (min-width: 1780px) {
@@ -65,13 +65,13 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .peque{
   display:none;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .peque2{
   display:none;
   }
