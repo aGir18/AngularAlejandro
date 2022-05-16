@@ -9,15 +9,17 @@ const routes: Routes = [
     loadChildren: () => import("./home/home.module").then((m) => m.HomeModule),
   },
   {
-    path: 'negocios',
-    //component: NegocioComponent,
-    loadChildren: () => import("./nuevo-negocio/nuevo-negocio.module").then((m) => m.NuevoNegocioModule),
+    path: 'asociaciones-negocios',
+    loadChildren: () => import("./asociaciones-negocios/asociaciones-negocios.module").then((m) => m.AsociacionesNegociosModule),
   },
   {
-    path: 'asociaciones',
-    //component: AsociacionComponent,
-    //loadChildren: '.nueva-asociacion/asociacion.module#AsociacionModule'
-    loadChildren: () => import("./nueva-asociacion/nueva-asociacion.module").then((m) => m.NuevaAsociacionModule),
+    path: 'negocios-asociados',
+    loadChildren: () => import("./negocios-asociados/negocios-asociados.module").then((m) => m.NegociosAsociadosModule),
+  },
+  {
+    path: 'contacts',
+    loadChildren: () => import("./contacts/contacts.module").then((m) => m.ContactsModule),
+    //loadChildren: 'contacts/contacts.module#ContactsModule',
   },
   {
     path: 'not-found',

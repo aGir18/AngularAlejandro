@@ -11,14 +11,14 @@
           <!-- Clase introducida con Bootstrap -->
           <div class="d-flex w-100 justify-content-between">
             <!-- Clase introducida con Bootstrap -->
-            <h5 class="mb-1">Negocio Félix González García</h5>
-            <a routerLink="/negocios">
+            <h5 class="mb-1">Asociación Félix González García</h5>
+            <a routerLink="/asociaciones-negocios/creacion">
               <fa-icon [icon]="eye"></fa-icon>
             </a>
-            <a routerLink="/negocios">
+            <a routerLink="/asociaciones-negocios/creacion">
               <fa-icon [icon]="pencil"></fa-icon>
             </a>
-            <a routerLink="/negocios">
+            <a routerLink="/asociaciones-negocios/creacion">
               <fa-icon [icon]="trash"></fa-icon>
             </a>
           </div>
@@ -27,14 +27,14 @@
           </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between" >
-              <h5 class="mb-1">Negocio Alberto Núñez Morcillo</h5>
-              <a routerLink="/negocios">
+              <h5 class="mb-1">Asociación Alberto Núñez Morcillo</h5>
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="eye"></fa-icon>
               </a>
-              <a routerLink="/negocios">
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="pencil"></fa-icon>
               </a>
-              <a routerLink="/negocios">
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="trash"></fa-icon>
               </a>
             </div>
@@ -42,14 +42,14 @@
             </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Negocio Antonio Pisón Saravia</h5>
-              <a routerLink="/negocios">
+              <h5 class="mb-1">Asociación Antonio Pisón Saravia</h5>
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="eye"></fa-icon>
               </a>
-              <a routerLink="/negocios">
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="pencil"></fa-icon>
               </a>
-              <a routerLink="/negocios">
+              <a routerLink="/asociaciones-negocios/creacion">
                 <fa-icon [icon]="trash"></fa-icon>
               </a>
             </div>
@@ -57,14 +57,14 @@
             </a>
           <div href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Negocio Eduardo Ríos Sasiaín</h5>
-                <a routerLink="/negocios">
+              <h5 class="mb-1">Asociación Eduardo Ríos Sasiaín</h5>
+                <a routerLink="/asociaciones-negocios/creacion">
                   <fa-icon [icon]="eye"></fa-icon>
                 </a>
-                <a routerLink="/negocios">
+                <a routerLink="/asociaciones-negocios/creacion">
                   <fa-icon [icon]="pencil"></fa-icon>
                 </a>
-                <a routerLink="/negocios">
+                <a routerLink="/asociaciones-negocios/creacion">
                   <fa-icon [icon]="trash"></fa-icon>
                 </a>
             </div>
@@ -72,7 +72,8 @@
           </div>
         </div>
         <div class="d-grid gap-2" id="sumarAsociacion">
-          <button class="creacion btn btn-primary" type="button" routerLink="/negocios"><fa-icon [icon]="plus"></fa-icon> Crear nuevo negocio</button>
+          <button class="creacion btn btn-primary" type="button" routerLink="/asociaciones-negocios/creacion"><fa-icon [icon]="plus"></fa-icon> Crear nueva asociación</button>
+          <router-outlet></router-outlet>
         </div>
       </div>
       <div class="col-sm-3">

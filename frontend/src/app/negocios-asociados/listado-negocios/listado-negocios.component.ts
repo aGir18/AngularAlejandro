@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCirclePlus, faEye, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEye, faTrashCan, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-listado-negocios',

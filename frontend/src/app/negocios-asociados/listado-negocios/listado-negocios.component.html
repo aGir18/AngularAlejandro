@@ -11,14 +11,14 @@
           <!-- Clase introducida con Bootstrap -->
           <div class="d-flex w-100 justify-content-between">
             <!-- Clase introducida con Bootstrap -->
-            <h5 class="mb-1">Asociación Félix González García</h5>
-            <a routerLink="/asociaciones">
+            <h5 class="mb-1">Negocio Félix González García</h5>
+            <a routerLink="/negocios-asociados/creacion-negocio">
               <fa-icon [icon]="eye"></fa-icon>
             </a>
-            <a routerLink="/asociaciones">
+            <a routerLink="/negocios-asociados/creacion-negocio">
               <fa-icon [icon]="pencil"></fa-icon>
             </a>
-            <a routerLink="/asociaciones">
+            <a routerLink="/negocios-asociados/creacion-negocio">
               <fa-icon [icon]="trash"></fa-icon>
             </a>
           </div>
@@ -27,14 +27,14 @@
           </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between" >
-              <h5 class="mb-1">Asociación Alberto Núñez Morcillo</h5>
-              <a routerLink="/asociaciones">
+              <h5 class="mb-1">Negocio Alberto Núñez Morcillo</h5>
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="eye"></fa-icon>
               </a>
-              <a routerLink="/asociaciones">
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="pencil"></fa-icon>
               </a>
-              <a routerLink="/asociaciones">
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="trash"></fa-icon>
               </a>
             </div>
@@ -42,14 +42,14 @@
             </a>
           <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Asociación Antonio Pisón Saravia</h5>
-              <a routerLink="/asociaciones">
+              <h5 class="mb-1">Negocio Antonio Pisón Saravia</h5>
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="eye"></fa-icon>
               </a>
-              <a routerLink="/asociaciones">
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="pencil"></fa-icon>
               </a>
-              <a routerLink="/asociaciones">
+              <a routerLink="/negocios-asociados/creacion-negocio">
                 <fa-icon [icon]="trash"></fa-icon>
               </a>
             </div>
@@ -57,14 +57,14 @@
             </a>
           <div href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Asociación Eduardo Ríos Sasiaín</h5>
-                <a routerLink="/asociaciones">
+              <h5 class="mb-1">Negocio Eduardo Ríos Sasiaín</h5>
+                <a routerLink="/negocios-asociados/creacion-negocio">
                   <fa-icon [icon]="eye"></fa-icon>
                 </a>
-                <a routerLink="/asociaciones">
+                <a routerLink="/negocios-asociados/creacion-negocio">
                   <fa-icon [icon]="pencil"></fa-icon>
                 </a>
-                <a routerLink="/asociaciones">
+                <a routerLink="/negocios-asociados/creacion-negocio">
                   <fa-icon [icon]="trash"></fa-icon>
                 </a>
             </div>
@@ -72,12 +72,22 @@
           </div>
         </div>
         <div class="d-grid gap-2" id="sumarAsociacion">
-          <button class="creacion btn btn-primary" type="button" routerLink="/asociaciones"><fa-icon [icon]="plus"></fa-icon> Crear nueva asociación</button>
+          <button class="creacion btn btn-primary" type="button" routerLink="/negocios-asociados/creacion-negocio"><fa-icon [icon]="plus"></fa-icon> Crear nuevo negocio</button>
         </div>
       </div>
       <div class="col-sm-3">
 
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">NOMBRE</div>
+      <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">GÉNERO</div>
+      <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">FECHA NACIMIENTO</div>
+      <div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">COLOR DE PELO</div>
+    </div>
+    <!--
+    <div *ngFor="let nuevo-negocio of listado-negocios">
+      <app-listado-item [nuevo-negocio]="nuevo-negocio"></app-listado-item>
+    </div> -->
+    </div>
 </main>

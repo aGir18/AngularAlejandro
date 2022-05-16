@@ -24,7 +24,7 @@
         <!-- Se utiliza Bootstrap para validar los valores que se introducen en el formulario -->
         <form class="was-validated">
           <!-- Etiqueta que introduce formulario -->
-          <div class="form-group">
+          <div class="form-group" hidden>
             <!-- Esta etiqueta explicará lo que hay que rellenar en el formulario -->
             <label for="tipoNegocio">Elija el tipo de negocio  </label>
             <!-- Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -->
@@ -36,9 +36,16 @@
             </select>
           </div>
           <div class="form-group">
+            <label for="tipo">Tipo de negocio</label> <br>
+            <input type="radio" value="f" name="tipo" [(ngModel)]="nuevoNegocio.tipoNegocio"/>
+            <i>Farmacia</i> <br>
+            <input type="radio" value="o" name="tipo" [(ngModel)]="nuevoNegocio.tipoNegocio"/>
+            <i>Optica</i>
+          </div>
+          <div class="form-group">
             <label for="nombreNegocio">Introduzca el nombre del negocio:</label>
             <!-- La entrada será de tipo texto, lo que se verá si no está relleno es el placeholder y este campo es obligatorio por el atributo required -->
-            <input type="text" class="form-control" id="nombre" placeholder="P ej, Farmacia Moncloa" name="nombre" required>
+            <input type="text" class="form-control" id="nombre" placeholder="P ej, Farmacia Moncloa" name="nombre" [(ngModel)]="nuevoNegocio.nombreNegocio" required>
               <!-- Especifica el mensaje que saldrá si se ha rellenado este campo, además saldrá en verde porque es del tipo válido -->
               <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
               <!-- Especifica el mensaje que saldrá si NO se ha rellenado este campo, además saldrá en rojo porque es del tipo no válido -->
@@ -47,26 +54,28 @@
           <div class="form-group">
             <label for="nifNegocio">Introduzca el NIF del negocio:
             </label>
-            <input type="text" class="form-control" id="nif" placeholder="Por ejemplo 58798754K" name="nombre" required>
+            <input type="text" class="form-control" id="nif" placeholder="Por ejemplo 58798754K" name="nombre" [(ngModel)]="nuevoNegocio.nifNegocio" required>
               <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
               <div class="invalid-feedback">Por favor, rellene este campo.</div>
           </div>
-          <div class="form-group" id="selectorFarmacia" >
-            <!-- Más adelante, con JavaScript, se definirá que si selecciono óptica este campo se oculte, el siguiente, de la misma manera,
-            si selecciono farmacia se ocultará -->
-            <label for="puntosSigre">Introduzca el número de puntos SIGRE de la farmacia:</label>
-            <!-- Aquí la entrada son números, se define un máximo y un mínimo, el campo tendrá unas flechitas
-            con las que poder aumentar/reducir dicho número -->
-            <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="puntosSigre" name="puntosSigre" required>
-              <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
-              <div class="invalid-feedback">Por favor, rellene este campo.</div>
-          </div>
-          <div class="form-group" id="selectorOptica" >
-            <label for="puntosSigre">Introduzca el número de autorefractometros de la óptica:</label>
-            <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="autorefractometros" name="autorefractometros" required>
-              <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
-              <div class="invalid-feedback">Por favor, rellene este campo.</div>
-          </div>
+          <section *ngIf="nuevoNegocio.tipoNegocio=='f'; else optica">
+            <div class="form-group" id="selectorFarmacia" >
+              <label for="puntosSigre">Introduzca el número de puntos SIGRE de la farmacia:</label>
+              <!-- Aquí la entrada son números, se define un máximo y un mínimo, el campo tendrá unas flechitas
+              con las que poder aumentar/reducir dicho número -->
+              <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="puntosSigre" name="puntosSigre" [(ngModel)]="nuevoNegocio.puntosSigre" required>
+                <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+                <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            </div>
+          </section>
+          <ng-template #optica>
+            <div class="form-group" id="selectorOptica" >
+              <label for="puntosSigre">Introduzca el número de autorefractometros de la óptica:</label>
+              <input  type="number" min="0" max="5" placeholder="Por ejemplo 3" class="form-control" id="autorefractometros" name="autorefractometros" [(ngModel)]="nuevoNegocio.autorefractometros" required>
+                <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+                <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            </div>
+          </ng-template>
           <div class="form-group" id="selectorAsociacion" hidden>
           <label for="tipoNegocio">Elija su asociación</label>
             <!-- Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -->
@@ -130,6 +139,8 @@
           </div>
         </div>
       </div>
+      <!-- Para pruebas -->
+      <pre>{{nuevoNegocio | json}}</pre>
     </div>
   </div>
 </main>

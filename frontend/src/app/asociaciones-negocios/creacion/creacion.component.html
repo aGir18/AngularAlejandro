@@ -28,7 +28,7 @@
           <div class="form-group">
             <label for="nombreAsociacion">Introduzca el nombre de la asociación:</label>
             <!-- La entrada será de tipo texto, lo que se verá si no está relleno es el placeholder y este campo es obligatorio por el atributo required -->
-            <input type="text" class="form-control" id="nombre" placeholder="P ej, Asociación Madrid" name="nombre" required>
+            <input type="text" class="form-control" id="nombre" placeholder="P ej, Asociación Madrid" name="nombre" [(ngModel)]="nuevaAsociacion.nombre" required>
               <!-- Especifica el mensaje que saldrá si se ha rellenado este campo, además saldrá en verde porque es del tipo válido -->
               <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
               <!-- Especifica el mensaje que saldrá si NO se ha rellenado este campo, además saldrá en rojo porque es del tipo no válido -->
@@ -87,6 +87,14 @@
           </div>
         </div>
       </div>
+    </div>
+    <!-- Para pruebas-->
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <pre>{{nuevaAsociacion | json}}</pre>
+      </div>
+      <div class="col-sm-3"></div>
     </div>
   </div>
 </main>
