@@ -76,24 +76,31 @@
                 <div class="invalid-feedback">Por favor, rellene este campo.</div>
             </div>
           </ng-template>
-          <div class="form-group" id="selectorAsociacion" hidden>
+          <div class="form-group" id="selectorAsociacion">
+          <!--
           <label for="tipoNegocio">Elija su asociación</label>
-            <!-- Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -->
+            Será de tipo select, se le dan solo dos opciones cerradas que saldrán en un desplegable -
             <select name="select" id="nombreAsociacion">
-                <!-- Farmacia sale seleccionada por defecto -->
+                < Farmacia sale seleccionada por defecto --
                 <option value="blanco" selected>---</option>
                 <option value="farmacia" id="pepe">Asociación Pepe</option>
                 <option value="optica" id="paco">Asociación Paco</option>
+            </select>  -->
+            <label for="asociacion">Asociación</label>
+            <select name="asociacion" [(ngModel)]="nuevoNegocio.asociacion">
+              <option *ngFor="let asociacion of asociaciones" [value]="asociacion.id">
+                <span>{{asociacion.nombre}}</span>
+              </option>
             </select>
           </div>
           <div class="row">
-            <div class="col-sm-9" id="botonRegistro">
+            <div class="col-sm-6" id="botonRegistro">
               <!-- Botón que sirve para enviar el formulario, con JavaScript se le dará funcionalidad -->
-              <input class="btn btn-success btn-lg" type="submit" value="Registrar negocio" onclick="escribirTextoArchivo();"/>
+              <input class="btn btn-success btn-lg" type="submit" value="Registrar negocio" (click)="guardarNegocio()"/>
             </div>
             <div class="col-sm-3" id="botonRegistro2">
               <!-- Botón que sirve para borrar todos los campos del formulario para reiniciarlo -->
-              <input class="btn btn-danger btn-lg" type="reset" title="¡CUIDADO! Se borrará todo" value="Borrar formulario" onclick="escribirTextoArchivo2()"/>
+              <input class="btn btn-danger btn-lg" type="reset" title="¡CUIDADO! Se borrará todo" value="Borrar formulario"/>
             </div>
           </div>
         </form>
@@ -139,8 +146,45 @@
           </div>
         </div>
       </div>
-      <!-- Para pruebas -->
-      <pre>{{nuevoNegocio | json}}</pre>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+          <!-- Para pruebas -->
+          <pre>{{nuevoNegocio | json}}</pre>
+        </div>
+        <div class="col-sm-7"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"></div>
+          <div class="list-group" id="listadoPrincipal">
+            <!-- Clase introducida con Bootstrap -->
+            <!--
+            <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">-->
+            <ul *ngIf="negocios.length>0; else vacio">
+            <li *ngFor="let negocio of negocios">
+              <!--
+              <span>{{ negocio.nombreNegocio }} </span>
+              <input type="button" value="Delete" (click)="borrarNegocio(negocio)">  -->
+              <!-- Clase introducida con Bootstrap -->
+              <div class="d-flex w-100 justify-content-between">
+                <!-- Clase introducida con Bootstrap -->
+                <h5 class="mb-1">{{negocio.nombreNegocio}}</h5>
+                <a routerLink="/negocios-asociados/creacion-negocio">
+                  <fa-icon [icon]="eye"></fa-icon>
+                </a>
+                <a routerLink="/negocios-asociados/creacion-negocio">
+                  <fa-icon [icon]="pencil"></fa-icon>
+                </a>
+                <a routerLink="/negocios-asociados/creacion-negocio">
+                  <fa-icon [icon]="trash"></fa-icon>
+                </a>
+              </div>
+            </li>
+          </ul> <!--  </a>-->
+          <ng-template #vacio> <i>¡No tienes negocios registrados aún!</i> </ng-template>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
     </div>
   </div>
 </main>

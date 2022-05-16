@@ -7,6 +7,22 @@
   --blanco: #F5F5F5;
 }
 
+.list-group {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.list-group-item {
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+}
+
+.list-group-item:hover {
+  color: var(--blanco);
+  background-color: var(--verdeClaro);
+  border-color: var(--blanco);
+}
+
 main {
   border-bottom: 500px;
   background-color: var(--verdePrincipal);
