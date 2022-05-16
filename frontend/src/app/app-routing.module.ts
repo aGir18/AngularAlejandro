@@ -26,6 +26,14 @@ const routes: Routes = [
     component: NotFoundComponent,
   },
   {
+    path: 'rates',
+    loadChildren: () => import("./rates/rates.module").then((m) => m.RatesModule),
+  },
+  {
+    path: 'animus',
+    loadChildren: () => import("./animus-lucrandi/animus-lucrandi.module").then((m) => m.AnimusLucrandiModule),
+  },
+  {
     path: '**',
     redirectTo: "not-found",
   },
