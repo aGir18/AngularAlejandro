@@ -49,3 +49,10 @@ a {
 a:hover {
   color: var(--amarillo);
 }
+
+h1 {
+  color: var(--amarillo);
+  text-align: center;
+  margin-top: .5em;
+  margin-bottom: -.5em;
+}
