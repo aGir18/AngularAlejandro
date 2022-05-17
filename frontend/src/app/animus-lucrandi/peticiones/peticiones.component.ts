@@ -23,6 +23,7 @@ export class PeticionesComponent implements OnInit {
   public getNegocios : any = null;
   public getAsociaciones : any = null;
 
+
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
