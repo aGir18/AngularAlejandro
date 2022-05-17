@@ -1,5 +1,5 @@
 export interface Negocio {
-  tipoNegocio: string;
+  //tipoNegocio: string;
   nombreNegocio: string;
   nifNegocio: string;
   puntosSigre: number;

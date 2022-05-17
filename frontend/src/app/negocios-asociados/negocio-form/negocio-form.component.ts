@@ -9,7 +9,7 @@ import { NegocioService } from '../service/negocio.service';
 })
 export class NegocioFormComponent implements OnInit {
 
-  negocio: NegocioImpl = new NegocioImpl('', '', '', 0, 0, '');
+  negocio: NegocioImpl = new NegocioImpl();
 
   constructor(private negocioService: NegocioService) { }
 

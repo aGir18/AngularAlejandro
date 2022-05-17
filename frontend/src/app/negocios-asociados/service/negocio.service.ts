@@ -23,22 +23,24 @@ export class NegocioService {
 
   extraerNegocios(respuestaApi: any): Negocio[] {
     const negocios: Negocio[] = [];
-    respuestaApi.results.forEach((p: any) => {
+    respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
-
+    });
+    respuestaApi._embedded.opticas.forEach((p: any) => {
+      negocios.push(this.mapearNegocio(p));
     });
     return negocios;
   }
 
-
-  mapearNegocio(personajeApi: any): NegocioImpl {
-    return new NegocioImpl(
-      personajeApi.tipo_negocio,
-      personajeApi.nombre,
-      personajeApi.nif,
-      personajeApi.numeroPuntosSigre,
-      personajeApi.numeroAutorefractometros,
-      personajeApi.asociacion);
+  mapearNegocio(negocioApi: any): NegocioImpl {
+    let negocio = new NegocioImpl();
+    //negocio.tipoNegocio = negocioApi.tipo_negocio;
+    negocio.nombreNegocio = negocioApi.nombre;
+    negocio.nifNegocio = negocioApi.nif;
+    negocio.puntosSigre = negocioApi.numeroPuntosSigre;
+    negocio.autorefractometros = negocioApi.numeroAutorefractometros;
+    negocio.asociacion = negocioApi.asociacion;
+    return negocio;
   }
 
   create(negocio: Negocio): void {
