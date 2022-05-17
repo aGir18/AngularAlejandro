@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  //host: 'http://swapi.dev/api/',
   host: 'https://animus-lucrandi.herokuapp.com/api/',
   itemsPorPagina: 10
 };

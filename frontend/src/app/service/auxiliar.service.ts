@@ -22,5 +22,4 @@ export class AuxiliarService {
   getItemsPorPagina(urlEndPoint: string, pagina: number): Observable<any> {
     return this.http.get<any>(`${urlEndPoint}?page=${pagina}`)
   }
-
 }

@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CargaNegociosComponent } from './carga-negocios/carga-negocios.component';
 import { CreacionNegociosComponent } from './creacion-negocios/creacion-negocios.component';
 import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.component';
+import { NegocioFormComponent } from './negocio-form/negocio-form.component';
+import { NegociosComponent } from './negocios/negocios.component';
 
 const routes: Routes = [
   {
@@ -16,7 +18,18 @@ const routes: Routes = [
       {
         path: 'listado-negocios',
         component: ListadoNegociosComponent,
-      }
+      },
+      {
+        path: 'negocios',
+        component: NegociosComponent,
+      },
+      {
+        path: 'formulario-negocios',
+        component: NegocioFormComponent,
+      },
+      /*{
+        path:
+      }*/
     ]
   }
 ];

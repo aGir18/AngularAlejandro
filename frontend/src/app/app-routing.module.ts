@@ -25,6 +25,10 @@ const routes: Routes = [
     loadChildren: () => import("./animus-lucrandi/animus-lucrandi.module").then((m) => m.AnimusLucrandiModule),
   },
   {
+    path: 'asociaciones',
+    loadChildren: () => import("./asociaciones/asociaciones.module").then((m) => m.AsociacionesModule),
+  },
+  {
     path: '**',
     redirectTo: "not-found",
   },

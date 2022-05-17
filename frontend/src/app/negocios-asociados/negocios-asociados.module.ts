@@ -8,13 +8,22 @@ import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.co
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NegociosComponent } from './negocios/negocios.component';
+import { NegociosItemComponent } from './negocios-item/negocios-item.component';
+import { AuxiliarService } from '../service/auxiliar.service';
+import { NegocioComponent } from './negocios/negocio/negocio.component';
+import { NegocioFormComponent } from './negocio-form/negocio-form.component';
 
 
 @NgModule({
   declarations: [
     CargaNegociosComponent,
     CreacionNegociosComponent,
-    ListadoNegociosComponent
+    ListadoNegociosComponent,
+    NegociosComponent,
+    NegociosItemComponent,
+    NegocioComponent,
+    NegocioFormComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule
+  ],
+  providers: [
+    AuxiliarService
   ]
 })
 export class NegociosAsociadosModule { }
