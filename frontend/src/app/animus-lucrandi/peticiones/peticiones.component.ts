@@ -9,13 +9,6 @@ import { Negocio } from 'src/app/negocios-asociados/models/negocio';
 })
 export class PeticionesComponent implements OnInit {
 
-  public negocio = {
-    id:'',
-    nombre: '',
-    nif: '',
-    puntosSigre: 0,
-    autorefractrometros: 0
-  }
   public negocios: Negocio[] | undefined;
   private urlapi = 'https://animus-lucrandi.herokuapp.com/api';
   private urlapiNegocios = 'https://animus-lucrandi.herokuapp.com/api/negocios';
@@ -23,6 +16,14 @@ export class PeticionesComponent implements OnInit {
   public getNegocios : any = null;
   public getAsociaciones : any = null;
 
+  public Negocio : {
+    tipoNegocio: string;
+    nombreNegocio: string;
+    nifNegocio: string;
+    puntosSigre: number;
+    autorefractometros: number;
+    asociacion: string;
+  } | undefined
 
   constructor(private httpClient: HttpClient) { }
 
@@ -38,6 +39,17 @@ export class PeticionesComponent implements OnInit {
   private getAsociacionesMetodo(){
     this.httpClient.get(this.urlapiAsociaciones).subscribe(apiResult => (this.getAsociaciones = apiResult));
   }
+
+  /*private postAsociacion(){
+    const datos = this.transformData();
+  }*/
+
+  /*private mapearNegocios(getNegocios: any){
+    const personaje = getNegocios;
+    personaje.array.forEach(element => {
+
+    });
+  }*/
 
   private pintarNegocios(){
     this.negocios?.forEach(element => {

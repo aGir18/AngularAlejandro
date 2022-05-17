@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  host: 'https://animus-lucrandi.herokuapp.com/api'
+  host: 'https://animus-lucrandi.herokuapp.com/api/',
+  itemsPorPagina: 10
 };
 
 /*

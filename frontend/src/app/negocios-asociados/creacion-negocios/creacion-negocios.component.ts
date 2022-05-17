@@ -23,6 +23,10 @@ export class CreacionNegociosComponent implements OnInit {
     this.negocios.push({...this.nuevoNegocio});
     this.numeroNegocios = this.negocios.length;
   }
+/*
+  public postNegocio() {
+    this.nuevoNegocio.http
+  }*/
 
   public borrarNegocio(negocio: Negocio){
     this.negocios = this.negocios.filter(c => c.nombreNegocio !== negocio.nombreNegocio );

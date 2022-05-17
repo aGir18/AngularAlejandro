@@ -7,6 +7,7 @@ import { CreacionNegociosComponent } from './creacion-negocios/creacion-negocios
 import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     NegociosAsociadosRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class NegociosAsociadosModule { }

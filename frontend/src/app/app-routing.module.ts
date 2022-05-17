@@ -17,11 +17,6 @@ const routes: Routes = [
     loadChildren: () => import("./negocios-asociados/negocios-asociados.module").then((m) => m.NegociosAsociadosModule),
   },
   {
-    path: 'contacts',
-    loadChildren: () => import("./contacts/contacts.module").then((m) => m.ContactsModule),
-    //loadChildren: 'contacts/contacts.module#ContactsModule',
-  },
-  {
     path: 'not-found',
     component: NotFoundComponent,
   },
