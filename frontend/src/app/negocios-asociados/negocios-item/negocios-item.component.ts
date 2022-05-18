@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
 
@@ -19,5 +20,9 @@ export class NegociosItemComponent implements OnInit {
     console.log('negocio = ', this.negocio);
 
   }
+
+  pencil=faPencil;
+  eye=faEye;
+  trash=faTrashCan;
 
 }

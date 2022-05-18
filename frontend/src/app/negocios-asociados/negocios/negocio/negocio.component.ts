@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { NegocioImpl } from '../../models/negocio-impl';
 
 @Component({
@@ -19,5 +20,7 @@ export class NegocioComponent implements OnInit {
   eliminar(): void {
     this.negocioEliminar.emit(this.negocio);
   }
+
+  plus=faCirclePlus;
 
 }

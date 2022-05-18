@@ -8,3 +8,15 @@
 section {
   color: var(--amarillo);
 }
+
+.col-sm-3{
+  text-align: center;
+}
+
+a{
+  color: var(--amarillo);
+}
+
+a:hover{
+  color: var(--blanco);
+}

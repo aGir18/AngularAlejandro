@@ -1,28 +1,38 @@
 <main>
-<div class="row">
-  <div class="col-sm-4"></div>
-  <!-- <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">TIPO DE NEGOCIO</div>  -->
-  <div class="col-sm-2">NOMBRE</div>
-  <div class="col-sm-2">NIF</div>
-  <!--<div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">PUNTOS SIGRE</div> -->
-  <!--<div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">AUTOREFRACTOMETROS</div> -->
-  <!--<div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">ASOCIACION</div> -->
-  <div class="col-sm-4"></div>
-
-</div>
-<div *ngIf="negocios.length > 0; else noNegocios">
-  <div *ngFor="let negocio of negocios">
-    <!-- <div>
-      {{ negocio.nombreNegocio }}
-    </div> -->
-    <app-negocios-item>[negocio]="negocio" (negocioSeleccionado)="verDatos($event)"</app-negocios-item>
-  </div>
-</div>
-<ng-template #noNegocios>
   <div class="row">
-    NO EXISTEN NEGOCIOS
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1>Listado de negocios</h1>
+      <div class="d-grid gap-2" id="sumarNegocio">
+        <button class="creacion btn btn-primary" type="button" routerLink="/negocios-asociados/formulario-negocios"><fa-icon [icon]="plus"></fa-icon> Crear nuevo negocio</button>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
   </div>
-</ng-template>
+  <div class="row">
+    <div class="col-sm-3"></div>
+  <!--   <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">TIPO DE NEGOCIO</div>-->
+    <div class="col-sm-3">NOMBRE</div>
+    <div class="col-sm-3">NIF</div>
+    <!--<div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">PUNTOS SIGRE</div> -->
+    <!--<div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3">AUTOREFRACTOMETROS</div> -->
+    <!--<div class="col-10 col-sm-10 col-md-3 col-lg-2 col-xl-2">ASOCIACION</div> -->
+    <div class="col-sm-3"></div>
+
+  </div>
+  <div *ngIf="negocios.length > 0; else noNegocios">
+    <div *ngFor="let negocio of negocios">
+      <!-- <div>
+        {{ negocio.nombreNegocio }}
+      </div> -->
+      <app-negocios-item [negocio]="negocio"></app-negocios-item>
+    </div>
+  </div>
+  <ng-template #noNegocios>
+    <div class="row">
+      NO EXISTEN NEGOCIOS
+    </div>
+  </ng-template>
 
 
 

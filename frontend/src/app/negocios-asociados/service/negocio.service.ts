@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { environment } from 'src/environments/environment';
 import { Negocio } from '../models/negocio';
@@ -72,6 +72,9 @@ export class NegocioService {
     // respuestaApi._embedded.negocios.forEach((p:any) => {
     //   negocios.push(this.mapearNegocio(p));
     // });
+    respuestaApi._embedded.negocios.forEach((p: any) => {
+      negocios.push(this.mapearNegocio(p));
+    });
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -94,9 +97,12 @@ export class NegocioService {
     negocio.asociacion = negocioApi.asociacion;
     return negocio;
   }
-
+/*
   create(negocio: Negocio): void {
     console.log(`Se ha creado el negocio: ${JSON.stringify(negocio)}`);
+  }*/
+  create(negocio: Negocio): Observable<any> {
+    return this.http.post(`${this.urlEndPoint}`, negocio);
   }
 
   getNegociosPagina(pagina: number): Observable<any> {

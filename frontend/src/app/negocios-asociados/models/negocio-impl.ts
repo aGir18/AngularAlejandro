@@ -27,9 +27,9 @@ export class NegocioImpl implements Negocio {
     this.asociacion = asociacion;
   }*/
 
-  getIdNegocio(url: string): string {
+  /*getIdNegocio(url: string): string {
     url = url.slice(0, url.length - 1)
     return url.slice(url.lastIndexOf('/') + 1, url.length);
-  }
+  }*/
 
 }

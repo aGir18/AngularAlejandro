@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
@@ -20,7 +21,7 @@ export class NegociosComponent implements OnInit {
 
   constructor(
     private negocioService: NegocioService,
-    private auxService: AuxiliarService) { }
+    private auxService: AuxiliarService) { };
 
   ngOnInit(): void {
     this.negocioService.getNegocios().subscribe((response) =>  {
@@ -52,5 +53,7 @@ export class NegociosComponent implements OnInit {
       }
     });
   }
+
+  plus=faCirclePlus;
 
 }

@@ -1,33 +1,67 @@
 <form #negocioForm="ngForm">
-  <div class="form-row py-2">
-    <div class="col-lg-4 col-md-12">
-      <label>Nombre <sup class="text-danger">*</sup></label>
-      <input type="text" class="form-control" [(ngModel)]="negocio.nombreNegocio" placeholder="Nombre Negocio" name="pers"
-        required minlength="3" #pers="ngModel" [ngClass]="{
-          'is-invalid': pers.invalid && (pers.dirty || pers.touched),
-          'is-valid': !pers.invalid
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="form-row py-2">
+          <label>Nombre del negocio<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="negocio.nombreNegocio" placeholder="Nombre negocio" name="neg"
+            required minlength="3" maxlength="25" #neg="ngModel" [ngClass]="{
+              'is-invalid': neg.invalid && (neg.dirty || neg.touched),
+              'is-valid': !neg.invalid
+            }" />
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+          <!-- <div class="text-danger" *ngIf="neg.invalid && (neg.dirty || neg.touched)">
+            <div *ngIf="propi.errors.required">
+              El Nombre del Personaje es obligatorio
+            </div>
+            <div *ngIf="pers.errors.minlength">
+              El Nombre del Personaje debe tener al menos 3
+            </div>
+          </div> -->
+        </div>
+    <div class="form-row py-2">
+        <label>NIF del negocio<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="negocio.nifNegocio" placeholder="NIF del negocio" name="neg2"
+          required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+            'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+            'is-valid': !neg2.invalid
+          }" />
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+        <!-- <div class="text-danger" *ngIf="neg.invalid && (neg.dirty || neg.touched)">
+          <div *ngIf=".errors.required">
+            El Nombre del Personaje es obligatorio
+          </div>
+          <div *ngIf="pers.errors.minlength">
+            El Nombre del Personaje debe tener al menos 3
+          </div>
+        </div> -->
+    </div>
+    <div class="form-row py-2">
+      <label>Asociación a la que pertenece el negocio<sup class="text-danger">*</sup></label>
+      <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Nombre de la asociación" name="aso"
+        required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
+          'is-invalid': aso.invalid && (aso.dirty || aso.touched),
+          'is-valid': !aso.invalid
         }" />
-      <div class="text-danger" *ngIf="pers.invalid && (pers.dirty || pers.touched)">
-
-      </div>
+      <div class="invalid-feedback">Por favor, rellene este campo.</div>
+      <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+      <!-- <div class="text-danger" *ngIf="neg.invalid && (neg.dirty || neg.touched)">
+        <div *ngIf="propi.errors.required">
+          El Nombre del Personaje es obligatorio
+        </div>
+        <div *ngIf="pers.errors.minlength">
+          El Nombre del Personaje debe tener al menos 3
+        </div>
+      </div> -->
     </div>
-  </div>
-  <div class="form-row py-2">
-    <div class="col-lg-4 col-md-12">
-      <label for="validationServer02">Tipo negocio<sup class="text-danger"></sup></label>
-      <!-- <input type="text" class="form-control" [(ngModel)]="negocio.tipoNegocio" placeholder="tipo de negocio"
-        minlength="5" maxlength="5" required name="fechNac" #fechNac="ngModel" [ngClass]="{
-          'is-invalid': fechNac.invalid && (fechNac.dirty || fechNac.touched),
-          'is-valid': !fechNac.invalid
-        }" /> -->
-    </div>
-  </div>
-  <div class="form-row justify-content-between pt-5">
-    <div class="col-lg-5 col-md-12">
-      <button class="btn btn-primary" role="button" (click)="create()" routerLink='/personajes'
-        [disabled]="!negocioForm.form.valid">
-        Crear Negocio
-      </button>
+      <div class="form-row justify-content-between pt-5">
+          <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios'
+            [disabled]="!negocioForm.form.valid">
+            Crear Negocio
+          </button>
+        </div>
     </div>
   </div>
 </form>
