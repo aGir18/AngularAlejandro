@@ -57,11 +57,18 @@
       </div> -->
     </div>
       <div class="form-row justify-content-between pt-5">
-          <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios'
-            [disabled]="!negocioForm.form.valid">
-            Crear Negocio
-          </button>
-        </div>
+        <button class="btn btn-primary" role="button" (click)="create()" routerLink=''
+          [disabled]="!negocioForm.form.valid">
+          Crear Negocio
+        </button>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <pre>{{ negocio | json }}</pre>
     </div>
+    <div class="col-sm-3"></div>
+  </div>
   </div>
 </form>
