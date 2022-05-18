@@ -21,8 +21,13 @@ export class NegocioService {
     return this.http.get<any>(this.urlEndPoint);
   }
 //Crear un extraerFarmacias y uno opticas
+/*
   extraerNegocios(respuestaApi: any): Negocio[] {
     const negocios: Negocio[] = [];
+*/
+  extraerNegocios(respuestaApi: any): NegocioImpl[] {
+    //let negocio = new NegocioImpl();
+    const negocios: NegocioImpl[] = [];
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -33,7 +38,7 @@ export class NegocioService {
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    let negocio = new NegocioImpl();
+    let negocio: NegocioImpl = new NegocioImpl();
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
     negocio.nombreNegocio = negocioApi.nombre;
     negocio.nifNegocio = negocioApi.nif;

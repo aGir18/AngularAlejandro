@@ -8,13 +8,15 @@ import { NegocioImpl } from '../models/negocio-impl';
   styleUrls: ['./negocios-item.component.css']
 })
 export class NegociosItemComponent implements OnInit {
-
-  @Input() negocio: Negocio = new NegocioImpl();
+//AQUÍ ESTÁ el PROBLEMA
+//@Input() negocio: Negocio = new NegocioImpl();
+  @Input() negocio: NegocioImpl = new NegocioImpl();
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log('negocio = ', this.negocio);
 
   }
 

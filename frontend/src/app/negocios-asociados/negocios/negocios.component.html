@@ -12,6 +12,9 @@
 </div>
 <div *ngIf="negocios.length > 0; else noNegocios">
   <div *ngFor="let negocio of negocios">
+    <!-- <div>
+      {{ negocio.nombreNegocio }}
+    </div> -->
     <app-negocios-item>[negocio]="negocio" (negocioSeleccionado)="verDatos($event)"</app-negocios-item>
   </div>
 </div>

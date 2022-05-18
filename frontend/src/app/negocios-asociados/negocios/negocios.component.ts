@@ -11,7 +11,9 @@ import { NegocioService } from '../service/negocio.service';
 })
 export class NegociosComponent implements OnInit {
 
-  negocios: Negocio[] = [];
+  //cambiado
+  //negocios: Negocio[] = [];
+  negocios: NegocioImpl[] = [];
   todosNegocios: Negocio[] = [];
   numPaginas: number = 0;
   negocioVerDatos!: Negocio;
@@ -24,6 +26,7 @@ export class NegociosComponent implements OnInit {
     this.negocioService.getNegocios().subscribe((response) =>  {
       this.negocios = this.negocioService.extraerNegocios(response);
       console.log('negocios = ', this.negocios);
+      console.log('tipo negocio = ', this.negocios[1] instanceof NegocioImpl);
     });
 
     this.getTodosNegocios();
