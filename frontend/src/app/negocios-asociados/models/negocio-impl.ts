@@ -2,6 +2,10 @@ import { Negocio } from "./negocio";
 
 export class NegocioImpl implements Negocio {
   //tipoNegocio!: string;
+  //GUIJARRO
+  /*
+  id!: string;
+  */
   nombreNegocio!: string;
   nifNegocio!: string;
   puntosSigre!: number;
@@ -11,6 +15,7 @@ export class NegocioImpl implements Negocio {
 
   constructor(){
   }
+
 
 /*
   constructor(tipo_negocio:string, nombre: string, nif: string, numeroPuntosSigre: number, numeroAutorefractometros: number, asociacion: string){

@@ -12,6 +12,8 @@ import { NegocioImpl } from '../models/negocio-impl';
 export class NegocioService {
   private host: string = environment.host;
   private urlEndPoint: string = `${this.host}negocios`;
+  private urlEndPoint1: string = `${this.host}farmacias`;
+  private urlEndPoint2: string = `${this.host}opticas`;
 
   constructor(
     private http: HttpClient,
@@ -20,14 +22,56 @@ export class NegocioService {
   getNegocios(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint);
   }
+
+  getFarmacias(): Observable<any> {
+    return this.http.get<any>(this.urlEndPoint1);
+  }
+
+  getOpticas(): Observable<any> {
+    return this.http.get<any>(this.urlEndPoint2);
+  }
 //Crear un extraerFarmacias y uno opticas
 /*
   extraerNegocios(respuestaApi: any): Negocio[] {
     const negocios: Negocio[] = [];
 */
-  extraerNegocios(respuestaApi: any): NegocioImpl[] {
+/*
+    CAMBIOS GUIJARRO
+    extraerNegocios(respuestaApi: any): NegocioImpl[]
+*/
+  extraerFarmacias(respuestaApi: any): Negocio[] {
     //let negocio = new NegocioImpl();
-    const negocios: NegocioImpl[] = [];
+    /*const negocios: NegocioImpl[] = [];*/
+    const negocios: Negocio[] = [];
+    // respuestaApi._embedded.negocios.forEach((p:any) => {
+    //   negocios.push(this.mapearNegocio(p));
+    // });
+    respuestaApi._embedded.farmacias.forEach((p: any) => {
+      negocios.push(this.mapearNegocio(p));
+    });
+    return negocios;
+  }
+
+  extraerOpticas(respuestaApi: any): Negocio[] {
+    //let negocio = new NegocioImpl();
+    /*const negocios: NegocioImpl[] = [];*/
+    const negocios: Negocio[] = [];
+    // respuestaApi._embedded.negocios.forEach((p:any) => {
+    //   negocios.push(this.mapearNegocio(p));
+    // });
+    respuestaApi._embedded.opticas.forEach((p: any) => {
+      negocios.push(this.mapearNegocio(p));
+    });
+    return negocios;
+  }
+
+  extraerNegocios(respuestaApi: any): Negocio[] {
+    //let negocio = new NegocioImpl();
+    /*const negocios: NegocioImpl[] = [];*/
+    const negocios: Negocio[] = [];
+    // respuestaApi._embedded.negocios.forEach((p:any) => {
+    //   negocios.push(this.mapearNegocio(p));
+    // });
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -38,8 +82,10 @@ export class NegocioService {
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    let negocio: NegocioImpl = new NegocioImpl();
+    //let negocio: NegocioImpl = new NegocioImpl();
+    let negocio = new NegocioImpl();
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
+    //negocio.id = this.getId(negocioApi._links.href);
     negocio.nombreNegocio = negocioApi.nombre;
     negocio.nifNegocio = negocioApi.nif;
     negocio.puntosSigre = negocioApi.numeroPuntosSigre;
@@ -56,4 +102,12 @@ export class NegocioService {
   getNegociosPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint, pagina);
   }
+
+  getId(url:string): string {
+    let posicionFinal: number = url.lastIndexOf('/');
+    let numId: string = url.slice(posicionFinal + 1, url.length);
+    return numId;
+
+  }
+
 }

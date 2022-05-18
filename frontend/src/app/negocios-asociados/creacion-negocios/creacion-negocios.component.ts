@@ -20,7 +20,7 @@ export class CreacionNegociosComponent implements OnInit {
   public numeroNegocios = 0;
 
   public guardarNegocio() {
-    this.negocios.push({...this.nuevoNegocio});
+    //this.negocios.push({...this.nuevoNegocio});
     this.numeroNegocios = this.negocios.length;
   }
 /*

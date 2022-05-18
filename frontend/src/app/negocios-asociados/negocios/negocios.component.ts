@@ -12,8 +12,8 @@ import { NegocioService } from '../service/negocio.service';
 export class NegociosComponent implements OnInit {
 
   //cambiado
-  //negocios: Negocio[] = [];
-  negocios: NegocioImpl[] = [];
+  //negocios: NegocioImpl[] = [];
+  negocios: Negocio[] = [];
   todosNegocios: Negocio[] = [];
   numPaginas: number = 0;
   negocioVerDatos!: Negocio;
@@ -46,7 +46,7 @@ export class NegociosComponent implements OnInit {
       this.numPaginas = this.auxService.getPaginasResponse(r);
       for (let index = 1; index <= this.numPaginas; index++) {
         this.negocioService.getNegociosPagina(index)
-          .subscribe(response => {
+          .subscribe((response) => {
             this.todosNegocios.push(...this.negocioService.extraerNegocios(response));
           });
       }
