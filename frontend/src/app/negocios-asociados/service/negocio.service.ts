@@ -20,7 +20,7 @@ export class NegocioService {
   getNegocios(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint);
   }
-
+//Crear un extraerFarmacias y uno opticas
   extraerNegocios(respuestaApi: any): Negocio[] {
     const negocios: Negocio[] = [];
     respuestaApi._embedded.farmacias.forEach((p: any) => {
@@ -39,6 +39,7 @@ export class NegocioService {
     negocio.nifNegocio = negocioApi.nif;
     negocio.puntosSigre = negocioApi.numeroPuntosSigre;
     negocio.autorefractometros = negocioApi.numeroAutorefractometros;
+    //guardar href
     negocio.asociacion = negocioApi.asociacion;
     return negocio;
   }

@@ -10,10 +10,17 @@
   <div class="col-sm-4"></div>
 
 </div>
-
-<div *ngFor="let negocio of negocios">
-  <app-negocios-item>[negocio]="negocio" (negocioSeleccionado)="verDatos($event)"</app-negocios-item>
+<div *ngIf="negocios.length > 0; else noNegocios">
+  <div *ngFor="let negocio of negocios">
+    <app-negocios-item>[negocio]="negocio" (negocioSeleccionado)="verDatos($event)"</app-negocios-item>
+  </div>
 </div>
+<ng-template #noNegocios>
+  <div class="row">
+    NO EXISTEN NEGOCIOS
+  </div>
+</ng-template>
+
 
 
 <!-- Modal -->

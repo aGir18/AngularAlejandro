@@ -21,7 +21,11 @@ export class NegociosComponent implements OnInit {
     private auxService: AuxiliarService) { }
 
   ngOnInit(): void {
-    this.negocioService.getNegocios().subscribe((response) => this.negocios = this.negocioService.extraerNegocios(response));
+    this.negocioService.getNegocios().subscribe((response) =>  {
+      this.negocios = this.negocioService.extraerNegocios(response);
+      console.log('negocios = ', this.negocios);
+    });
+
     this.getTodosNegocios();
   }
 

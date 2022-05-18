@@ -21,10 +21,6 @@ const routes: Routes = [
     component: NotFoundComponent,
   },
   {
-    path: 'animus',
-    loadChildren: () => import("./animus-lucrandi/animus-lucrandi.module").then((m) => m.AnimusLucrandiModule),
-  },
-  {
     path: 'asociaciones',
     loadChildren: () => import("./asociaciones/asociaciones.module").then((m) => m.AsociacionesModule),
   },

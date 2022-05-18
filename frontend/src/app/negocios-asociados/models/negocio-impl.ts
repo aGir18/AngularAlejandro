@@ -6,6 +6,7 @@ export class NegocioImpl implements Negocio {
   nifNegocio!: string;
   puntosSigre!: number;
   autorefractometros!: number;
+  //asociación del tipo asocaición y el de abajo se llama urlAsociación; ¡¡¡uno más!!!
   asociacion!: string;
 
   constructor(){
