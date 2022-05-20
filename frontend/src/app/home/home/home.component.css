@@ -45,6 +45,10 @@
   margin-left: 15em;
 }
 
+img{
+  aspect-ratio: 16/9;
+}
+
 @media screen and (max-width: 1780px) {
   .grande{
   display:none;
@@ -84,5 +88,6 @@
 }
 
 main {
-  color: var(--amarillo)
+  color: var(--amarillo);
+  scroll-behavior: smooth;
 }

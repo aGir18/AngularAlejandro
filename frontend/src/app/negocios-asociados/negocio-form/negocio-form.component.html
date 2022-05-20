@@ -4,7 +4,7 @@
     <div class="col-sm-6">
       <div class="form-row py-2">
           <label>Nombre del negocio<sup class="text-danger">*</sup></label>
-          <input type="text" class="form-control" [(ngModel)]="negocio.nombreNegocio" placeholder="Nombre negocio" name="neg"
+          <input type="text" class="form-control" [(ngModel)]="negocio.nombre" placeholder="Nombre negocio" name="neg"
             required minlength="3" maxlength="25" #neg="ngModel" [ngClass]="{
               'is-invalid': neg.invalid && (neg.dirty || neg.touched),
               'is-valid': !neg.invalid
@@ -22,7 +22,7 @@
         </div>
     <div class="form-row py-2">
         <label>NIF del negocio<sup class="text-danger">*</sup></label>
-        <input type="text" class="form-control" [(ngModel)]="negocio.nifNegocio" placeholder="NIF del negocio" name="neg2"
+        <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="NIF del negocio" name="neg2"
           required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
             'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
             'is-valid': !neg2.invalid
@@ -57,7 +57,7 @@
       </div> -->
     </div>
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="create()" routerLink=''
+        <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Negocio
         </button>

@@ -38,7 +38,7 @@ export class NegociosComponent implements OnInit {
   }
 
   onNegocioEliminar(negocio: NegocioImpl): void {
-    console.log(`He eliminado a ${negocio.nombreNegocio}`);
+    console.log(`He eliminado a ${negocio.nombre}`);
     this.negocios = this.negocios.filter(p => negocio !== p)
   }
 

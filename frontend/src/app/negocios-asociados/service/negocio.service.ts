@@ -89,8 +89,8 @@ export class NegocioService {
     let negocio = new NegocioImpl();
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
     //negocio.id = this.getId(negocioApi._links.href);
-    negocio.nombreNegocio = negocioApi.nombre;
-    negocio.nifNegocio = negocioApi.nif;
+    negocio.nombre = negocioApi.nombre;
+    negocio.nif = negocioApi.nif;
     negocio.puntosSigre = negocioApi.numeroPuntosSigre;
     negocio.autorefractometros = negocioApi.numeroAutorefractometros;
     //guardar href

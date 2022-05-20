@@ -29,7 +29,7 @@ export class CreacionNegociosComponent implements OnInit {
   }*/
 
   public borrarNegocio(negocio: Negocio){
-    this.negocios = this.negocios.filter(c => c.nombreNegocio !== negocio.nombreNegocio );
+    this.negocios = this.negocios.filter(c => c.nombre !== negocio.nombre );
     this.numeroNegocios = this.negocios.length;
   }
 
@@ -42,7 +42,7 @@ export class CreacionNegociosComponent implements OnInit {
 
   public mostrarNegocios(){
     this.negocios.forEach(element => {
-      element.nombreNegocio
+      element.nombre
     });
   }
 
