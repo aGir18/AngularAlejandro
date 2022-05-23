@@ -89,6 +89,7 @@ export class NegocioService {
     let negocio = new NegocioImpl();
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
     //negocio.id = this.getId(negocioApi._links.href);
+    negocio.id = this.getId(negocioApi._links.self.href);
     negocio.nombre = negocioApi.nombre;
     negocio.nif = negocioApi.nif;
     negocio.puntosSigre = negocioApi.numeroPuntosSigre;
@@ -103,6 +104,7 @@ export class NegocioService {
   }*/
   create(negocio: Negocio): Observable<any> {
     return this.http.post(`${this.urlEndPoint}`, negocio);
+    //return this.http.post(`${this.urlEndPoint}`, negocio).subscribe;
   }
 
   getNegociosPagina(pagina: number): Observable<any> {

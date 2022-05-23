@@ -21,6 +21,9 @@ export class NegocioFormComponent implements OnInit {
 
   create(): void {
     this.negocioService.create(this.negocio);
+    //this.negocioService.http.post(this.negocioService.urlEndPoint, this.negocio);
+
+    //this.negocioService.create(this.negocio).subscribe;
   }
   pencil=faPencil;
   eye=faEye;

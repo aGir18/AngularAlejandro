@@ -38,6 +38,45 @@
           </div>
         </div> -->
     </div>
+<!--
+    <div class="form-row py-2">
+      <label>Número de puntos SIGRE<sup class="text-danger">*</sup></label>
+      <input type="number" class="form-control" [(ngModel)]="negocio.puntosSigre" placeholder="Número de puntos SIGRE" name="neg3"
+        max="5" min="0" #neg3="ngModel" [ngClass]="{
+          'is-invalid': neg3.invalid && (neg3.dirty || neg3.touched),
+          'is-valid': !neg3.invalid
+        }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div> -->
+      <!-- <div class="text-danger" *ngIf="neg.invalid && (neg.dirty || neg.touched)">
+        <div *ngIf=".errors.required">
+          El Nombre del Personaje es obligatorio
+        </div>
+        <div *ngIf="pers.errors.minlength">
+          El Nombre del Personaje debe tener al menos 3
+        </div>
+      </div> -->
+<!--   </div>
+ -->
+  <!-- <div class="form-row py-2">
+    <label>Número de autorefractometros<sup class="text-danger">*</sup></label>
+    <input type="number" class="form-control" [(ngModel)]="negocio.autorefractometros" placeholder="Número de autorefractometros" name="neg4"
+      required min="0" max="5" #neg4="ngModel" [ngClass]="{
+        'is-invalid': neg4.invalid && (neg4.dirty || neg4.touched),
+        'is-valid': !neg4.invalid
+      }" />
+      <div class="invalid-feedback">Por favor, rellene este campo.</div>
+      <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div> -->
+    <!-- <div class="text-danger" *ngIf="neg.invalid && (neg.dirty || neg.touched)">
+      <div *ngIf=".errors.required">
+        El Nombre del Personaje es obligatorio
+      </div>
+      <div *ngIf="pers.errors.minlength">
+        El Nombre del Personaje debe tener al menos 3
+      </div>
+    </div> -->
+<!-- </div>
+ -->
     <div class="form-row py-2">
       <label>Asociación a la que pertenece el negocio<sup class="text-danger">*</sup></label>
       <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Nombre de la asociación" name="aso"

@@ -3,6 +3,7 @@ export interface Negocio {
   //CAMBIOS GUIJARRO
   /*
   id: string;*/
+  id: string;
   nombre: string;
   nif: string;
   puntosSigre: number;

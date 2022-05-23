@@ -6,6 +6,7 @@ import { MainComponent } from './shell/main/main.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -19,7 +20,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    AppRoutingModule
   ],
   exports: [ShellComponent]
 })

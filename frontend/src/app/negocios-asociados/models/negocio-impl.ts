@@ -6,6 +6,7 @@ export class NegocioImpl implements Negocio {
   /*
   id!: string;
   */
+  id!: string;
   nombre!: string;
   nif!: string;
   puntosSigre!: number;
