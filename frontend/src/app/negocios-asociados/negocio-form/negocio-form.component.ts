@@ -11,8 +11,8 @@ import { NegocioService } from '../service/negocio.service';
 })
 export class NegocioFormComponent implements OnInit {
 
-  negocio: NegocioImpl = new NegocioImpl();
-  negocios!: Negocio[];
+  negocio: NegocioImpl = new NegocioImpl('', '', '');
+  //negocios!: Negocio[];
 
   constructor(private negocioService: NegocioService) { }
 
@@ -20,7 +20,9 @@ export class NegocioFormComponent implements OnInit {
   }
 
   create(): void {
-    this.negocioService.create(this.negocio);
+    //this.negocioService.create(this.negocio);
+    console.info('paso por metodo de formulario');
+    this.negocioService.postNegocio(this.negocio);
     //this.negocioService.http.post(this.negocioService.urlEndPoint, this.negocio);
 
     //this.negocioService.create(this.negocio).subscribe;

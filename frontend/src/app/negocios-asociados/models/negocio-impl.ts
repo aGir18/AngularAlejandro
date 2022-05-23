@@ -6,17 +6,27 @@ export class NegocioImpl implements Negocio {
   /*
   id!: string;
   */
-  id!: string;
+  idNegocio!: string;
   nombre!: string;
   nif!: string;
-  puntosSigre!: number;
-  autorefractometros!: number;
+  numeroPuntosSigre!: number;
+  numeroAutorefractometros!: number;
   //asociación del tipo asocaición y el de abajo se llama urlAsociación; ¡¡¡uno más!!!
   asociacion!: string;
 
-  constructor(){
+ /*  constructor(){
+  } */
+
+  constructor(nombre: string, nif: string, asociacion: string){
+    this.nombre = nombre;
+    this.nif = nif;
+    this.asociacion = asociacion;
   }
 
+  getIdNegocio(url: string): string {
+    url = url.slice(0, url.length - 1)
+    return url.slice(url.lastIndexOf('/') + 1, url.length);
+  }
 
 /*
   constructor(tipo_negocio:string, nombre: string, nif: string, numeroPuntosSigre: number, numeroAutorefractometros: number, asociacion: string){

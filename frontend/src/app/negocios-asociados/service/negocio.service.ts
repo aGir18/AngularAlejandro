@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { environment } from 'src/environments/environment';
 import { Negocio } from '../models/negocio';
@@ -86,23 +86,35 @@ export class NegocioService {
 
   mapearNegocio(negocioApi: any): NegocioImpl {
     //let negocio: NegocioImpl = new NegocioImpl();
-    let negocio = new NegocioImpl();
+    //let negocio =
+    return new NegocioImpl(negocioApi.nombre, negocioApi.nif, negocioApi.asociacion);
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
     //negocio.id = this.getId(negocioApi._links.href);
-    negocio.id = this.getId(negocioApi._links.self.href);
-    negocio.nombre = negocioApi.nombre;
-    negocio.nif = negocioApi.nif;
-    negocio.puntosSigre = negocioApi.numeroPuntosSigre;
-    negocio.autorefractometros = negocioApi.numeroAutorefractometros;
+    //negocio.idNegocio = this.getId(negocioApi._links.self.href);
+    /* negocio.nombre = negocioApi.nombre;
+    negocio.nif = negocioApi.nif; */
+    //negocio.numeroPuntosSigre = negocioApi.numeroPuntosSigre;
+    //negocio.numeroAutorefractometros = negocioApi.numeroAutorefractometros;
     //guardar href
-    negocio.asociacion = negocioApi.asociacion;
-    return negocio;
+/*     negocio.asociacion = negocioApi.asociacion;
+ */   // return negocio;
   }
 /*
   create(negocio: Negocio): void {
     console.log(`Se ha creado el negocio: ${JSON.stringify(negocio)}`);
   }*/
-  create(negocio: Negocio): Observable<any> {
+
+  // getNegocios(): Observable<any> {
+  //   return this.http.get<any>(this.urlEndPoint);
+  // }
+
+
+  postNegocio(negocio: NegocioImpl){
+    this.http.post(this.urlEndPoint, negocio).subscribe();
+  }
+
+  create(negocio: NegocioImpl): Observable<any> {
+    console.warn('pasando por método crear');
     return this.http.post(`${this.urlEndPoint}`, negocio);
     //return this.http.post(`${this.urlEndPoint}`, negocio).subscribe;
   }
