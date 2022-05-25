@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { AsociacionesRoutingModule } from './asociaciones-routing.module';
 import { AsociacionComponent } from './asociacion/asociacion.component';
+import { ListadoAsociacionesComponent } from './listado-asociaciones/listado-asociaciones.component';
+import { AsociacionItemComponent } from './asociacion-item/asociacion-item.component';
+import { FormsModule } from '@angular/forms';
+import { AuxiliarService } from '../service/auxiliar.service';
 
 
 @NgModule({
   declarations: [
-    AsociacionComponent
+    AsociacionComponent,
+    ListadoAsociacionesComponent,
+    AsociacionItemComponent
   ],
   imports: [
     CommonModule,
-    AsociacionesRoutingModule
-  ]
+    AsociacionesRoutingModule,
+    FormsModule
+  ],
+  providers: [AuxiliarService]
 })
 export class AsociacionesModule { }

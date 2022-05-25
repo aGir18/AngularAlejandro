@@ -5,9 +5,19 @@
   --blanco: #F5F5F5;
 }
 
-pre {
-  margin-top: 20em;
-  margin-bottom: -1em;
-  text-align: center;
+section {
   color: var(--amarillo);
+  font-size: 1em;
+}
+
+.central{
+  text-align: center;
+}
+
+a{
+  color: var(--amarillo);
+}
+
+a:hover{
+  color: var(--blanco);
 }

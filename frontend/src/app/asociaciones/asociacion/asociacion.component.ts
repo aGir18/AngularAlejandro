@@ -21,7 +21,7 @@ export class AsociacionComponent implements OnInit {
   }
 
   cargarAsociacion(): any {
-    return this.asociacionService.getAsociacion(this.activateRoute.snapshot.params['id']);
-
+    return this.asociacionService.getAsociaciones();
+//this.activateRoute.snapshot.params['id'] iba dentro del método anterior
   }
 }

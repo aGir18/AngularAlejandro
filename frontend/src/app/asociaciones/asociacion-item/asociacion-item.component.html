@@ -1,0 +1,35 @@
+<section *ngIf="asociacion.nombre != null; else noExiste">
+<div class="row mb-2">
+  <hr class='w-100'>
+  <!-- <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-1">
+  </div> -->
+  <div class="col-sm-5">
+<!--       <a class="" data-toggle="modal" data-target="#modalNegocio" (click)='negocioSeleccionado.emit(negocio)'> {{negocio.nombre}}</a>
+-->    </div>
+  <!-- <div class="col-sm-3">{{negocio.nombre}}, {{negocio.nif}}
+    <a routerLink="/negocios-asociados/formulario-negocios">
+      <fa-icon [icon]="eye"></fa-icon>
+    </a>
+    <a routerLink="/negocios-asociados/formulario-negocios">
+      <fa-icon [icon]="pencil"></fa-icon>
+    </a>
+    <a routerLink="/negocios-asociados/formulario-negocios">
+      <fa-icon [icon]="trash"></fa-icon>
+    </a>
+  </div> -->
+  <div class="col-sm-3" id="central">{{asociacion.nombre}}</div>
+<!--   <div class="col-sm-3">{{asociacion.negocios.length}}</div>
+ -->  <div class="col-sm-4">
+<!--       <button class="btn btn-info" [routerLink]="['/asociaciones', negocio.asociacion]">Asociacion</button>
+-->    </div>
+  <!--
+  <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-1">{{negocio.puntosSigre}}</div>
+  <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-1">{{negocio.autorefractometros}}</div> -->
+<!--     <div class="col-10 col-sm-10 col-md-2 col-lg-2 col-xl-1">{{negocio.asociacion}}</div>
+-->  </div>
+</section>
+<ng-template #noExiste>
+  <div>
+    NO EXISTEN NEGOCIOS
+  </div>
+</ng-template>

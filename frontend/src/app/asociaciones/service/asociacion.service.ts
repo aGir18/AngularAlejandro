@@ -1,7 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { environment } from 'src/environments/environment';
+import { Asociacion } from '../models/asociacion';
+import { AsociacionImpl } from '../models/asociacion-impl';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +12,42 @@ import { environment } from 'src/environments/environment';
 export class AsociacionService {
 
   private host: string = environment.host;
-  private urlEndPoint: string = `${this.host}asociaciones`;
-  constructor(private http: HttpClient) { }
+  private urlEndPoint3: string = `${this.host}asociaciones`;
+  constructor(
+    private http: HttpClient,
+    private auxService: AuxiliarService) { }
 
-  getAsociacion(id: string): Observable<any> {
-    return this.http.get<any>(`${this.urlEndPoint}${id}`);
+/*   getAsociacion(id: string): Observable<any> {
+    return this.http.get<any>(`${this.urlEndPoint3}${id}`);
+  } */
+
+  getAsociaciones(): Observable<any> {
+    return this.http.get<any>(this.urlEndPoint3);
+	}
+
+  mapearAsociacion(personajeApi: any): AsociacionImpl {
+    return new AsociacionImpl(
+      personajeApi.nombre,
+      personajeApi.negocios
+      );
+  }
+
+  extraerAsociaciones(respuestaApi: any): Asociacion[] {
+	  const asociaciones: Asociacion[] = [];
+	  respuestaApi._embedded.asociaciones.forEach((p: any) => {
+	    asociaciones.push(this.mapearAsociacion(p));
+    });
+    return asociaciones;
+  }
+
+/* 	create(personaje: Personaje): void {
+
+    console.log(`Se ha creado el personaje: ${JSON.stringify(personaje)}`);
+
+  } */
+
+  getAsociacionesPagina(pagina: number): Observable<any> {
+	  return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);
+
   }
 }
