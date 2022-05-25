@@ -3,6 +3,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
+import { FarmaciaService } from '../service/farmacia.service';
 import { NegocioService } from '../service/negocio.service';
 
 @Component({
@@ -21,6 +22,7 @@ export class NegociosComponent implements OnInit {
 
   constructor(
     private negocioService: NegocioService,
+    private farmaciaService: FarmaciaService,
     private auxService: AuxiliarService) { };
 
   ngOnInit(): void {

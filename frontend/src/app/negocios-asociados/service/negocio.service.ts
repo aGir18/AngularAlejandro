@@ -87,7 +87,7 @@ export class NegocioService {
   mapearNegocio(negocioApi: any): NegocioImpl {
     //let negocio: NegocioImpl = new NegocioImpl();
     //let negocio =
-    return new NegocioImpl(negocioApi.nombre, negocioApi.nif, negocioApi.asociacion);
+    return new NegocioImpl(negocioApi.nombre, negocioApi.nif, negocioApi.asociacion, negocioApi.tipoNegocio);
     //negocio.tipoNegocio = negocioApi.tipo_negocio;
     //negocio.id = this.getId(negocioApi._links.href);
     //negocio.idNegocio = this.getId(negocioApi._links.self.href);

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { FarmaciaImpl } from '../models/farmacia-impl';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
+import { FarmaciaService } from '../service/farmacia.service';
 import { NegocioService } from '../service/negocio.service';
 
 @Component({
@@ -11,10 +13,12 @@ import { NegocioService } from '../service/negocio.service';
 })
 export class NegocioFormComponent implements OnInit {
 
-  negocio: NegocioImpl = new NegocioImpl('', '', '');
+  negocio: NegocioImpl = new NegocioImpl('', '', '', '');
+  farmacia: FarmaciaImpl = new FarmaciaImpl('', '', '', 0);
   //negocios!: Negocio[];
 
-  constructor(private negocioService: NegocioService) { }
+  constructor(private negocioService: NegocioService,
+    private farmaciaService: FarmaciaService) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +31,11 @@ export class NegocioFormComponent implements OnInit {
 
     //this.negocioService.create(this.negocio).subscribe;
   }
+
+  crearFarmacia(): void {
+    this.farmaciaService.postFarmacia(this.farmacia);
+  }
+
   pencil=faPencil;
   eye=faEye;
   trash=faTrashCan;

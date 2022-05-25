@@ -12,7 +12,7 @@ export class NegociosItemComponent implements OnInit {
 //AQUÍ ESTÁ el PROBLEMA
 //@Input() negocio: Negocio = new NegocioImpl();
   //@Input() negocio: NegocioImpl = new NegocioImpl('','','');
-  @Input() negocio: Negocio = new NegocioImpl('', '', '');
+  @Input() negocio: Negocio = new NegocioImpl('', '', '', '');
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
 
   constructor() { }

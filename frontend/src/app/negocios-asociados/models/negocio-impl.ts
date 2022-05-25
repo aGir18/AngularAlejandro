@@ -13,14 +13,15 @@ export class NegocioImpl implements Negocio {
   numeroAutorefractometros!: number;
   //asociación del tipo asocaición y el de abajo se llama urlAsociación; ¡¡¡uno más!!!
   asociacion!: string;
-
+  tipoNegocio!: string;
  /*  constructor(){
   } */
 
-  constructor(nombre: string, nif: string, asociacion: string){
+  constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string){
     this.nombre = nombre;
     this.nif = nif;
     this.asociacion = asociacion;
+    this.tipoNegocio = tipoNegocio;
   }
 
   getIdNegocio(url: string): string {
