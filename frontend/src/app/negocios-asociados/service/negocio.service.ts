@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { environment } from 'src/environments/environment';
+import { FarmaciaImpl } from '../models/farmacia-impl';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
 
@@ -30,15 +31,7 @@ export class NegocioService {
   getOpticas(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint2);
   }
-//Crear un extraerFarmacias y uno opticas
-/*
-  extraerNegocios(respuestaApi: any): Negocio[] {
-    const negocios: Negocio[] = [];
-*/
-/*
-    CAMBIOS GUIJARRO
-    extraerNegocios(respuestaApi: any): NegocioImpl[]
-*/
+
   extraerFarmacias(respuestaApi: any): Negocio[] {
     //let negocio = new NegocioImpl();
     /*const negocios: NegocioImpl[] = [];*/
@@ -66,12 +59,7 @@ export class NegocioService {
   }
 
   extraerNegocios(respuestaApi: any): Negocio[] {
-    //let negocio = new NegocioImpl();
-    /*const negocios: NegocioImpl[] = [];*/
     const negocios: Negocio[] = [];
-    // respuestaApi._embedded.negocios.forEach((p:any) => {
-    //   negocios.push(this.mapearNegocio(p));
-    // });
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -85,32 +73,15 @@ export class NegocioService {
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    //let negocio: NegocioImpl = new NegocioImpl();
-    //let negocio =
     return new NegocioImpl(negocioApi.nombre, negocioApi.nif, negocioApi.asociacion, negocioApi.tipoNegocio);
-    //negocio.tipoNegocio = negocioApi.tipo_negocio;
-    //negocio.id = this.getId(negocioApi._links.href);
-    //negocio.idNegocio = this.getId(negocioApi._links.self.href);
-    /* negocio.nombre = negocioApi.nombre;
-    negocio.nif = negocioApi.nif; */
-    //negocio.numeroPuntosSigre = negocioApi.numeroPuntosSigre;
-    //negocio.numeroAutorefractometros = negocioApi.numeroAutorefractometros;
-    //guardar href
-/*     negocio.asociacion = negocioApi.asociacion;
- */   // return negocio;
   }
-/*
-  create(negocio: Negocio): void {
-    console.log(`Se ha creado el negocio: ${JSON.stringify(negocio)}`);
-  }*/
-
-  // getNegocios(): Observable<any> {
-  //   return this.http.get<any>(this.urlEndPoint);
-  // }
-
 
   postNegocio(negocio: NegocioImpl){
     this.http.post(this.urlEndPoint, negocio).subscribe();
+  }
+
+  postFarmaciaNegocio(farmacia: FarmaciaImpl){
+    this.http.post(this.urlEndPoint1, farmacia).subscribe();
   }
 
   create(negocio: NegocioImpl): Observable<any> {

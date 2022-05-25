@@ -11,8 +11,12 @@ export class FarmaciaImpl implements Farmacia {
   //Puesto por problemas
   numeroAutorefractometros!: number;
 
+  constructor(
+    nombre: string,
+    nif: string,
+    asociacion: string,
+    numeroPuntosSigre: number){
 
-  constructor(nombre: string, nif: string, asociacion: string, numeroPuntosSigre: number){
     this.nombre = nombre;
     this.nif = nif;
     this.asociacion = asociacion;

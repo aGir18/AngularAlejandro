@@ -10,6 +10,8 @@
           <option name="optica" value="optica" ngDefaultControl>Optica</option>
         </select>
       </div>
+
+      <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row py-2">
           <label>Nombre del negocio<sup class="text-danger">*</sup></label>
           <input type="text" class="form-control" [(ngModel)]="negocio.nombre" placeholder="Nombre negocio" name="neg"
@@ -17,7 +19,72 @@
           <div class="invalid-feedback">Por favor, rellene este campo.</div>
           <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
         </div>
-    <div class="form-row py-2">
+      </section>
+
+      <section *ngIf="negocio.tipoNegocio == 'farmacia'">
+        <div class="form-row py-2">
+          <label>Nombre de la farmacia<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="farmacia.nombre" placeholder="Nombre negocio" name="neg"
+          required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
+      </section>
+
+<!--       <section *ngIf="negocio.tipoNegocio == 'optica'">
+        <div class="form-row py-2">
+          <label>Nombre de la optica<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Nombre negocio" name="neg"
+          required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
+      </section> -->
+
+      <section *ngIf="negocio.tipoNegocio == '0'">
+        <div class="form-row py-2">
+          <label>NIF del negocio<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="NIF del negocio" name="neg2"
+            required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+              'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+              'is-valid': !neg2.invalid
+            }" />
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+      </div>
+      </section>
+
+      <section *ngIf="negocio.tipoNegocio == 'farmacia'">
+        <div class="form-row py-2">
+          <label>NIF de la farmacia<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="farmacia.nif" placeholder="NIF de la farmacia" name="neg2"
+            required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+              'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+              'is-valid': !neg2.invalid
+            }" />
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+      </div>
+      </section>
+
+<!--       <section *ngIf="negocio.tipoNegocio == 'optica'">
+        <div class="form-row py-2">
+          <label>NIF de la optica<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="optica.nif" placeholder="NIF de la optica" name="neg2"
+            required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+              'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+              'is-valid': !neg2.invalid
+            }" />
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+      </div>
+      </section> -->
+
+
+
+      <!-- ESTE BORRAR SI SALE LO DE ARRIBA -->
+
+<!--     <div class="form-row py-2">
         <label>NIF del negocio<sup class="text-danger">*</sup></label>
         <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="NIF del negocio" name="neg2"
           required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
@@ -26,21 +93,50 @@
           }" />
           <div class="invalid-feedback">Por favor, rellene este campo.</div>
           <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
-    </div>
-    <div class="form-row py-2">
-      <label>Asociación a la que pertenece el negocio<sup class="text-danger">*</sup></label>
-      <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Nombre de la asociación" name="aso"
-        required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
-          'is-invalid': aso.invalid && (aso.dirty || aso.touched),
-          'is-valid': !aso.invalid
-        }" />
-      <div class="invalid-feedback">Por favor, rellene este campo.</div>
-      <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
-    </div>
+    </div> -->
+    <section *ngIf="negocio.tipoNegocio == '0'">
+      <div class="form-row py-2">
+        <label>Asociación a la que pertenece el negocio<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Nombre de la asociación" name="aso"
+          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
+            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
+            'is-valid': !aso.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+      </div>
+    </section>
+
+    <section *ngIf="negocio.tipoNegocio == 'farmacia'">
+      <div class="form-row py-2">
+        <label>Asociación a la que pertenece la farmacia<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="farmacia.asociacion" placeholder="Nombre de la asociación" name="aso"
+          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
+            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
+            'is-valid': !aso.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+      </div>
+    </section>
+
+<!--     <section *ngIf="negocio.tipoNegocio == 'optica'">
+      <div class="form-row py-2">
+        <label>Asociación a la que pertenece la optica<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="optica.asociacion" placeholder="Nombre de la asociación" name="aso"
+          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
+            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
+            'is-valid': !aso.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+      </div>
+    </section> -->
+
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row py-2">
         <label>Introduzca el número de puntos SIGRE de la farmacia:<sup class="text-danger">*</sup></label>
-        <input type="number" class="form-control" [(ngModel)]="negocio.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg2"
+        <input type="number" class="form-control" [(ngModel)]="farmacia.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg2"
           required min="0" max="5" #neg2="ngModel" [ngClass]="{
             'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
             'is-valid': !neg2.invalid
@@ -49,10 +145,11 @@
           <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
     </div>
     </section>
-    <section *ngIf="negocio.tipoNegocio == 'optica'">
+
+<!--     <section *ngIf="negocio.tipoNegocio == 'optica'">
         <div class="form-row py-2">
           <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
-          <input type="number" class="form-control" [(ngModel)]="negocio.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg2"
+          <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg2"
             required min="0" max="5" #neg2="ngModel" [ngClass]="{
               'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
               'is-valid': !neg2.invalid
@@ -60,8 +157,8 @@
             <div class="invalid-feedback">Por favor, rellene este campo.</div>
             <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
       </div>
-    </section>
-    </div></div>
+    </section> -->
+  </div></div>
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
         <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios-asociados/negocios'

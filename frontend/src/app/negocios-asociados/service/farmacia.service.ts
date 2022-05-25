@@ -14,7 +14,8 @@ export class FarmaciaService {
   private host: string = environment.host;
   private urlEndPoint1: string = `${this.host}farmacias`;
 
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient,
     private auxService: AuxiliarService) { }
 
   getFarmacias(): Observable<any> {
@@ -22,7 +23,12 @@ export class FarmaciaService {
   }
 
   mapearFarmacia(farmaciaApi: any): FarmaciaImpl {
-    return new FarmaciaImpl(farmaciaApi.nombre, farmaciaApi.nif, farmaciaApi.asociacion, farmaciaApi.numeroPuntosSigre);
+    return new FarmaciaImpl(
+      farmaciaApi.nombre,
+      farmaciaApi.nif,
+      farmaciaApi.asociacion,
+      farmaciaApi.numeroPuntosSigre
+      );
   }
 
   extraerFarmacias(respuestaApi: any): Farmacia[] {
