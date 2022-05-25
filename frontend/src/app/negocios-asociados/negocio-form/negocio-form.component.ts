@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { FarmaciaImpl } from '../models/farmacia-impl';
 import { NegocioImpl } from '../models/negocio-impl';
+import { OpticaImpl } from '../models/optica-impl';
 import { FarmaciaService } from '../service/farmacia.service';
 import { NegocioService } from '../service/negocio.service';
+import { OpticaService } from '../service/optica.service';
 
 @Component({
   selector: 'app-negocio-form',
@@ -14,9 +16,11 @@ export class NegocioFormComponent implements OnInit {
 
   negocio: NegocioImpl = new NegocioImpl('', '', '', '');
   farmacia: FarmaciaImpl = new FarmaciaImpl('','','',0);
-  //negocios!: Negocio[];
+  optica: OpticaImpl = new OpticaImpl('', '', '', 0);
 
-  constructor(private negocioService: NegocioService,
+  constructor(
+    private negocioService: NegocioService,
+    private opticaService: OpticaService,
     private farmaciaService: FarmaciaService) { }
 
   ngOnInit(): void {
@@ -35,6 +39,10 @@ export class NegocioFormComponent implements OnInit {
     console.warn('paso por metodo del POST Farmacia');
     this.farmaciaService.postFarmacia(this.farmacia);
     //this.negocioService.postFarmaciaNegocio(this.farmacia);
+  }
+
+  crearOptica(): void {
+    this.opticaService.postOptica(this.optica);
   }
 
   pencil=faPencil;
