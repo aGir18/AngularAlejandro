@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { FarmaciaImpl } from '../models/farmacia-impl';
 import { NegocioImpl } from '../models/negocio-impl';
 import { OpticaImpl } from '../models/optica-impl';
@@ -17,6 +18,7 @@ export class NegocioFormComponent implements OnInit {
   negocio: NegocioImpl = new NegocioImpl('', '', '', '');
   farmacia: FarmaciaImpl = new FarmaciaImpl('','','',0);
   optica: OpticaImpl = new OpticaImpl('', '', '', 0);
+  asociaciones: Asociacion[] = [];
 
   constructor(
     private negocioService: NegocioService,

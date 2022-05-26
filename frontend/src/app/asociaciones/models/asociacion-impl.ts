@@ -3,10 +3,12 @@ import { Asociacion } from "./asociacion";
 export class AsociacionImpl implements Asociacion {
   nombre!: string;
   negocios!: any[];
+  urlAsociacion!: string;
 
-  constructor(nombre: string, negocios: any[]){
+  constructor(nombre: string, negocios: any[], urlAsociacion: string){
     this.nombre = nombre;
     this.negocios = negocios;
+    this.urlAsociacion = urlAsociacion;
   }
 
   getIdAsociacion(url: string): string {

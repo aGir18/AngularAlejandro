@@ -28,7 +28,8 @@ export class AsociacionService {
   mapearAsociacion(personajeApi: any): AsociacionImpl {
     return new AsociacionImpl(
       personajeApi.nombre,
-      personajeApi.negocios
+      personajeApi.negocios,
+      personajeApi.urlAsociacion
       );
   }
 
