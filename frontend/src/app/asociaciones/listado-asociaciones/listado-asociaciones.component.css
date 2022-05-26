@@ -5,13 +5,39 @@
   --blanco: #F5F5F5;
 }
 
-p {
-  margin-top: 20em;
+main{
+  margin-top: 7em;
+  margin-bottom: -1em;
   color: var(--amarillo);
+  font-size: 1.5em;
+  color: var(--amarillo);
+}
+
+h1 {
+  color: var(--amarillo);
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 1em;
+}
+
+.col-sm-3{
   text-align: center;
 }
 
-main{
-  margin-top: 15em;
-  color: var(--amarillo);
+.col-sm-4{
+  text-align: center;
+}
+
+.creacion{
+  margin-top:0em;
+  margin-bottom: 2em;
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
+
+.creacion:hover {
+  color: var(--blanco);
+  background-color: var(--verdeClaro);
+  border-color: var(--blanco);
 }

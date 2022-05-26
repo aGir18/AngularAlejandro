@@ -16,6 +16,10 @@ main{
   text-align: center;
 }
 
+.col-sm-4{
+  text-align: center;
+}
+
 .creacion{
   margin-top:0em;
   margin-bottom: 2em;

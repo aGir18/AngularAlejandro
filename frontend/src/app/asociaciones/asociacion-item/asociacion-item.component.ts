@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from '../models/asociacion';
 
 @Component({
@@ -14,5 +15,9 @@ export class AsociacionItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  pencil=faPencil;
+  eye=faEye;
+  trash=faTrashCan;
 
 }

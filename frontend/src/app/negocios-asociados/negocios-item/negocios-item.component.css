@@ -14,8 +14,13 @@ section {
   text-align: center;
 }
 
+.col-sm-4{
+  text-align: center;
+}
+
 a{
   color: var(--amarillo);
+  text-decoration-line: none;
 }
 
 a:hover{

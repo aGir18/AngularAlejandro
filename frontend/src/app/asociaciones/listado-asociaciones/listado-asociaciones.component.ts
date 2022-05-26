@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPencil, faEye, faTrashCan, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Asociacion } from '../models/asociacion';
 import { AsociacionService } from '../service/asociacion.service';
@@ -49,4 +50,10 @@ export class ListadoAsociacionesComponent implements OnInit {
       }
     });
   }
+
+  pencil=faPencil;
+  eye=faEye;
+  trash=faTrashCan;
+  plus=faCirclePlus;
+
 }
