@@ -10,6 +10,8 @@ export class OpticaImpl implements Optica {
   tipoNegocio!: string;
   //Puesto por problemas
   numeroPuntosSigre!: number;
+  //Para hacer DELETE y PATCH
+  urlNegocio!: string;
 
   constructor(
     nombre: string,

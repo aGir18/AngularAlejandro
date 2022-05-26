@@ -33,12 +33,7 @@ export class NegocioService {
   }
 
   extraerFarmacias(respuestaApi: any): Negocio[] {
-    //let negocio = new NegocioImpl();
-    /*const negocios: NegocioImpl[] = [];*/
     const negocios: Negocio[] = [];
-    // respuestaApi._embedded.negocios.forEach((p:any) => {
-    //   negocios.push(this.mapearNegocio(p));
-    // });
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -46,12 +41,7 @@ export class NegocioService {
   }
 
   extraerOpticas(respuestaApi: any): Negocio[] {
-    //let negocio = new NegocioImpl();
-    /*const negocios: NegocioImpl[] = [];*/
     const negocios: Negocio[] = [];
-    // respuestaApi._embedded.negocios.forEach((p:any) => {
-    //   negocios.push(this.mapearNegocio(p));
-    // });
     respuestaApi._embedded.opticas.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
@@ -73,7 +63,20 @@ export class NegocioService {
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    return new NegocioImpl(negocioApi.nombre, negocioApi.nif, negocioApi.asociacion, negocioApi.tipoNegocio);
+    let negocioNuevo : NegocioImpl = new NegocioImpl('','','','');
+    negocioNuevo.nombre = negocioApi.nombre;
+    negocioNuevo.nif = negocioApi.nif;
+    //Lo mismo hay que cambiarlo y poner el _links
+    negocioNuevo.asociacion = negocioApi.asociacion;
+    negocioNuevo.tipoNegocio = negocioApi.tipoNegocio;
+    negocioNuevo.urlNegocio = negocioApi._links.self.href;
+
+    return negocioNuevo;
+    //return new NegocioImpl(
+      //negocioApi.nombre,
+      //negocioApi.nif,
+      //negocioApi.asociacion,
+      //negocioApi.tipoNegocio);
   }
 
   postNegocio(negocio: NegocioImpl){
@@ -82,6 +85,10 @@ export class NegocioService {
 
   postFarmaciaNegocio(farmacia: FarmaciaImpl){
     this.http.post(this.urlEndPoint1, farmacia).subscribe();
+  }
+
+  deleteNegocio(direccionEliminar: string){
+    this.http.delete(direccionEliminar).subscribe();
   }
 
   create(negocio: NegocioImpl): Observable<any> {
@@ -100,5 +107,13 @@ export class NegocioService {
     return numId;
 
   }
+
+/*   getId(): string {
+    let posicionFinal: number = this.NegocioImplEjemplo.lastIndexOf('/');
+    let numId: string = url.slice(posicionFinal + 1, url.length);
+    return numId;
+
+  } */
+
 
 }

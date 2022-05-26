@@ -10,6 +10,8 @@ export class FarmaciaImpl implements Farmacia {
   tipoNegocio!: string;
   //Puesto por problemas
   numeroAutorefractometros!: number;
+  //Para hacer DELETE y PATCH
+  urlNegocio!: string;
 
   constructor(
     nombre: string,

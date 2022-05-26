@@ -1,8 +1,8 @@
-<section *ngIf="negocio.nombre != null; else noExiste">
+<!-- <section *ngIf="negocio.nombre != null; else noExiste"> -->
   <div class="row mb-2">
     <hr class='w-100'>
-    <div class="col-sm-4">{{negocio.nombre}}</div>
-    <div class="col-sm-4">{{negocio.nif}}</div>
+    <div class="col-sm-4">{{negocio.nombre}}, {{negocio.asociacion}}</div>
+    <div class="col-sm-4">{{negocio.nif}}, {{negocio.urlNegocio}}</div>
     <div class="col-sm-4">
       <a routerLink="/negocios-asociados/formulario-negocios">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
@@ -10,16 +10,22 @@
       <a routerLink="/negocios-asociados/formulario-negocios">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
-      <a routerLink="/negocios-asociados/formulario-negocios">
+      <a routerLink="/negocios-asociados/formulario-negocios" role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/negocios-asociados/negocios">
         &nbsp;&nbsp;<fa-icon [icon]="trash"></fa-icon>&nbsp;
       </a>
+      <!-- <button class="btn btn-danger" (click)="borrarNegocio(this.negocio.urlNegocio)"> -->
+      <!-- <button class="btn btn-danger" (click)="borrarNegocio(this.negocio.getIdNegocio(this.negocio.urlNegocio))"> -->
+      <!-- <a routerLink="/negocios-asociados/formulario-negocios">
+          &nbsp;&nbsp;<fa-icon [icon]="trash"></fa-icon>&nbsp;
+        </a>
+      </button> -->
     </div>
   </div>
-</section>
-<!-- ESTO ES NUEVO y el *ngIf -->
+<!-- </section>
+-- ESTO ES NUEVO y el *ngIf
 <ng-template #noExiste>
   <div>
     NO EXISTEN NEGOCIOS
   </div>
-</ng-template>
+</ng-template> -->
 

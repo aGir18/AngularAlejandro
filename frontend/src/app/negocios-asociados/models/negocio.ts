@@ -7,7 +7,9 @@ export interface Negocio {
   numeroAutorefractometros: number;
   asociacion: string;
   tipoNegocio: string;
+  //Para hacer DELETE y PATCH
+  urlNegocio: string;
 /*AÑADIDO AHORA*/
-  getIdNegocio(url: string): string;
+  getIdNegocio(urlNegocio: string): string;
 
 }

@@ -14,7 +14,9 @@ export class NegocioImpl implements Negocio {
   //asociación del tipo asocaición y el de abajo se llama urlAsociación; ¡¡¡uno más!!!
   asociacion!: string;
   tipoNegocio!: string;
- /*  constructor(){
+  //Para hacer DELETE y PATCH
+  urlNegocio!: string;
+/*  constructor(){
   } */
 
   constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string){
@@ -24,24 +26,10 @@ export class NegocioImpl implements Negocio {
     this.tipoNegocio = tipoNegocio;
   }
 
-  getIdNegocio(url: string): string {
-    url = url.slice(0, url.length - 1)
-    return url.slice(url.lastIndexOf('/') + 1, url.length);
+  //Para hacer DELETE y PATCH
+  getIdNegocio(urlNegocio: string): string {
+    urlNegocio = urlNegocio.slice(0, urlNegocio.length - 1)
+    return urlNegocio.slice(urlNegocio.lastIndexOf('/') + 1, urlNegocio.length);
   }
-
-/*
-  constructor(tipo_negocio:string, nombre: string, nif: string, numeroPuntosSigre: number, numeroAutorefractometros: number, asociacion: string){
-    this.tipoNegocio = tipo_negocio;
-    this.nombreNegocio = nombre;
-    this.nifNegocio = nif;
-    this.puntosSigre = numeroPuntosSigre;
-    this.autorefractometros = numeroAutorefractometros;
-    this.asociacion = asociacion;
-  }*/
-
-  /*getIdNegocio(url: string): string {
-    url = url.slice(0, url.length - 1)
-    return url.slice(url.lastIndexOf('/') + 1, url.length);
-  }*/
 
 }
