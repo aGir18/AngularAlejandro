@@ -5,23 +5,14 @@
   --blanco: #F5F5F5;
 }
 
-section {
+form{
+  margin-top: 15em;
   color: var(--amarillo);
-  font-size: 1em;
-}
-
-.col-sm-3{
   text-align: center;
 }
 
-a{
-  color: var(--amarillo);
-}
-
-a:hover{
-  color: var(--blanco);
-}
-
-#segundo {
-  color: red;
+.btn{
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
 }

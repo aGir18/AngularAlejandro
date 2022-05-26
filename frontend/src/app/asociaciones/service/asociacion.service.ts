@@ -28,8 +28,8 @@ export class AsociacionService {
   mapearAsociacion(personajeApi: any): AsociacionImpl {
     return new AsociacionImpl(
       personajeApi.nombre,
-      personajeApi.negocios,
-      personajeApi.urlAsociacion
+/*       personajeApi.negocios,
+      personajeApi.urlAsociacion */
       );
   }
 
@@ -41,11 +41,13 @@ export class AsociacionService {
     return asociaciones;
   }
 
-/* 	create(personaje: Personaje): void {
+  create(asociacion: Asociacion): void {
+    console.log(`Se ha creado el personaje: ${JSON.stringify(asociacion)}`);
+  }
 
-    console.log(`Se ha creado el personaje: ${JSON.stringify(personaje)}`);
-
-  } */
+  postAsociacion(asociacion: AsociacionImpl){
+    this.http.post(this.urlEndPoint3, asociacion).subscribe();
+  }
 
   getAsociacionesPagina(pagina: number): Observable<any> {
 	  return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);

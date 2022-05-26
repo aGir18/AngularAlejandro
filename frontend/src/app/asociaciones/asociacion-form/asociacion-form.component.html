@@ -1,0 +1,30 @@
+<!-- MANDA A ASOCIACION.COMPONENT.HTML -->
+<form #asociacionForm="ngForm">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <section>
+        <div class="form-row py-2">
+          <label>Nombre de la asociación<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="asociacion.nombre" placeholder="Por ejemplo ASOCIACIÓN DE GAFAS" name="neg"
+            required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
+      </section>
+    </div>
+    <div class="form-row justify-content-between pt-5">
+      <button class="btn btn-primary" role="button" (click)="create()" routerLink='/asociaciones'>
+        <!-- [disabled]="!negocioForm.form.valid" -->
+        Crear Asociacion
+      </button>
+    </div>
+  </div>
+<!--   <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <pre>{{ negocio | json }}</pre>
+    </div>
+    <div class="col-sm-3"></div>
+  </div> -->
+</form>

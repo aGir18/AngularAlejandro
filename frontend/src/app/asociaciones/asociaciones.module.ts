@@ -8,13 +8,15 @@ import { AsociacionItemComponent } from './asociacion-item/asociacion-item.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { AuxiliarService } from '../service/auxiliar.service';
+import { AsociacionFormComponent } from './asociacion-form/asociacion-form.component';
 
 
 @NgModule({
   declarations: [
     AsociacionComponent,
     ListadoAsociacionesComponent,
-    AsociacionItemComponent
+    AsociacionItemComponent,
+    AsociacionFormComponent
   ],
   imports: [
     CommonModule,
