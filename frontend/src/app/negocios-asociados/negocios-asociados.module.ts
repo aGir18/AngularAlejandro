@@ -13,6 +13,7 @@ import { NegociosItemComponent } from './negocios-item/negocios-item.component';
 import { AuxiliarService } from '../service/auxiliar.service';
 import { NegocioComponent } from './negocios/negocio/negocio.component';
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
+import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { NegocioFormComponent } from './negocio-form/negocio-form.component';
     NegociosComponent,
     NegociosItemComponent,
     NegocioComponent,
-    NegocioFormComponent
+    NegocioFormComponent,
+    NegocioModificarComponent
   ],
   imports: [
     CommonModule,

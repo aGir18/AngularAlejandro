@@ -67,7 +67,7 @@ export class NegocioService {
     negocioNuevo.nombre = negocioApi.nombre;
     negocioNuevo.nif = negocioApi.nif;
     //Lo mismo hay que cambiarlo y poner el _links
-    negocioNuevo.asociacion = negocioApi.asociacion;
+    negocioNuevo.asociacion = negocioApi._links.asociacion.href;
     negocioNuevo.tipoNegocio = negocioApi.tipoNegocio;
     negocioNuevo.urlNegocio = negocioApi._links.self.href;
 
@@ -83,9 +83,14 @@ export class NegocioService {
     this.http.post(this.urlEndPoint, negocio).subscribe();
   }
 
+  patchNegocio(negocio: NegocioImpl) {
+    this.http.patch(this.urlEndPoint, negocio).subscribe();
+  }
+
   postFarmaciaNegocio(farmacia: FarmaciaImpl){
     this.http.post(this.urlEndPoint1, farmacia).subscribe();
   }
+
 
   deleteNegocio(direccionEliminar: string){
     this.http.delete(direccionEliminar).subscribe();

@@ -164,7 +164,7 @@
   </div></div>
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="modificarNegocio()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Negocio
         </button>
@@ -172,7 +172,7 @@
     </section>
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearFarmacia()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="modificarFarmacia()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Farmacia
         </button>
@@ -180,7 +180,7 @@
     </section>
     <section *ngIf="negocio.tipoNegocio == 'optica'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearOptica()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="modificarOptica()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Optica
         </button>

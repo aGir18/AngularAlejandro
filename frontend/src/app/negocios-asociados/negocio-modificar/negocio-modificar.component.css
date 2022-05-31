@@ -1,0 +1,18 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+form{
+  margin-top: 13em;
+  color: var(--amarillo);
+  text-align: center;
+}
+
+.btn{
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}

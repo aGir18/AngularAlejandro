@@ -4,6 +4,7 @@ import { CargaNegociosComponent } from './carga-negocios/carga-negocios.componen
 import { CreacionNegociosComponent } from './creacion-negocios/creacion-negocios.component';
 import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.component';
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
+import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
 import { NegociosComponent } from './negocios/negocios.component';
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
         path: 'formulario-negocios',
         component: NegocioFormComponent,
       },
+      {
+        path: 'modificar',
+        component: NegocioModificarComponent
+      }
       /*{
         path:
       }*/
