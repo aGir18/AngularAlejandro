@@ -1,8 +1,10 @@
 <!-- <section *ngIf="negocio.nombre != null; else noExiste"> -->
   <div class="row mb-2">
     <hr class='w-100'>
-    <div class="col-sm-4">{{negocio.nombre}}, {{negocio.asociacion}}</div>
-    <div class="col-sm-4">{{negocio.nif}}, {{negocio.urlNegocio}}</div>
+    <div class="col-sm-4">{{negocio.nombre}}</div>
+    <!-- {{negocio.asociacion}} tengo que obtener ese valor -->
+    <div class="col-sm-4">{{negocio.nif}}</div>
+    <!--  {{negocio.urlNegocio}} esto lo tengo para otros métodos -->
     <div class="col-sm-4">
       <a routerLink="/negocios-asociados/formulario-negocios">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
