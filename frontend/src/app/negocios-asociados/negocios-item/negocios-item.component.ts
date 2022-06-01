@@ -14,7 +14,9 @@ export class NegociosItemComponent implements OnInit {
 //@Input() negocio: Negocio = new NegocioImpl();
   //@Input() negocio: NegocioImpl = new NegocioImpl('','','');
   //Este es el que se ha usado para el DELETE
-  @Input() negocio: Negocio = new NegocioImpl('', '', '', '');
+//  @Input() negocio: Negocio = new NegocioImpl('', '', '', '');
+
+  @Input() negocio: Negocio = new NegocioImpl('', '', '', '', 0, 0);
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
   //negocioItem : Negocio = new NegocioImpl('', '', '', '');
 

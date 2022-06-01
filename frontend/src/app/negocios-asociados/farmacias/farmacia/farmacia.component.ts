@@ -4,15 +4,15 @@ import { FarmaciaImpl } from '../../models/farmacia-impl';
 import { NegocioImpl } from '../../models/negocio-impl';
 
 @Component({
-  selector: 'app-negocio',
-  templateUrl: './negocio.component.html',
-  styleUrls: ['./negocio.component.css']
+  selector: 'app-farmacia',
+  templateUrl: './farmacia.component.html',
+  styleUrls: ['./farmacia.component.css']
 })
-export class NegocioComponent implements OnInit {
+export class FarmaciaComponent implements OnInit {
 
   @Input() farmacia!: FarmaciaImpl;
   @Input() negocio!: NegocioImpl;
-  @Output() negocioEliminar = new EventEmitter<NegocioImpl>();
+  @Output() farmaciaEliminar = new EventEmitter<FarmaciaImpl>();
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class NegocioComponent implements OnInit {
   }
 
   eliminar(): void {
-    this.negocioEliminar.emit(this.negocio);
+    this.farmaciaEliminar.emit(this.farmacia);
   }
 
   plus=faCirclePlus;

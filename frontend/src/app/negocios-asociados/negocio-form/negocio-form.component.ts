@@ -15,7 +15,9 @@ import { OpticaService } from '../service/optica.service';
 })
 export class NegocioFormComponent implements OnInit {
 
-  negocio: NegocioImpl = new NegocioImpl('', '', '', '');
+//  negocio: NegocioImpl = new NegocioImpl('', '', '', '');
+  negocio: NegocioImpl = new NegocioImpl('', '', '', '', 0, 0);
+
   farmacia: FarmaciaImpl = new FarmaciaImpl('','','',0);
   optica: OpticaImpl = new OpticaImpl('', '', '', 0);
   asociaciones: Asociacion[] = [];

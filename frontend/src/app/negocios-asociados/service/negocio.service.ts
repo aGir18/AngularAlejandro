@@ -53,30 +53,25 @@ export class NegocioService {
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
-    respuestaApi._embedded.farmacias.forEach((p: any) => {
+    /* respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
     respuestaApi._embedded.opticas.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
-    });
+    }); */
     return negocios;
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    let negocioNuevo : NegocioImpl = new NegocioImpl('','','','');
+    //let negocioNuevo : NegocioImpl = new NegocioImpl('','','','');
+    let negocioNuevo : NegocioImpl = new NegocioImpl('','','','', 0, 0);
     negocioNuevo.nombre = negocioApi.nombre;
     negocioNuevo.nif = negocioApi.nif;
-    //Lo mismo hay que cambiarlo y poner el _links
     negocioNuevo.asociacion = negocioApi._links.asociacion.href;
     negocioNuevo.tipoNegocio = negocioApi.tipoNegocio;
     negocioNuevo.urlNegocio = negocioApi._links.self.href;
 
     return negocioNuevo;
-    //return new NegocioImpl(
-      //negocioApi.nombre,
-      //negocioApi.nif,
-      //negocioApi.asociacion,
-      //negocioApi.tipoNegocio);
   }
 
   postNegocio(negocio: NegocioImpl){
@@ -90,7 +85,6 @@ export class NegocioService {
   postFarmaciaNegocio(farmacia: FarmaciaImpl){
     this.http.post(this.urlEndPoint1, farmacia).subscribe();
   }
-
 
   deleteNegocio(direccionEliminar: string){
     this.http.delete(direccionEliminar).subscribe();

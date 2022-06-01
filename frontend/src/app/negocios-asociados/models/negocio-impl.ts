@@ -19,11 +19,20 @@ export class NegocioImpl implements Negocio {
 /*  constructor(){
   } */
 
-  constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string){
+/*   constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string){
     this.nombre = nombre;
     this.nif = nif;
     this.asociacion = asociacion;
     this.tipoNegocio = tipoNegocio;
+  } */
+
+  constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string, numeroPuntosSigre: number, numeroAutorefractometros: number){
+    this.nombre = nombre;
+    this.nif = nif;
+    this.asociacion = asociacion;
+    this.tipoNegocio = tipoNegocio;
+    this.numeroPuntosSigre = numeroPuntosSigre;
+    this.numeroPuntosSigre = numeroPuntosSigre;
   }
 
   //Para hacer DELETE y PATCH

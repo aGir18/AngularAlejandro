@@ -14,6 +14,9 @@ import { AuxiliarService } from '../service/auxiliar.service';
 import { NegocioComponent } from './negocios/negocio/negocio.component';
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
 import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
+import { FarmaciasItemComponent } from './farmacias-item/farmacias-item.component';
+import { FarmaciasComponent } from './farmacias/farmacias.component';
+import { FarmaciaComponent } from './farmacias/farmacia/farmacia.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar
     NegociosItemComponent,
     NegocioComponent,
     NegocioFormComponent,
-    NegocioModificarComponent
+    NegocioModificarComponent,
+    FarmaciasItemComponent,
+    FarmaciasComponent,
+    FarmaciaComponent
   ],
   imports: [
     CommonModule,

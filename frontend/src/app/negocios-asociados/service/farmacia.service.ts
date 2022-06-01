@@ -23,12 +23,14 @@ export class FarmaciaService {
   }
 
   mapearFarmacia(farmaciaApi: any): FarmaciaImpl {
-    return new FarmaciaImpl(
-      farmaciaApi.nombre,
-      farmaciaApi.nif,
-      farmaciaApi.asociacion,
-      farmaciaApi.numeroPuntosSigre
-      );
+    let farmaciaNueva : FarmaciaImpl = new FarmaciaImpl('','','', 0);
+    farmaciaNueva.nombre = farmaciaApi.nombre;
+    farmaciaNueva.nif = farmaciaApi.nif;
+    farmaciaNueva.asociacion = farmaciaApi._links.asociacion.href;
+    farmaciaNueva.numeroPuntosSigre = farmaciaApi.numeroPuntosSigre;
+    farmaciaNueva.urlNegocio = farmaciaApi._links.self.href;
+
+    return farmaciaNueva;
   }
 
   extraerFarmacias(respuestaApi: any): Farmacia[] {
@@ -41,6 +43,14 @@ export class FarmaciaService {
 
   postFarmacia(farmacia: FarmaciaImpl){
     this.http.post(this.urlEndPoint1, farmacia).subscribe();
+  }
+
+  deleteFarmacia(direccionEliminar: string){
+    this.http.delete(direccionEliminar).subscribe();
+  }
+
+  getFarmaciasPagina(pagina: number): Observable<any> {
+    return this.auxService.getItemsPorPagina(this.urlEndPoint1, pagina);
   }
 
   getId(url:string): string {

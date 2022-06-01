@@ -34,6 +34,10 @@ main{
   border-color: var(--blanco);
 }
 
+#modalNegocio, #modalFarmacia{
+  color: var(--verdePrincipal);
+}
+
 /* CSS de IG*/
 /*
 .creacion{

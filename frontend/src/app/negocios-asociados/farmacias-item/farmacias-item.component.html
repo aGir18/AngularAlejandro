@@ -2,12 +2,12 @@
   <div class="row mb-2">
     <hr class='w-100'>
     <div class="col-sm-4">
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocio" (click)="negocioSeleccionado.emit(negocio)">
-        {{negocio.nombre}}
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
+        {{farmacia.nombre}}
       </a>
     </div>
     <!-- {{negocio.asociacion}} tengo que obtener ese valor -->
-    <div class="col-sm-4">{{negocio.nif}}</div>
+    <div class="col-sm-4">{{farmacia.nif}}</div>
     <!--  {{negocio.urlNegocio}} esto lo tengo para otros métodos -->
     <div class="col-sm-4">
       <!-- Este fue para meter el ojo, abajo se le ha dado una funcionalidad con el modal -->
@@ -28,13 +28,10 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Nombre del negocio: {{negocio.nombre}} <br>
-              NIF del negocio: {{negocio.nif}} <br>
-              Asociacion del negocio: {{negocio.asociacion}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
-              Tipo de negocio: {{negocio.tipoNegocio}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
-              <section id="seccionModal" *ngIf="negocio.numeroAutorefractometros != 0">
-                Numero de autorefractometros: {{negocio.numeroAutorefractometros}}
-              </section>
+              Nombre del negocio: {{farmacia.nombre}} <br>
+              NIF del negocio: {{farmacia.nif}} <br>
+              Asociacion del negocio: {{farmacia.asociacion}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
+              Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -51,7 +48,7 @@
 
 
       <!-- HAY DOS RUTAS!!!!!!! -->
-      <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/negocios-asociados/negocios">
+      <a role="button" (click)="borrarFarmacia(this.farmacia.urlNegocio)" routerLink="/negocios-asociados/negocios">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
         &nbsp;
@@ -65,7 +62,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalParaBorrar" >Borrar negocio</h5>
+              <h5 class="modal-title" id="modalParaBorrar" >Borrar farmacia</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -74,7 +71,7 @@
             <!-- Con este MODAL me borra el último que ha pillado, hace lo mismo que el otro modal -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-              <button role="button" type="button" class="btn btn-primary" (click)="borrarNegocio(this.negocio.urlNegocio)">ELIMINAR</button>
+              <button role="button" type="button" class="btn btn-primary" (click)="borrarFarmacia(this.farmacia.urlNegocio)">ELIMINAR</button>
             </div>
           </div>
         </div>
@@ -110,4 +107,5 @@
     NO EXISTEN NEGOCIOS
   </div>
 </ng-template> -->
+
 

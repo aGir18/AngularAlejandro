@@ -1,2 +1,16 @@
-<pre>{{ negocio | json }}</pre>
-<button type="button" class="btn btn-outline-danger" (click)="eliminar()">Eliminar</button>
+<!-- <pre>{{ negocio | json }}</pre> -->
+<section id="datosNegocio">
+  Nombre del negocio: {{negocio.nombre}} <br>
+  NIF del negocio: {{negocio.nif}} <br>
+  Asociación del negocio: {{negocio.asociacion}} <br>
+  ID del negocio: {{negocio.getIdNegocio(negocio.urlNegocio)}}
+</section>
+
+<section id="datosFarmacia">
+  Nombre de la farmacia: {{farmacia.nombre}} <br>
+  NIF de la farmacia: {{farmacia.nif}} <br>
+  Asociación de la farmacia: {{farmacia.asociacion}} <br>
+  ID de la farmacia: {{farmacia.idNegocio}} <br>
+  Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}}
+</section>
+<!-- <button type="button" class="btn btn-outline-danger" (click)="eliminar()">Eliminar</button> -->
