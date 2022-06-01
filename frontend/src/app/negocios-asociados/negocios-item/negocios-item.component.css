@@ -26,3 +26,11 @@ a{
 a:hover{
   color: var(--blanco);
 }
+
+#modalDatos{
+  color: var(--verdePrincipal);
+}
+
+#seccionModal{
+  color: var(--verdePrincipal);
+}

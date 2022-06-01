@@ -28,7 +28,7 @@
               NIF del negocio: {{negocio.nif}} <br>
               Asociacion del negocio: {{negocio.asociacion}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
               Tipo de negocio: {{negocio.tipoNegocio}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
-              <section *ngIf="negocio.numeroAutorefractometros != 0">
+              <section id="seccionModal" *ngIf="negocio.numeroAutorefractometros != 0">
                 Numero de autorefractometros: {{negocio.numeroAutorefractometros}}
               </section>
             </div>
