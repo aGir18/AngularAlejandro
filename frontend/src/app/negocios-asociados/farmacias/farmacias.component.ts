@@ -13,8 +13,8 @@ export class FarmaciasComponent implements OnInit {
 
   farmacias: Farmacia[] = [];
   todasFarmacias: Farmacia[] = [];
-  numPaginas: number = 0;
   farmaciaVerDatos!: Farmacia;
+  numPaginas: number = 0;
 
   constructor(
     private farmaciaService: FarmaciaService,

@@ -1,0 +1,105 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+main{
+  margin-top: 7em;
+  margin-bottom: -1em;
+  color: var(--amarillo);
+  font-size: 1.5em;
+}
+
+.col-sm-3{
+  text-align: center;
+}
+
+.col-sm-4{
+  text-align: center;
+}
+
+.creacion{
+  margin-top:0em;
+  margin-bottom: 2em;
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
+
+.creacion:hover {
+  color: var(--blanco);
+  background-color: var(--verdeClaro);
+  border-color: var(--blanco);
+}
+
+#modalNegocio, #modalFarmacia{
+  color: var(--verdePrincipal);
+}
+
+/* CSS de IG*/
+/*
+.creacion{
+  border: none;
+  background: none;
+  color: var(--amarillo);
+  width: 260px;
+  height: 50px;
+  position: relative;
+  transition: 0.5s;
+  /*margin-top:0em;
+  margin-bottom: 2em;
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
+.creacion::before {
+  content: "";
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 5em;
+  left: -50px;
+  top: 0;
+  bottom: 0;
+  background: var(--amarillo);
+  position: absolute;
+  z-index: -1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.5s ease;
+}
+
+.creacion::after{
+  content: "+";
+  color: #000;
+  font-size: 2em;
+  position: absolute;
+  left: -35px;
+  top: 10px;
+  bottom: 0;
+}
+
+.creacion:hover {
+  color: #000;
+  cursor: pointer;
+}
+
+.creacion:hover {
+  color: var(--blanco);
+  background-color: var(--verdeClaro);
+  border-color: var(--blanco);
+}
+
+.creacion:hover::before{
+  transition: all 0.5s ease;
+  width: 170%;
+  box-shadow: rgba(red, green, blue, alpha);
+}*/
+
+
+h1 {
+  color: var(--amarillo);
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 1em;
+}

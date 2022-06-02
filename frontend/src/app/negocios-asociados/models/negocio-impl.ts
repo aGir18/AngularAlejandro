@@ -32,7 +32,7 @@ export class NegocioImpl implements Negocio {
     this.asociacion = asociacion;
     this.tipoNegocio = tipoNegocio;
     this.numeroPuntosSigre = numeroPuntosSigre;
-    this.numeroPuntosSigre = numeroPuntosSigre;
+    this.numeroAutorefractometros = numeroAutorefractometros;
   }
 
   //Para hacer DELETE y PATCH

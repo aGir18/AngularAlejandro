@@ -18,20 +18,17 @@
   </div>
   <div *ngIf="negocios.length > 0; else noNegocios">
     <div *ngFor="let negocio of negocios">
-      <!-- <div>
-        {{ negocio.nombreNegocio }}
-      </div> -->
-      <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="verDatos($event)"></app-negocios-item>
+      <!-- <div *ngIf="negocio.numeroPuntosSigre>0"> -->
+      <!-- <div *ngIf="negocio.asociacion=='https://animus-lucrandi.herokuapp.com/api/negocios/62/asociacion'"> -->
+        <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="verDatos($event)"></app-negocios-item>
+      <!-- </div> -->
     </div>
   </div>
-  <div *ngIf="farmacias.length > 0; else noFarmacias">
+  <!-- <div *ngIf="farmacias.length > 0; else noFarmacias">
     <div *ngFor="let farmacia of farmacias">
-      <!-- <div>
-        {{ negocio.nombreNegocio }}
-      </div> -->
-      <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="verDatosFarmacia($event)"></app-farmacias-item>
+      <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-farmacias-item>
     </div>
-  </div>
+  </div> -->
   <ng-template #noNegocios>
     <div class="row">
       NO EXISTEN NEGOCIOS
@@ -43,88 +40,41 @@
     </div>
   </ng-template>
 
-
-
-<!-- Modal 1-->
-<!-- <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-negocio [negocio]='negocioVerDatos'></app-negocio> -->
-        <!-- (negocioEliminar)='onNegocioEliminar($event)' -->
-      <!-- </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+  <!-- Modal NEGOCIOS -->
+  <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
+        </div>
+        <div class="modal-body">
+          <app-negocio [negocio]="negocioVerDatos"></app-negocio>
+          <!-- <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">¿MODIFICAR?</button>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
 
-
-<!-- Modal NEGOCIOS -->
-
-<div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
-      </div>
-      <div class="modal-body">
-        <app-negocio [negocio]="negocioVerDatos"></app-negocio>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">¿MODIFICAR?</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal FARMACIAS -->
-
-<div class="modal fade" id="modalFarmacia" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="datosFarmacia">Datos Completos Farmacia</h5>
-      </div>
-      <div class="modal-body">
-        <!-- EL PROBLEMA ESTÁ AQUÍ -->
-        <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">¿MODIFICAR?</button>
+  <!-- Modal FARMACIAS -->
+  <div class="modal fade" id="modalFarmacia" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosFarmacia">Datos Completos Farmacia</h5>
+        </div>
+        <div class="modal-body">
+          <!-- EL PROBLEMA ESTÁ AQUÍ -->
+          <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">¿MODIFICAR o qué?</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-
-<!-- <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-negocio [negocio]='negocioVerDatos'></app-negocio> -->
-        <!-- (negocioEliminar)='onNegocioEliminar($event)' -->
-      <!-- </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 </main>

@@ -23,6 +23,12 @@ export class FarmaciaComponent implements OnInit {
     this.farmaciaEliminar.emit(this.farmacia);
   }
 
+  // getId(url:string): string {
+  //   let posicionFinal: number = url.lastIndexOf('/');
+  //   let numId: string = url.slice(posicionFinal + 1, url.length);
+  //   return numId;
+  // }
+
   plus=faCirclePlus;
 
 }

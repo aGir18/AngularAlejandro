@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CargaNegociosComponent } from './carga-negocios/carga-negocios.component';
 import { CreacionNegociosComponent } from './creacion-negocios/creacion-negocios.component';
+import { FarmaciasComponent } from './farmacias/farmacias.component';
 import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.component';
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
 import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'modificar',
         component: NegocioModificarComponent
+      },
+      {
+        path: 'farmacias',
+        component: FarmaciasComponent
       }
       /*{
         path:

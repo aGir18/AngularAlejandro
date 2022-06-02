@@ -3,10 +3,15 @@
   Nombre del negocio: {{negocio.nombre}} <br>
   NIF del negocio: {{negocio.nif}} <br>
   Asociación del negocio: {{negocio.asociacion}} <br>
-  ID del negocio: {{negocio.getIdNegocio(negocio.urlNegocio)}}
+  <!-- ID del negocio: {{negocio.getIdNegocio(this.negocio.urlNegocio)}} -->
+  URL del negocio: {{negocio.urlNegocio}} <br>
+  <div *ngIf="">
+    Número de puntos SIGRE 2: {{negocio.numeroPuntosSigre}}
+  </div>
 </section>
 
-<section id="datosFarmacia">
+<section id="datosFarmacia2">
+  pepeDos
   Nombre de la farmacia: {{farmacia.nombre}} <br>
   NIF de la farmacia: {{farmacia.nif}} <br>
   Asociación de la farmacia: {{farmacia.asociacion}} <br>

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faEraser } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEye, faTrashCan, faEraser, faTrash, faX } from '@fortawesome/free-solid-svg-icons';
+import { Farmacia } from '../models/farmacia';
+import { FarmaciaImpl } from '../models/farmacia-impl';
 import { Negocio } from '../models/negocio';
 import { NegocioImpl } from '../models/negocio-impl';
 import { NegocioService } from '../service/negocio.service';
@@ -17,7 +19,10 @@ export class NegociosItemComponent implements OnInit {
 //  @Input() negocio: Negocio = new NegocioImpl('', '', '', '');
 
   @Input() negocio: Negocio = new NegocioImpl('', '', '', '', 0, 0);
+  @Input() farmacia: Farmacia = new FarmaciaImpl('','','',0);
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
+  @Output() farmaciaSeleccionada = new EventEmitter<Farmacia>();
+
   //negocioItem : Negocio = new NegocioImpl('', '', '', '');
 
   constructor(
@@ -39,5 +44,7 @@ export class NegociosItemComponent implements OnInit {
   eye=faEye;
   trash=faTrashCan;
   eraser= faEraser;
+  trash2=faTrash;
+  x=faX;
 
 }

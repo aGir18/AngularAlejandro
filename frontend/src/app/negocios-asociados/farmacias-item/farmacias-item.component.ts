@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faEraser, faEye, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faCapsules, faEraser, faEye, faPencil, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Farmacia } from '../models/farmacia';
 import { FarmaciaImpl } from '../models/farmacia-impl';
 import { FarmaciaService } from '../service/farmacia.service';
@@ -31,5 +31,6 @@ export class FarmaciasItemComponent implements OnInit {
   eye=faEye;
   trash=faTrashCan;
   eraser= faEraser;
+  pills= faCapsules;
 
 }

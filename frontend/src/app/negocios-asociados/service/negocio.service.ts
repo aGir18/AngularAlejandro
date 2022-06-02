@@ -53,9 +53,10 @@ export class NegocioService {
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
-    /* respuestaApi._embedded.farmacias.forEach((p: any) => {
-      negocios.push(this.mapearNegocio(p));
-    });
+    // respuestaApi._embedded.farmacias.forEach((p: any) => {
+    //   negocios.push(this.mapearNegocio(p));
+    // });
+    /*
     respuestaApi._embedded.opticas.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     }); */
