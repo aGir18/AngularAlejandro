@@ -38,6 +38,7 @@ export class NegociosItemComponent implements OnInit {
   borrarNegocio(direccion: string): void {
 //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
     this.negocioService.deleteNegocio(direccion);
+    this.ngOnInit();
   }
 
   pencil=faPencil;

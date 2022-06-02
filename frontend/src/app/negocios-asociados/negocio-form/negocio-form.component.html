@@ -81,30 +81,18 @@
       </section>
 
       <!-- VOY POR AQUÍ -->
-      <div *ngIf="asociaciones.length > 0">
+      <!-- <div *ngIf="asociaciones.length > 0">
         Las asociaciones son {{asociaciones.length}}
-      </div>
-<!-- ¡¡¡¡¡AQUÍ METER UN GET ASOCIACIONES!!!!! -->
+      </div> -->
+
   <section *ngIf="negocio.tipoNegocio == '0'">
     <div class="form-row py-2">
-      <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+      <label>Seleccione la asociación<sup class="text-danger">*</sup></label><br>
       <!-- [(ngModel)]="negocio.asociacion" METERLO EN LA ETIQUETA select -->
       <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
-        <p *ngFor="let asociacion of asociaciones">
-          <option value={{asociacion.urlAsociacion}}>1</option>
-        </p>
-        <option value="">Valor 1</option>
-        <option value="">Valor 2</option>
-        <!-- <option value="0">Sin tipo</option>
-        <option value="farmacia" name="farmacia" ngDefaultControl>Farmacia</option>
-        <option value="optica" name="optica" ngDefaultControl>Optica</option> -->
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
       </select>
-    </div>
-  </section>
-
-<!--     <section *ngIf="negocio.tipoNegocio == '0'">
-      <div class="form-row py-2">
-        <label>Asociación a la que pertenece el negocio<sup class="text-danger">*</sup></label>
+      <!--
         <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Dirección de la asociación" name="aso"
           required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
             'is-invalid': aso.invalid && (aso.dirty || aso.touched),
@@ -112,36 +100,25 @@
           }" />
         <div class="invalid-feedback">Por favor, rellene este campo.</div>
         <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
-      </div>
-    </section> -->
-
-<!-- ¡¡¡¡¡AQUÍ METER UN GET ASOCIACIONES!!!!! -->
+      -->
+    </div>
+  </section>
 
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row py-2">
-        <label>Asociación a la que pertenece la farmacia<sup class="text-danger">*</sup></label>
-        <input type="text" class="form-control" [(ngModel)]="farmacia.asociacion" placeholder="Dirección de la asociación" name="aso"
-          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
-            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
-            'is-valid': !aso.invalid
-          }" />
-        <div class="invalid-feedback">Por favor, rellene este campo.</div>
-        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion2" class="form-select" aria-label="Default select example" [(ngModel)]="farmacia.asociacion">
+            <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
       </div>
     </section>
 
-<!-- ¡¡¡¡¡AQUÍ METER UN GET ASOCIACIONES!!!!! -->
-
     <section *ngIf="negocio.tipoNegocio == 'optica'">
       <div class="form-row py-2">
-        <label>Asociación a la que pertenece la optica<sup class="text-danger">*</sup></label>
-        <input type="text" class="form-control" [(ngModel)]="optica.asociacion" placeholder="Dirección de la asociación" name="aso"
-          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
-            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
-            'is-valid': !aso.invalid
-          }" />
-        <div class="invalid-feedback">Por favor, rellene este campo.</div>
-        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" [(ngModel)]="optica.asociacion" placeholder="Seleccione asociación">
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
       </div>
     </section>
 
@@ -172,6 +149,7 @@
     </section>
 
   </div></div>
+
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
         <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios-asociados/negocios'
@@ -180,17 +158,19 @@
         </button>
       </div>
     </section>
+
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearFarmacia()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="crearFarmacia()" routerLink='/negocios-asociados/farmacias'
           [disabled]="!negocioForm.form.valid">
           Crear Farmacia
         </button>
       </div>
     </section>
+
     <section *ngIf="negocio.tipoNegocio == 'optica'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearOptica()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="crearOptica()" routerLink='/negocios-asociados/opticas'
           [disabled]="!negocioForm.form.valid">
           Crear Optica
         </button>
