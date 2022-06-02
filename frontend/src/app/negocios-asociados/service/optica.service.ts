@@ -10,7 +10,6 @@ import { OpticaImpl } from '../models/optica-impl';
   providedIn: 'root'
 })
 export class OpticaService {
-  //NO ESTÁ DESDE PRODUCCIÓN, PERO EL VALOR ES EL MISMO
   private host: string = environment.host;
   private urlEndPoint2: string = `${this.host}opticas`;
 
@@ -23,13 +22,16 @@ export class OpticaService {
   }
 
   mapearOptica(opticaApi: any): OpticaImpl {
-    return new OpticaImpl(
-      opticaApi.nombre,
-      opticaApi.nif,
-      opticaApi.asociacion,
-      opticaApi.numeroAutorefractometros
-      );
+    let opticaNueva: OpticaImpl = new OpticaImpl('','','', 0);
+    opticaNueva.nombre = opticaApi.nombre;
+    opticaNueva.nif = opticaApi.nif;
+    opticaNueva.asociacion = opticaApi._links.asociacion.href;
+    opticaNueva.numeroAutorefractometros = opticaApi.numeroAutorefractometros;
+    opticaNueva.urlNegocio = opticaApi._links.self.href;
+
+    return opticaNueva;
   }
+
   extraerOpticas(respuestaApi: any): Optica[] {
     const opticas: Optica[] = [];
     respuestaApi._embedded.opticas.forEach((p: any) => {
@@ -40,6 +42,14 @@ export class OpticaService {
 
   postOptica(optica: OpticaImpl){
     this.http.post(this.urlEndPoint2, optica).subscribe();
+  }
+
+  deleteOptica(direccionEliminar: string){
+    this.http.delete(direccionEliminar).subscribe();
+  }
+
+  getOpticasPagina(pagina: number): Observable<any> {
+    return this.auxService.getItemsPorPagina(this.urlEndPoint2, pagina);
   }
 
   getId(url:string): string {

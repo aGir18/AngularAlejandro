@@ -21,11 +21,11 @@ export class FarmaciasItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-    //Para hacer DELETE
-    borrarFarmacia(direccion: string): void {
-      //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
-          this.farmaciaService.deleteFarmacia(direccion);
-        }
+  //Para hacer DELETE
+  borrarFarmacia(direccion: string): void {
+    //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
+    this.farmaciaService.deleteFarmacia(direccion);
+  }
 
   pencil=faPencil;
   eye=faEye;

@@ -7,6 +7,7 @@ import { ListadoNegociosComponent } from './listado-negocios/listado-negocios.co
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
 import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
 import { NegociosComponent } from './negocios/negocios.component';
+import { OpticasComponent } from './opticas/opticas.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
       {
         path: 'farmacias',
         component: FarmaciasComponent
+      },
+      {
+        path: 'opticas',
+        component: OpticasComponent
       }
       /*{
         path:

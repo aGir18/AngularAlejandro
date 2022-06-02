@@ -17,6 +17,9 @@ import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar
 import { FarmaciasItemComponent } from './farmacias-item/farmacias-item.component';
 import { FarmaciasComponent } from './farmacias/farmacias.component';
 import { FarmaciaComponent } from './farmacias/farmacia/farmacia.component';
+import { OpticasComponent } from './opticas/opticas.component';
+import { OpticaComponent } from './opticas/optica/optica.component';
+import { OpticasItemComponent } from './opticas-item/opticas-item.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { FarmaciaComponent } from './farmacias/farmacia/farmacia.component';
     NegocioModificarComponent,
     FarmaciasItemComponent,
     FarmaciasComponent,
-    FarmaciaComponent
+    FarmaciaComponent,
+    OpticasComponent,
+    OpticaComponent,
+    OpticasItemComponent
   ],
   imports: [
     CommonModule,

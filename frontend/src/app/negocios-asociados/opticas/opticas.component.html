@@ -1,0 +1,48 @@
+<main>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1>Listado de ópticas</h1>
+      <div class="d-grid gap-2" id="sumarNegocio">
+        <button class="creacion btn btn-primary" type="button" routerLink="/negocios-asociados/formulario-negocios">
+          <fa-icon [icon]="plus"></fa-icon> Crear nuevo negocio
+        </button>
+      </div>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">NOMBRE</div>
+    <div class="col-sm-4">NIF</div>
+    <div class="col-sm-4">OPERACIONES</div>
+  </div>
+  <div *ngIf="opticas.length > 0; else noOpticas">
+    <div *ngFor="let optica of opticas">
+      <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-opticas-item>
+    </div>
+  </div>
+  <ng-template #noOpticas>
+    <div class="row">
+      NO EXISTEN OPTICAS
+    </div>
+  </ng-template>
+
+  <!-- Modal OPTICAS -->
+  <div class="modal fade" id="modalOptica" tabindex="-1" role="dialog" aria-labelledby="datosOptica" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosFarmacia">Datos Completos Óptica</h5>
+        </div>
+        <div class="modal-body">
+          <!-- EL PROBLEMA ESTÁ AQUÍ -->
+          <app-optica [optica]="opticasVerDatos"></app-optica>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">¿MODIFICAR?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
