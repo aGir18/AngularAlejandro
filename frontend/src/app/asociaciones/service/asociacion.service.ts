@@ -25,12 +25,11 @@ export class AsociacionService {
     return this.http.get<any>(this.urlEndPoint3);
 	}
 
-  mapearAsociacion(personajeApi: any): AsociacionImpl {
-    return new AsociacionImpl(
-      personajeApi.nombre,
-/*       personajeApi.negocios,
-      personajeApi.urlAsociacion */
-      );
+  mapearAsociacion(asociacionApi: any): AsociacionImpl {
+    let asociacionNueva: AsociacionImpl = new AsociacionImpl('', '');
+    asociacionNueva.nombre = asociacionApi.nombre;
+    asociacionNueva.urlAsociacion = asociacionApi._links.self.href;
+    return asociacionNueva;
   }
 
   extraerAsociaciones(respuestaApi: any): Asociacion[] {
@@ -51,6 +50,5 @@ export class AsociacionService {
 
   getAsociacionesPagina(pagina: number): Observable<any> {
 	  return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);
-
   }
 }

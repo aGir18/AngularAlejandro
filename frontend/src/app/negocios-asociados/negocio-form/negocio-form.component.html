@@ -81,8 +81,24 @@
       </section>
 
 <!-- VOY POR AQUÍ -->
-
+<div *ngIf="asociaciones.length > 0">
+  Las asociaciones son {{asociaciones.length}}
+</div>
 <!-- ¡¡¡¡¡AQUÍ METER UN GET ASOCIACIONES!!!!! -->
+  <section *ngIf="negocio.tipoNegocio == '0'">
+    <div class="form-row py-2">
+      <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+      <!-- [(ngModel)]="negocio.asociacion" METERLO EN LA ETIQUETA select -->
+      <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
+        <div *ngFor="let asociacion of asociaciones">
+          <option value="asociacion.urlAsociacion">{{asociacion.nombre}}</option>
+        </div>
+        <!-- <option value="0">Sin tipo</option>
+        <option value="farmacia" name="farmacia" ngDefaultControl>Farmacia</option>
+        <option value="optica" name="optica" ngDefaultControl>Optica</option> -->
+      </select>
+    </div>
+  </section>
 
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row py-2">
