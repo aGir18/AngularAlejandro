@@ -26,9 +26,10 @@ export class AsociacionService {
 	}
 
   mapearAsociacion(asociacionApi: any): AsociacionImpl {
-    let asociacionNueva: AsociacionImpl = new AsociacionImpl('', '');
+    let asociacionNueva: AsociacionImpl = new AsociacionImpl('', '', []);
     asociacionNueva.nombre = asociacionApi.nombre;
     asociacionNueva.urlAsociacion = asociacionApi._links.self.href;
+    asociacionNueva.negocios = asociacionApi._links.negociosAsociacion.href;
     return asociacionNueva;
   }
 

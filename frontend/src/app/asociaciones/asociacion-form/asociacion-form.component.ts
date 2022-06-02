@@ -9,7 +9,7 @@ import { AsociacionService } from '../service/asociacion.service';
 })
 export class AsociacionFormComponent implements OnInit {
 
-  asociacion: AsociacionImpl = new AsociacionImpl('', '');
+  asociacion: AsociacionImpl = new AsociacionImpl('', '', []);
 
   constructor(
     private asociacionService: AsociacionService) { }
