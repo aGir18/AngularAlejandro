@@ -162,14 +162,14 @@
     </section>
 
   </div></div>
-    <section *ngIf="negocio.tipoNegocio == '0'">
+    <!-- <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
         <button class="btn btn-primary" role="button" (click)="modificarNegocio()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Negocio
         </button>
       </div>
-    </section>
+    </section> -->
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row justify-content-between pt-5">
         <button class="btn btn-primary" role="button" (click)="modificarFarmacia()" routerLink='/negocios-asociados/negocios'

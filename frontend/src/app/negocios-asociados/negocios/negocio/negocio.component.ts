@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { FarmaciaImpl } from '../../models/farmacia-impl';
 import { NegocioImpl } from '../../models/negocio-impl';
+import { NegocioService } from '../../service/negocio.service';
 
 @Component({
   selector: 'app-negocio',
@@ -14,7 +15,9 @@ export class NegocioComponent implements OnInit {
   @Input() negocio!: NegocioImpl;
   @Output() negocioEliminar = new EventEmitter<NegocioImpl>();
 
-  constructor() { }
+  constructor(
+    negocioService: NegocioService
+  ) { }
 
   ngOnInit(): void {
   }

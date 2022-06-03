@@ -9,16 +9,25 @@
       <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocio" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
+
+
+      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalModificar" (click)="negocioSeleccionado.emit(negocio)">
+        &nbsp;<fa-icon [icon]="modificar"></fa-icon>&nbsp;
+      </a> -->
+
+
       <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/negocios-asociados/negocios">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
         &nbsp;
       </a>
-      <!-- Button trigger modal -->
-      <a data-bs-toggle="modal" data-bs-target="#modalBorrar">
+
+
+
+      <!-- <a data-bs-toggle="modal" data-bs-target="#modalBorrar">
         &nbsp;<fa-icon [icon]="x"></fa-icon>&nbsp;
       </a>
-      <!-- Modal -->
+
       <div class="modal fade" id="modalBorrar" tabindex="-1" aria-labelledby="modalParaBorrar" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -29,21 +38,74 @@
             <div class="modal-body">
               ¿Seguro que lo quiere borrar?
             </div>
-            <!-- Con este MODAL me borra el último que ha pillado, hace lo mismo que el otro modal -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
               <button role="button" type="button" class="btn btn-primary" (click)="borrarNegocio(this.negocio.urlNegocio)">ELIMINAR</button>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+      <!-- Con este MODAL me borra el último que ha pillado, hace lo mismo que el otro modal -->
+
+
+
       <a data-bs-toggle="collapse" href="#modificarNegocio" role="button" aria-expanded="false" aria-controls="modificarNegocio">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
     <div class="collapse" id="modificarNegocio">
+
       <div class="card card-body">
-        AQUÍ METERÉ UN PEQUEÑO FORMULARIO
+        <div class="form-row py-2">
+          <label>Nombre del negocio<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="negocio.nombre" placeholder="Por ejemplo GAFAS, S.A." name="neg"
+            required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
       </div>
+
+      <div class="form-row py-2">
+        <label>NIF del negocio<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+          required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+            'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+            'is-valid': !neg2.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+      </div>
+
+      <div class="form-row py-2">
+        <label>Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <!-- [(ngModel)]="negocio.asociacion" METERLO EN LA ETIQUETA select -->
+        <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
+            <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
+      </div>
+
+      <a role="button" (click)="modificarNegocio3(this.negocio)" routerLink="/negocios-asociados/negocios">
+          <button>MODIFICAR NEGOCIO</button>
+      </a>
+
+
+      <!-- <pre>
+        {{negocio | json}}
+      </pre> -->
+
+
+
+      <!-- <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/negocios-asociados/negocios">
+        &nbsp;&nbsp;
+        <fa-icon [icon]="trash"></fa-icon>
+        &nbsp;
+      </a> -->
+      <!-- <div class="form-row py-2">
+        <label>Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
+            <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
+      </div> -->
+
     </div>
     </div>
   </div>

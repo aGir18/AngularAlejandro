@@ -79,9 +79,21 @@ export class NegocioService {
     this.http.post(this.urlEndPoint, negocio).subscribe();
   }
 
-  patchNegocio(negocio: NegocioImpl) {
-    this.http.patch(this.urlEndPoint, negocio).subscribe();
+  patchNegocio(direccionEliminar: string) {
+    this.http.patch(this.urlEndPoint, direccionEliminar).subscribe();
   }
+
+  // patchNegocio2(direccionEliminar: string) {
+  //   return this.http.patch<any>(this.urlEndPoint);
+  // }
+
+  patchNegocio3(negocio: NegocioImpl) {
+    return this.http.patch<any>(`${this.urlEndPoint}/${negocio.getIdNegocio(negocio.urlNegocio)}`, negocio);
+  }
+
+  // getOpticas(): Observable<any> {
+  //   return this.http.get<any>(this.urlEndPoint2);
+  // }
 
   postFarmaciaNegocio(farmacia: FarmaciaImpl){
     this.http.post(this.urlEndPoint1, farmacia).subscribe();

@@ -7,6 +7,28 @@
   - URL del negocio: {{negocio.urlNegocio}} <br>
 </section>
 
+<!-- <section id="datosModificar">
+  <div class="form-row py-2">
+    <label>Nombre del negocio<sup class="text-danger">*</sup></label>
+    <input type="text" class="form-control" [(ngModel)]="negocio.nombre" placeholder="Por ejemplo GAFAS, S.A." name="neg"
+      required minlength="3" maxlength="25"/>
+    <div class="invalid-feedback">Por favor, rellene este campo.</div>
+    <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+  </div>
+
+  <div class="form-row py-2">
+    <label>NIF del negocio<sup class="text-danger">*</sup></label>
+    <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+      required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+        'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+        'is-valid': !neg2.invalid
+      }" />
+    <div class="invalid-feedback">Por favor, rellene este campo.</div>
+    <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+  </div>
+</section> -->
+
+
 <!-- <section id="datosFarmacia2">
   pepeDos
   Nombre de la farmacia: {{farmacia.nombre}} <br>

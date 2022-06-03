@@ -28,9 +28,9 @@ export class NegocioModificarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  modificarNegocio(): void {
-    this.negocioService.patchNegocio(this.negocio);
-  }
+  // modificarNegocio(): void {
+  //   this.negocioService.patchNegocio(this.negocio);
+  // }
 
   modificarFarmacia(): void {
 

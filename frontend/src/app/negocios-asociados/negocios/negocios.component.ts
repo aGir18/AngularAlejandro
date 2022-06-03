@@ -58,6 +58,10 @@ export class NegociosComponent implements OnInit {
     this.negocios = this.negocios.filter(p => negocio !== p)
   }
 
+  modificarNegocio(direccion: string): void {
+    this.negocioService.patchNegocio(direccion);
+  }
+
   getTodosNegocios(): void {
     this.negocioService.getNegocios().subscribe(r => {
       this.numPaginas = this.auxService.getPaginasResponse(r);
