@@ -4,42 +4,11 @@
     <div class="col-sm-4">
       {{optica.nombre}}
     </div>
-    <!-- {{negocio.asociacion}} tengo que obtener ese valor -->
     <div class="col-sm-4">{{optica.nif}}</div>
-    <!--  {{negocio.urlNegocio}} esto lo tengo para otros métodos -->
     <div class="col-sm-4">
-      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
-        &nbsp;<fa-icon [icon]="pills"></fa-icon>&nbsp;
-      </a> -->
       <a class="" data-bs-toggle="modal" data-bs-target="#modalOptica" (click)="opticaSeleccionada.emit(optica)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
-      <!-- Modal -->
-      <div class="modal fade" id="modalDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Descripción completa del negocio</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Nombre del negocio: {{optica.nombre}} <br>
-              NIF del negocio: {{optica.nif}} <br>
-              Asociacion del negocio: {{optica.asociacion}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
-              Número de puntos SIGRE: {{optica.numeroPuntosSigre}}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <a routerLink="/negocios-asociados/formulario-negocios">
-        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
-      </a> -->
-
       <a role="button" (click)="borrarOptica(this.optica.urlNegocio)" routerLink="/negocios-asociados/opticas">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
@@ -70,17 +39,59 @@
           </div>
         </div>
       </div>
-      <a data-bs-toggle="collapse" href="#modificarNegocio" role="button" aria-expanded="false" aria-controls="modificarNegocio">
+      <a data-bs-toggle="collapse" href="#modificarOptica" role="button" aria-expanded="false" aria-controls="modificarOptica">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
       <!-- <button data-bs-toggle="collapse" data-bs-target="#modificarNegocio" aria-expanded="false" aria-controls="modificarNegocio">
         &nbsp;&nbsp;<fa-icon [icon]="eraser"></fa-icon>&nbsp;
       </button> -->
-    <div class="collapse" id="modificarNegocio">
-      <div class="card card-body">
-        AQUÍ METERÉ UN PEQUEÑO FORMULARIO
+      <!-- <a data-bs-toggle="collapse" href="#modificarOptica" role="button" aria-expanded="false" aria-controls="modificarOptica">
+        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
+      </a> -->
+    <div class="collapse" id="modificarOptica">
+      <!-- <div class="card card-body"> -->
+        <div class="form-row py-2">
+          <label>Nombre de la optica<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
+          required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
+      <!-- </div> -->
+
+      <div class="form-row py-2">
+        <label>NIF de la optica<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="optica.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+          required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+            'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+            'is-valid': !neg2.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
       </div>
-    </div>
+
+      <div class="form-row py-2">
+        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" [(ngModel)]="optica.asociacion" placeholder="Seleccione asociación">
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
+      </div>
+
+      <div class="form-row py-2">
+        <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
+        <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
+          required min="0" max="5" #neg20="ngModel" [ngClass]="{
+            'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
+            'is-valid': !neg20.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+      </div>
+
+      <a role="button" (click)="modificarOptica(this.optica)" routerLink="/negocios-asociados/negocios">
+          <button>MODIFICAR NEGOCIO</button>
+      </a>
+
     </div>
   </div>
 <!-- </section>

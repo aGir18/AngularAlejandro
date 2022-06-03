@@ -136,15 +136,15 @@
     </section>
 
     <section *ngIf="negocio.tipoNegocio == 'optica'">
-        <div class="form-row py-2">
-          <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
-          <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
-            required min="0" max="5" #neg20="ngModel" [ngClass]="{
-              'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
-              'is-valid': !neg20.invalid
-            }" />
-          <div class="invalid-feedback">Por favor, rellene este campo.</div>
-          <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+      <div class="form-row py-2">
+        <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
+        <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
+          required min="0" max="5" #neg20="ngModel" [ngClass]="{
+            'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
+            'is-valid': !neg20.invalid
+          }" />
+        <div class="invalid-feedback">Por favor, rellene este campo.</div>
+        <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
       </div>
     </section>
 

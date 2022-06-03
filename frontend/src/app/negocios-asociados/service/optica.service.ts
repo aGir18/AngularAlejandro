@@ -48,6 +48,10 @@ export class OpticaService {
     this.http.delete(direccionEliminar).subscribe();
   }
 
+  patchOptica(optica: OpticaImpl) {
+    return this.http.patch<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica);
+  }
+
   getOpticasPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint2, pagina);
   }
