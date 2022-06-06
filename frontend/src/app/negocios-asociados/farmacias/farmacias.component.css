@@ -38,6 +38,10 @@ main{
   color: var(--verdePrincipal);
 }
 
+h5 {
+  color: var(--verdePrincipal);
+}
+
 /* CSS de IG*/
 /*
 .creacion{
