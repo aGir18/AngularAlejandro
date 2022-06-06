@@ -13,10 +13,20 @@ export class OpticaComponent implements OnInit {
   @Input() optica!: OpticaImpl;
   @Input() negocio!: NegocioImpl;
   @Output() opticaEliminar = new EventEmitter<OpticaImpl>();
+  segundoModal: boolean = false;
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cambioSegundoModal(): void{
+    this.segundoModal = true;
+  }
+
+  cambioPrimerModal(): void{
+    this.segundoModal = false;
   }
 
   eliminar(): void {

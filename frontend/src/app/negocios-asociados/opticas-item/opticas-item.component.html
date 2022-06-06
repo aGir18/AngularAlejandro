@@ -93,6 +93,47 @@
       </a>
 
     </div>
+
+    <a data-bs-toggle="collapse" href="#cambiarOptica" role="button" aria-expanded="false" aria-controls="cambiarOptica">
+      &nbsp;&nbsp;<fa-icon [icon]="pen"></fa-icon>&nbsp;
+    </a>
+
+    <div class="collapse" id="cambiarOptica">
+        <div class="form-row py-2">
+          <label>Nombre de la óptica<sup class="text-danger">*</sup></label>
+          <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
+          required minlength="3" maxlength="25"/>
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+        </div>
+      <div class="form-row py-2">
+        <label>NIF de la optica<sup class="text-danger">*</sup></label>
+        <input type="text" class="form-control" [(ngModel)]="optica.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+          required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+            'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+            'is-valid': !neg2.invalid
+          }" />
+      </div>
+      <div class="form-row py-2">
+        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion4" class="form-select" aria-label="Default select example" [(ngModel)]="optica.asociacion" placeholder="Seleccione asociación">
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+        </select>
+      </div>
+      <div class="form-row py-2">
+        <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
+        <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
+          required min="0" max="5" #neg20="ngModel" [ngClass]="{
+            'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
+            'is-valid': !neg20.invalid
+          }" />
+      </div>
+      <a role="button" (click)="cambiarOptica(this.optica)" routerLink="/negocios-asociados/negocios">
+          <button>CAMBIAR ÓPTICA</button>
+      </a>
+
+    </div>
+
   </div>
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faEraser, faCapsules } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEye, faTrashCan, faEraser, faCapsules, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
@@ -54,10 +54,15 @@ export class OpticasItemComponent implements OnInit {
     this.opticaService.patchOptica(optica).subscribe();
   }
 
+  cambiarOptica(optica: OpticaImpl): void {
+    this.opticaService.putOptica(optica).subscribe();
+  }
+
   pencil=faPencil;
   eye=faEye;
   trash=faTrashCan;
   eraser= faEraser;
   pills= faCapsules;
+  pen=faPenToSquare;
 
 }

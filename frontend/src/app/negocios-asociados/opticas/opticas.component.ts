@@ -15,6 +15,7 @@ export class OpticasComponent implements OnInit {
   todasOpticas: Optica[] = [];
   opticasVerDatos!: Optica;
   numPaginas: number = 0;
+  segundoModal: boolean = false;
 
   constructor(
     private opticaService: OpticaService,
@@ -27,6 +28,16 @@ export class OpticasComponent implements OnInit {
     });
 
     this.getTodasOpticas();
+  }
+
+  cambioSegundoModal(): void{
+    this.segundoModal = true;
+    console.log('paso al segundo modal');
+  }
+
+  cambioPrimerModal(): void{
+    this.segundoModal = false;
+    console.log('vuelvo al primer modal');
   }
 
   verDatosOptica(optica: Optica): void {
