@@ -35,17 +35,17 @@
           <h5 class="modal-title" id="datosFarmacia">Datos Completos Óptica</h5>
         </div>
         <div class="modal-body">
-          <!-- EL PROBLEMA ESTÁ AQUÍ -->
           <app-optica [optica]="opticasVerDatos"></app-optica>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-outline-success" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="cambioSegundoModal()">MODIFICAR</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="exampleModalToggle2" tabindex="-1" role="dialog" aria-labelledby="formularioOptica" aria-hidden="true">
+
+  <!-- MODAL PUT -->
+  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="formularioOptica" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -53,10 +53,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <app-optica [optica]="opticasVerDatos"></app-optica>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-dark" data-bs-target="#modalOptica" data-bs-toggle="modal" (click)="cambioPrimerModal()">Volver al anterior</button>
+          <app-optica-modificar [optica]="opticasVerDatos"></app-optica-modificar>
         </div>
       </div>
     </div>

@@ -34,7 +34,7 @@ main{
   border-color: var(--blanco);
 }
 
-#modalNegocio, #modalFarmacia, #modalOptica{
+#modalNegocio, #modalFarmacia, #modalOptica, #modalPut{
   color: var(--verdePrincipal);
 }
 

@@ -1,28 +1,30 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faEraser, faCapsules, faPenToSquare, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
-import { Optica } from '../models/optica';
-import { OpticaImpl } from '../models/optica-impl';
-import { OpticaService } from '../service/optica.service';
+import { NegocioImpl } from '../../models/negocio-impl';
+import { OpticaImpl } from '../../models/optica-impl';
+import { OpticaService } from '../../service/optica.service';
 
 @Component({
-  selector: 'app-opticas-item',
-  templateUrl: './opticas-item.component.html',
-  styleUrls: ['./opticas-item.component.css']
+  selector: 'app-optica-modificar',
+  templateUrl: './optica-modificar.component.html',
+  styleUrls: ['./optica-modificar.component.css']
 })
-export class OpticasItemComponent implements OnInit {
+export class OpticaModificarComponent implements OnInit {
 
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
-  @Input() optica: Optica = new OpticaImpl('', '', '', 0);
-  @Output() opticaSeleccionada = new EventEmitter<Optica>();
+  @Input() optica!: OpticaImpl;
+  @Input() negocio!: NegocioImpl;
+  @Output() opticaEliminar = new EventEmitter<OpticaImpl>();
+  segundoModal: boolean = false;
 
   constructor(
-    private opticaService: OpticaService,
     private asociacionService: AsociacionService,
+    private opticaService: OpticaService,
     private auxService: AuxiliarService
   ) { }
 
@@ -46,8 +48,8 @@ export class OpticasItemComponent implements OnInit {
     });
   }
 
-  borrarOptica(direccion: string): void {
-    this.opticaService.deleteOptica(direccion)
+  eliminar(): void {
+    this.opticaEliminar.emit(this.optica);
   }
 
   modificarOptica(optica: OpticaImpl): void {
@@ -58,13 +60,7 @@ export class OpticasItemComponent implements OnInit {
     this.opticaService.putOptica(optica).subscribe();
   }
 
-  pencil=faPencil;
-  eye=faEye;
-  trash=faTrashCan;
-  eraser= faEraser;
-  pills= faCapsules;
-  pen=faPenToSquare;
+  plus=faCirclePlus;
   cambio=faPenNib;
-
 
 }
