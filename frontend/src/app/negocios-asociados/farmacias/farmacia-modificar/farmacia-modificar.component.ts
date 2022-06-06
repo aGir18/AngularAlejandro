@@ -1,28 +1,29 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faCapsules, faEraser, faEye, faPencil, faPenNib, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
-import { Farmacia } from '../models/farmacia';
-import { FarmaciaImpl } from '../models/farmacia-impl';
-import { FarmaciaService } from '../service/farmacia.service';
+import { FarmaciaImpl } from '../../models/farmacia-impl';
+import { NegocioImpl } from '../../models/negocio-impl';
+import { FarmaciaService } from '../../service/farmacia.service';
 
 @Component({
-  selector: 'app-farmacias-item',
-  templateUrl: './farmacias-item.component.html',
-  styleUrls: ['./farmacias-item.component.css']
+  selector: 'app-farmacia-modificar',
+  templateUrl: './farmacia-modificar.component.html',
+  styleUrls: ['./farmacia-modificar.component.css']
 })
-export class FarmaciasItemComponent implements OnInit {
+export class FarmaciaModificarComponent implements OnInit {
 
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
-  @Input() farmacia: Farmacia = new FarmaciaImpl('', '', '', 0);
-  @Output() farmaciaSeleccionada = new EventEmitter<Farmacia>();
+  @Input() farmacia!: FarmaciaImpl;
+  @Input() negocio!: NegocioImpl;
+  @Output() farmaciaEliminar = new EventEmitter<FarmaciaImpl>();
 
   constructor(
-    private farmaciaService: FarmaciaService,
     private asociacionService: AsociacionService,
+    private farmaciaService: FarmaciaService,
     private auxService: AuxiliarService
   ) { }
 
@@ -46,8 +47,8 @@ export class FarmaciasItemComponent implements OnInit {
     });
   }
 
-  borrarFarmacia(direccion: string): void {
-    this.farmaciaService.deleteFarmacia(direccion);
+  eliminar(): void {
+    this.farmaciaEliminar.emit(this.farmacia);
   }
 
   modificarFarmacia(farmacia: FarmaciaImpl): void {
@@ -59,12 +60,7 @@ export class FarmaciasItemComponent implements OnInit {
     //.subscribe()
   }
 
-  pencil=faPencil;
-  eye=faEye;
-  trash=faTrashCan;
-  eraser= faEraser;
-  pills= faCapsules;
-  pen=faPenToSquare;
+  plus=faCirclePlus;
   cambio=faPenNib;
 
 }

@@ -4,84 +4,19 @@
     <div class="col-sm-4">
       {{farmacia.nombre}}
     </div>
-    <!-- {{negocio.asociacion}} tengo que obtener ese valor -->
     <div class="col-sm-4">{{farmacia.nif}}</div>
-    <!--  {{negocio.urlNegocio}} esto lo tengo para otros métodos -->
     <div class="col-sm-4">
-      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
-        &nbsp;<fa-icon [icon]="pills"></fa-icon>&nbsp;
-      </a> -->
       <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
-      <!-- Modal -->
-      <div class="modal fade" id="modalDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Descripción completa del negocio</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Nombre del negocio: {{farmacia.nombre}} <br>
-              NIF del negocio: {{farmacia.nif}} <br>
-              Asociacion del negocio: {{farmacia.asociacion}} <br> <!-- Esta aún no me sale, mirar la clase!! -->
-              Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}}
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- <a routerLink="/negocios-asociados/formulario-negocios">
-        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
-      </a> -->
-
       <a role="button" (click)="borrarFarmacia(this.farmacia.urlNegocio)" routerLink="/negocios-asociados/farmacias">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
         &nbsp;
       </a>
-      <!-- Button trigger modal -->
-      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)"> -->
-
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalBorrar" role="button" (click)="this.farmaciaSeleccionada.emit(farmacia)" routerLink="/negocios-asociados/negocios">
-        &nbsp;<fa-icon [icon]="trash"></fa-icon>&nbsp;
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalPutFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
+        &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
       </a>
-      <!-- Modal -->
-      <div class="modal fade" id="modalBorrar" tabindex="-1" aria-labelledby="modalParaBorrar" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modalParaBorrar" >Borrar farmacia</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ¿Seguro que lo quiere borrar?
-            </div>
-            <!-- Con este MODAL me borra el último que ha pillado, hace lo mismo que el otro modal -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>
-              <button role="button" type="button" class="btn btn-primary" (click)="borrarFarmacia(this.farmacia.urlNegocio)">ELIMINAR</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a data-bs-toggle="collapse" href="#modificarNegocio" role="button" aria-expanded="false" aria-controls="modificarNegocio">
-        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
-      </a>
-      <!-- <button data-bs-toggle="collapse" data-bs-target="#modificarNegocio" aria-expanded="false" aria-controls="modificarNegocio">
-        &nbsp;&nbsp;<fa-icon [icon]="eraser"></fa-icon>&nbsp;
-      </button> -->
-    <div class="collapse" id="modificarNegocio">
-      <div class="card card-body">
-        AQUÍ METERÉ UN PEQUEÑO FORMULARIO
-      </div>
-    </div>
-    </div>
   </div>
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf

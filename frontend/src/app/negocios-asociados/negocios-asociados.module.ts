@@ -21,6 +21,7 @@ import { OpticasComponent } from './opticas/opticas.component';
 import { OpticaComponent } from './opticas/optica/optica.component';
 import { OpticasItemComponent } from './opticas-item/opticas-item.component';
 import { OpticaModificarComponent } from './opticas/optica-modificar/optica-modificar.component';
+import { FarmaciaModificarComponent } from './farmacias/farmacia-modificar/farmacia-modificar.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { OpticaModificarComponent } from './opticas/optica-modificar/optica-modi
     OpticasComponent,
     OpticaComponent,
     OpticasItemComponent,
-    OpticaModificarComponent
+    OpticaModificarComponent,
+    FarmaciaModificarComponent
   ],
   imports: [
     CommonModule,

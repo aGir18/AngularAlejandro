@@ -49,6 +49,14 @@ export class FarmaciaService {
     this.http.delete(direccionEliminar).subscribe();
   }
 
+  patchFarmacia(farmacia: FarmaciaImpl) {
+    return this.http.patch<any>(`${this.urlEndPoint1}/${farmacia.getIdNegocio(farmacia.urlNegocio)}`, farmacia);
+  }
+
+  putFarmacia(farmacia: FarmaciaImpl){
+    return this.http.put<any>(`${this.urlEndPoint1}/${farmacia.getIdNegocio(farmacia.urlNegocio)}`, farmacia).subscribe();
+  }
+
   getFarmaciasPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint1, pagina);
   }
