@@ -34,9 +34,9 @@ export class AsociacionService {
   }
 
   extraerAsociaciones(respuestaApi: any): Asociacion[] {
-	  const asociaciones: Asociacion[] = [];
-	  respuestaApi._embedded.asociaciones.forEach((p: any) => {
-	    asociaciones.push(this.mapearAsociacion(p));
+    const asociaciones: Asociacion[] = [];
+    respuestaApi._embedded.asociaciones.forEach((p: any) => {
+      asociaciones.push(this.mapearAsociacion(p));
     });
     return asociaciones;
   }
@@ -50,6 +50,6 @@ export class AsociacionService {
   }
 
   getAsociacionesPagina(pagina: number): Observable<any> {
-	  return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);
+    return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);
   }
 }
