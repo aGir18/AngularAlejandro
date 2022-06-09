@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faEraser, faTrash, faX, faFilePen } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEye, faTrashCan, faEraser, faTrash, faX, faFilePen, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
@@ -62,7 +62,7 @@ export class NegociosItemComponent implements OnInit {
   borrarNegocio(direccion: string): void {
     //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
     if (confirm('¿Quiere borrar este negocio?')){
-    this.negocioService.deleteNegocio(direccion);
+      this.negocioService.deleteNegocio(direccion);
     }
     this.ngOnInit();
   }
@@ -75,6 +75,10 @@ export class NegociosItemComponent implements OnInit {
     this.negocioService.patchNegocio3(negocio).subscribe();
   }
 
+  cambiarNegocio(negocio: NegocioImpl): void {
+    this.negocioService.putNegocio(negocio).subscribe();
+  }
+
   pencil=faPencil;
   eye=faEye;
   trash=faTrashCan;
@@ -82,5 +86,6 @@ export class NegociosItemComponent implements OnInit {
   trash2=faTrash;
   x=faX;
   modificar=faFilePen;
+  cambio=faPenNib;
 
 }

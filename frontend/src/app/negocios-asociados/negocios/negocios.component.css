@@ -34,7 +34,7 @@ main{
   border-color: var(--blanco);
 }
 
-#modalNegocio, #modalFarmacia{
+#modalNegocio, #modalFarmacia, #modalPut{
   color: var(--verdePrincipal);
 }
 

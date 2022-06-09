@@ -91,6 +91,10 @@ export class NegocioService {
     return this.http.patch<any>(`${this.urlEndPoint}/${negocio.getIdNegocio(negocio.urlNegocio)}`, negocio);
   }
 
+  putNegocio(negocio: NegocioImpl) {
+    return this.http.put<any>(`${this.urlEndPoint}/${negocio.getIdNegocio(negocio.urlNegocio)}`, negocio);
+  }
+
   // getOpticas(): Observable<any> {
   //   return this.http.get<any>(this.urlEndPoint2);
   // }

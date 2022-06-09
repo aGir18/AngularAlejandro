@@ -51,8 +51,8 @@ export class FarmaciasItemComponent implements OnInit {
   // DELETE
   borrarFarmacia(direccion: string): void {
     if (confirm('¿Quiere borrar esta farmacia?')){
-    this.farmaciaService.deleteFarmacia(direccion);
-  }
+      this.farmaciaService.deleteFarmacia(direccion);
+    }
   }
 
   // PATCH

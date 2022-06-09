@@ -34,11 +34,6 @@
       NO EXISTEN NEGOCIOS
     </div>
   </ng-template>
-  <ng-template #noFarmacias>
-    <div class="row">
-      NO EXISTEN FARMACIAS
-    </div>
-  </ng-template>
 
   <!-- Modal NEGOCIOS -->
   <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
@@ -59,23 +54,20 @@
     </div>
   </div>
 
-  <!-- Modal MODIFICAR -->
-  <!-- <div class="modal fade" id="modalModificar" tabindex="-1" role="dialog" aria-labelledby="datosModificar" aria-hidden="true">
+  <!-- MODAL PUT -->
+  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="formularioNegocio" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="datosModificar">Datos Modificación Negocio</h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar negocio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <app-negocio [negocio]="negocioVerDatos"></app-negocio>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">MODIFICAR</button>
+          <!-- <app-negocio-modificar [negocio]="verDatos"></app-negocio-modificar> -->
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
 </main>

@@ -37,12 +37,6 @@ export class NegociosComponent implements OnInit {
       console.log('tipo negocio = ', this.negocios[1] instanceof NegocioImpl);
     });
     this.getTodosNegocios();
-
-    this.farmaciaService.getFarmacias().subscribe((response) =>  {
-      this.farmacias = this.farmaciaService.extraerFarmacias(response);
-    });
-    this.getTodasFarmacias();
-
   }
 
   verDatos(negocio: Negocio): void {
