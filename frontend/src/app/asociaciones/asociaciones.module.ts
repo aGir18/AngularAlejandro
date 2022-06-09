@@ -9,6 +9,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { AuxiliarService } from '../service/auxiliar.service';
 import { AsociacionFormComponent } from './asociacion-form/asociacion-form.component';
+import { AsociacionModalComponent } from './listado-asociaciones/asociacion-modal/asociacion-modal.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AsociacionFormComponent } from './asociacion-form/asociacion-form.compo
     AsociacionComponent,
     ListadoAsociacionesComponent,
     AsociacionItemComponent,
-    AsociacionFormComponent
+    AsociacionFormComponent,
+    AsociacionModalComponent
   ],
   imports: [
     CommonModule,

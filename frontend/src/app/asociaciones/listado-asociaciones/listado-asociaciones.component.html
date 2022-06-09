@@ -30,4 +30,23 @@
       NO EXISTEN ASOCIACIONES
     </div>
   </ng-template>
+  <!-- MODAL PUT -->
+  <div class="modal fade" id="modalListado" tabindex="-1" role="dialog" aria-labelledby="formularioOptica" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Listado de negocios</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div *ngFor="let negocio of negocios">
+            <!-- <app-asociacion-modal [negocio]="negocio" (negocioSeleccionado)="this.verDatosNegocio($event)"></app-asociacion-modal> -->
+            <!-- <app-asociacion-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-asociacion-item> -->
+          </div>
+          <!-- <app-asociacion-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-asociacion-item> -->
+          <!-- AQUÍ METER EL NUEVO COMPONENTE!!! -->
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

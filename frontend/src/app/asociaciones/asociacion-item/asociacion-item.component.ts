@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { faPencil, faEye, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { faPencil, faEye, faTrashCan, faList } from '@fortawesome/free-solid-svg-icons';
+import { Negocio } from 'src/app/negocios-asociados/models/negocio';
 import { Asociacion } from '../models/asociacion';
 
 @Component({
@@ -10,6 +11,9 @@ import { Asociacion } from '../models/asociacion';
 export class AsociacionItemComponent implements OnInit {
 
   @Input() asociacion!: Asociacion;
+  @Output() asociacionSeleccionada = new EventEmitter<Asociacion>();
+  @Output() negocioSeleccionado = new EventEmitter<Negocio>();
+  //@Output() asociacionSeleccionada = new EventEmitter<Asociacion>();
 
   constructor() { }
 
@@ -19,5 +23,6 @@ export class AsociacionItemComponent implements OnInit {
   pencil=faPencil;
   eye=faEye;
   trash=faTrashCan;
+  lista=faList;
 
 }

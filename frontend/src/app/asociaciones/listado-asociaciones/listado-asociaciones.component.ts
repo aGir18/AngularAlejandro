@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faPencil, faEye, faTrashCan, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { Negocio } from 'src/app/negocios-asociados/models/negocio';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Asociacion } from '../models/asociacion';
 import { AsociacionService } from '../service/asociacion.service';
@@ -15,6 +16,8 @@ export class ListadoAsociacionesComponent implements OnInit {
   todasAsociaciones: Asociacion[] = [];
 	numPaginas: number = 0;
   asociacionVerDatos!: Asociacion;
+  negocios: Negocio[] = [];
+  negocioVerDatos!: Negocio;
 
 
   constructor(
@@ -32,6 +35,10 @@ export class ListadoAsociacionesComponent implements OnInit {
 
   verDatos(asociacion: Asociacion): void {
     this.asociacionVerDatos = asociacion;
+  }
+
+  verDatosNegocio(negocio: Negocio): void {
+    this.negocioVerDatos = negocio;
   }
 
   onNegocioEliminar(asociacion: Asociacion): void {

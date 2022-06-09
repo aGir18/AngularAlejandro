@@ -16,6 +16,7 @@ section {
 
 a{
   color: var(--amarillo);
+  text-decoration: none;
 }
 
 a:hover{

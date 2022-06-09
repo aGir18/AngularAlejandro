@@ -41,3 +41,7 @@ h1 {
   background-color: var(--verdeClaro);
   border-color: var(--blanco);
 }
+
+h5{
+  color: var(--verdePrincipal);
+}
