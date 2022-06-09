@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CargaNegociosComponent } from './carga-negocios/carga-negocios.component';
 import { FarmaciasComponent } from './farmacias/farmacias.component';
 import { NegocioFormComponent } from './negocio-form/negocio-form.component';
-import { NegocioModificarComponent } from './negocio-modificar/negocio-modificar.component';
 import { NegociosComponent } from './negocios/negocios.component';
 import { OpticasComponent } from './opticas/opticas.component';
 
@@ -19,10 +18,6 @@ const routes: Routes = [
       {
         path: 'formulario-negocios',
         component: NegocioFormComponent,
-      },
-      {
-        path: 'modificar',
-        component: NegocioModificarComponent
       },
       {
         path: 'farmacias',
