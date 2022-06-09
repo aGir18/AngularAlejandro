@@ -14,6 +14,7 @@ import { FarmaciaService } from '../service/farmacia.service';
 })
 export class FarmaciasItemComponent implements OnInit {
 
+  @Output() asociacionResultado = new EventEmitter<Asociacion>();
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
@@ -27,6 +28,7 @@ export class FarmaciasItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // Antes de iniciar cargo todas las asociaciones
     this.asociacionService.getAsociaciones().subscribe((response) => {
       this.asociaciones = this.asociacionService.extraerAsociaciones(response);
   });
@@ -46,17 +48,28 @@ export class FarmaciasItemComponent implements OnInit {
     });
   }
 
+  // DELETE
   borrarFarmacia(direccion: string): void {
+    if (confirm('¿Quiere borrar esta farmacia?')){
     this.farmaciaService.deleteFarmacia(direccion);
   }
+  }
 
+  // PATCH
   modificarFarmacia(farmacia: FarmaciaImpl): void {
     this.farmaciaService.patchFarmacia(farmacia).subscribe();
   }
 
+  // PUT
   cambiarFarmacia(farmacia: FarmaciaImpl): void {
     this.farmaciaService.putFarmacia(farmacia);
     //.subscribe()
+  }
+
+  // Para pintar en el MODAL
+  obtenerAsociacion(){
+    // this.asociacionResultado = this.farmaciaService.getAsociacionFarmacia3(this.farmacia.asociacion);
+    return this.farmaciaService.getAsociacionFarmacia2(this.farmacia.asociacion);
   }
 
   pencil=faPencil;

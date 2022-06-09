@@ -61,6 +61,21 @@ export class FarmaciaService {
     return this.auxService.getItemsPorPagina(this.urlEndPoint1, pagina);
   }
 
+  // Para cargar en modal
+  getAsociacionFarmacia2(direccionConsulta: string){
+    this.http.get(direccionConsulta).subscribe();
+  }
+
+  // Para cargar en modal
+  getAsociacionFarmacia3(direccionConsulta: string): Observable<any>{
+    return this.http.get(direccionConsulta);
+  }
+
+  // Para cargar en modal
+  getAsociacionFarmacia(): Observable<any> {
+    return this.http.get<any>(`${this.urlEndPoint1}/${this.getId}/asociacion`);
+  }
+
   getId(url:string): string {
     let posicionFinal: number = url.lastIndexOf('/');
     let numId: string = url.slice(posicionFinal + 1, url.length);

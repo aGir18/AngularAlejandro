@@ -60,8 +60,10 @@ export class NegociosItemComponent implements OnInit {
   }
 
   borrarNegocio(direccion: string): void {
-//    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
+    //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
+    if (confirm('¿Quiere borrar este negocio?')){
     this.negocioService.deleteNegocio(direccion);
+    }
     this.ngOnInit();
   }
 

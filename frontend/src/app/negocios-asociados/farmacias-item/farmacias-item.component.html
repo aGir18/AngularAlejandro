@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-4">{{farmacia.nif}}</div>
     <div class="col-sm-4">
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)" (click)="obtenerAsociacion()">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
       <a role="button" (click)="borrarFarmacia(this.farmacia.urlNegocio)" routerLink="/negocios-asociados/farmacias">

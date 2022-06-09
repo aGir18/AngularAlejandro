@@ -4,4 +4,31 @@
   - Asociación de la farmacia: {{farmacia.asociacion}} <br>
   - URL de la farmacia: {{farmacia.urlNegocio}} <br>
   - Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}} <br>
+  {{asociaciones}} <br>
+  <button (click)="obtenerAsociacion()">
+    Obtener asociación
+  </button>
+  <div *ngFor="let asociacion of asociaciones">
+    <!-- <div *ngIf="asociacion.urlAsociacion == asociacionString()">
+    </div> -->
+    <!-- {{asociacionString()}} -->
+    <p>{{asociacion.nombre}}</p>
+    <!-- <p (load)="obtenerAsociacion(this.farmacia.asociacion)">
+    </p>-->
+
+
+
+    <!-- <div *ngIf="obtenerAsociacion() == asociacion.urlAsociacion">
+      {{asociacion.nombre}}
+    </div> -->
+
+
+
+    <button (click)="obtenerAsociacion()">
+      hola
+    </button>
+    <!-- <div *ngIf="this.getAsociacionUrl(farmacia.asociacion) == asociacion.urlAsociacion">
+      {{this.getAsociacionUrl(farmacia.asociacion)}}
+    </div> -->
+  </div>
 </section>

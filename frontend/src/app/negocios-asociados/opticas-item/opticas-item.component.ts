@@ -47,7 +47,9 @@ export class OpticasItemComponent implements OnInit {
   }
 
   borrarOptica(direccion: string): void {
-    this.opticaService.deleteOptica(direccion)
+    if (confirm('¿Quiere borrar esta óptica?')){
+      this.opticaService.deleteOptica(direccion)
+    }
   }
 
   modificarOptica(optica: OpticaImpl): void {
