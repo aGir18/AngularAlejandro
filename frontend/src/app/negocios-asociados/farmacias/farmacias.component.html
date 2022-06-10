@@ -12,9 +12,10 @@
     <div class="col-sm-4"></div>
   </div>
   <div class="row">
-    <div class="col-sm-4">NOMBRE</div>
-    <div class="col-sm-4">NIF</div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">NOMBRE Y NIF</div>
     <div class="col-sm-4">OPERACIONES</div>
+    <div class="col-sm-2"></div>
   </div>
   <div *ngIf="farmacias.length > 0; else noFarmacias">
     <div *ngFor="let farmacia of farmacias">

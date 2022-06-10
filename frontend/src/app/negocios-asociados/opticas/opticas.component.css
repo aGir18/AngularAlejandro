@@ -16,7 +16,7 @@ main{
   text-align: center;
 }
 
-.col-sm-4{
+.col-sm-4, .col-sm-6, .col-sm-5{
   text-align: center;
 }
 

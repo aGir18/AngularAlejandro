@@ -62,9 +62,21 @@ export class AsociacionService {
 
   // Para el listado de negocios, poner los negocios de UNA asociación
 
-  getNegociosAsociados(urlAsociacion: Asociacion): Observable<any>{
-    return this.http.get<any>(`${this.urlEndPoint3}/${urlAsociacion.urlAsociacion}/negociosAsociacion`);
+  getNegociosAsociados(asociacionListar: AsociacionImpl): Observable<any>{
+    return this.http.get<any>(`${this.urlEndPoint3}/${asociacionListar.getIdAsociacion(asociacionListar.urlAsociacion)}/negociosAsociacion`);
   }
+
+    // Para el listado de negocios, poner los negocios de UNA asociación
+
+    getNegociosAsociadosSegunda(asociacionListar: AsociacionImpl){
+      return this.http.get(`${this.urlEndPoint3}/${asociacionListar.getIdAsociacion(asociacionListar.urlAsociacion)}/negociosAsociacion`).subscribe();
+    }
+
+    // Para el listado de negocios, poner los negocios de UNA asociación
+
+    getNegociosAsociadosTercera(asociacionListar: string){
+      return this.http.get(`${asociacionListar}/negociosAsociacion`).subscribe();
+    }
 
   // Para el listado de negocios, poner los negocios de UNA asociación
 
@@ -82,4 +94,12 @@ export class AsociacionService {
 
     return negocios;
   }
+
+  // extraerAsociaciones(respuestaApi: any): Asociacion[] {
+  //   const asociaciones: Asociacion[] = [];
+  //   respuestaApi._embedded.asociaciones.forEach((p: any) => {
+  //     asociaciones.push(this.mapearAsociacion(p));
+  //   });
+  //   return asociaciones;
+  // }
 }

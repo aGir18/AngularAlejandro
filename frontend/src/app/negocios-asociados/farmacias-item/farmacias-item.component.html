@@ -1,22 +1,23 @@
 <!-- <section *ngIf="negocio.nombre != null; else noExiste"> -->
   <div class="row mb-2">
     <hr class='w-100'>
-    <div class="col-sm-4">
-      {{farmacia.nombre}}
-    </div>
-    <div class="col-sm-4">{{farmacia.nif}}</div>
+    <!-- <div class="col-sm-4"></div> -->
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">{{farmacia.nombre}}, {{farmacia.nif}}</div>
     <div class="col-sm-4">
       <a class="" data-bs-toggle="modal" data-bs-target="#modalFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)" (click)="obtenerAsociacion()">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
+      </a>
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalPutFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
+        &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
       </a>
       <a role="button" (click)="borrarFarmacia(this.farmacia.urlNegocio)" routerLink="/negocios-asociados/farmacias">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
         &nbsp;
       </a>
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalPutFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
-        &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
-      </a>
+    </div>
+    <div class="col-sm-2"></div>
   </div>
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf

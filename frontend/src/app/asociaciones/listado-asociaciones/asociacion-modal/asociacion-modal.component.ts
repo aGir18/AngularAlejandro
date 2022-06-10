@@ -19,6 +19,8 @@ export class AsociacionModalComponent implements OnInit {
   @Input() asociacion!: AsociacionImpl;
   @Input() negocio!: NegocioImpl;
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
+  @Output() asociacionSeleccionada = new EventEmitter<Asociacion>();
+
 
   constructor(
     private asociacionService: AsociacionService,

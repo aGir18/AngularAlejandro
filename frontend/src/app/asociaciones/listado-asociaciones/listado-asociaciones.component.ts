@@ -3,6 +3,7 @@ import { faPencil, faEye, faTrashCan, faCirclePlus } from '@fortawesome/free-sol
 import { Negocio } from 'src/app/negocios-asociados/models/negocio';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
 import { Asociacion } from '../models/asociacion';
+import { AsociacionImpl } from '../models/asociacion-impl';
 import { AsociacionService } from '../service/asociacion.service';
 
 @Component({

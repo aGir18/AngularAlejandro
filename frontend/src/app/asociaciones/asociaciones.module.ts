@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AuxiliarService } from '../service/auxiliar.service';
 import { AsociacionFormComponent } from './asociacion-form/asociacion-form.component';
 import { AsociacionModalComponent } from './listado-asociaciones/asociacion-modal/asociacion-modal.component';
+import { NegociosListadosComponent } from './negocios-listados/negocios-listados.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AsociacionModalComponent } from './listado-asociaciones/asociacion-moda
     ListadoAsociacionesComponent,
     AsociacionItemComponent,
     AsociacionFormComponent,
-    AsociacionModalComponent
+    AsociacionModalComponent,
+    NegociosListadosComponent
   ],
   imports: [
     CommonModule,

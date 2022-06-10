@@ -1,0 +1,17 @@
+<section id="negociosLista">
+  <p>
+    Hola qué tal
+  </p>
+  <!-- <button (click)="listarNegociosSegunda(this.asociacion)">
+    obtener negocios
+  </button> -->
+  <button (click)="listarNegociosTercera(this.asociacion.urlAsociacion)">
+    obtener negocios tercera
+  </button>
+  <div *ngFor="let negocio of asociacion.negocios">
+    {{negocio.urlNegocio}}
+  </div>
+  <!-- <div *ngFor="let negocio of negocios">
+    {{negocio}}
+  </div> -->
+</section>

@@ -4,6 +4,7 @@ export class AsociacionImpl implements Asociacion {
   nombre!: string;
   negocios!: any[];
   urlAsociacion!: string;
+  idAsociacion!: string;
 
   constructor(nombre: string, urlAsociacion: string, negocios: any[]){
     this.nombre = nombre;
@@ -12,8 +13,9 @@ export class AsociacionImpl implements Asociacion {
   }
 
   getIdAsociacion(url: string): string {
-	  url = url.slice(0, url.length - 1)
-	  return url.slice(url.lastIndexOf('/') + 1, url.length);
+  url = url.slice(0, url.length - 1)
+
+	return url.slice(url.lastIndexOf('/') + 1, url.length);
 	}
 
 }

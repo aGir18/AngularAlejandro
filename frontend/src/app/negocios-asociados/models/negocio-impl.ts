@@ -1,11 +1,6 @@
 import { Negocio } from "./negocio";
 
 export class NegocioImpl implements Negocio {
-  //tipoNegocio!: string;
-  //GUIJARRO
-  /*
-  id!: string;
-  */
   idNegocio!: string;
   nombre!: string;
   nif!: string;
