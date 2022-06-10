@@ -59,7 +59,7 @@ export class OpticaService {
 // intento de PATCH como Cap
   update(idOptica: string, optica: OpticaImpl): Observable<any> {
     return this.http
-      .patch<any>(`${this.urlEndPoint2}${idOptica}`, optica);
+      .patch<any>(`${this.urlEndPoint2}/${idOptica}`, optica);
     }
 
   putOptica(optica: OpticaImpl){
