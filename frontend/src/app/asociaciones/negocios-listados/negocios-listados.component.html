@@ -9,7 +9,8 @@
     obtener negocios tercera
   </button>
   <div *ngFor="let negocio of asociacion.negocios">
-    {{negocio.urlNegocio}}
+    <!-- <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-farmacias-item> -->
+    <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="verDatos($event)"></app-negocios-item>
   </div>
   <!-- <div *ngFor="let negocio of negocios">
     {{negocio}}

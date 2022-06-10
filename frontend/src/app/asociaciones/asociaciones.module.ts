@@ -11,6 +11,8 @@ import { AuxiliarService } from '../service/auxiliar.service';
 import { AsociacionFormComponent } from './asociacion-form/asociacion-form.component';
 import { AsociacionModalComponent } from './listado-asociaciones/asociacion-modal/asociacion-modal.component';
 import { NegociosListadosComponent } from './negocios-listados/negocios-listados.component';
+import { NegociosItemComponent } from '../negocios-asociados/negocios-item/negocios-item.component';
+import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociados.module';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { NegociosListadosComponent } from './negocios-listados/negocios-listados
     CommonModule,
     AsociacionesRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    NegociosAsociadosModule
   ],
   providers: [AuxiliarService]
 })

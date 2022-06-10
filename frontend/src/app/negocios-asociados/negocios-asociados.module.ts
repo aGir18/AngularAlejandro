@@ -48,6 +48,10 @@ import { NegocioModificarComponent } from './negocios/negocio-modificar/negocio-
   ],
   providers: [
     AuxiliarService
+  ],
+  exports:[
+    NegociosItemComponent,
+    FarmaciasItemComponent
   ]
 })
 export class NegociosAsociadosModule { }

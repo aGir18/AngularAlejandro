@@ -10,6 +10,11 @@
         <fa-icon [icon]="lista"></fa-icon>
         &nbsp;
       </a>
+      <a class="" data-bs-toggle="modal" (click)="asociacionSeleccionada.emit(asociacion)" (click)="listarNegociosTercera(asociacion.urlAsociacion)">
+        &nbsp;&nbsp;
+        <fa-icon [icon]="lista2"></fa-icon>
+        &nbsp;
+      </a>
     </div>
     <div class="col-sm-3"></div>
     <!-- {{asociacion.negocios}} -->

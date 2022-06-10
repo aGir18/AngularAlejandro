@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faList } from '@fortawesome/free-solid-svg-icons';
+import { faPencil, faEye, faTrashCan, faList, faListOl } from '@fortawesome/free-solid-svg-icons';
 import { Negocio } from 'src/app/negocios-asociados/models/negocio';
 import { Asociacion } from '../models/asociacion';
 import { AsociacionService } from '../service/asociacion.service';
@@ -35,5 +35,6 @@ export class AsociacionItemComponent implements OnInit {
   eye=faEye;
   trash=faTrashCan;
   lista=faList;
+  lista2=faListOl;
 
 }
