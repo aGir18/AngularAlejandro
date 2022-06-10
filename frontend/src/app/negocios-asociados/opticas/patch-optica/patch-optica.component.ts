@@ -57,4 +57,8 @@ export class PatchOpticaComponent implements OnInit {
     return this.opticaService.update(this.optica.getIdNegocio(this.optica.urlNegocio), this.optica).subscribe();
   }
 
+  patchOptica4(){
+    this.opticaService.update(this.optica.getIdNegocio(this.optica.urlNegocio), this.optica).subscribe();
+  }
+
 }
