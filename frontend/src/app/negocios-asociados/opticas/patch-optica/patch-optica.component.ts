@@ -1,28 +1,27 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faPencil, faEye, faTrashCan, faEraser, faCapsules, faPenToSquare, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { Component, Input, OnInit } from '@angular/core';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
-import { Optica } from '../models/optica';
-import { OpticaImpl } from '../models/optica-impl';
-import { OpticaService } from '../service/optica.service';
+import { NegocioImpl } from '../../models/negocio-impl';
+import { OpticaImpl } from '../../models/optica-impl';
+import { OpticaService } from '../../service/optica.service';
 
 @Component({
-  selector: 'app-opticas-item',
-  templateUrl: './opticas-item.component.html',
-  styleUrls: ['./opticas-item.component.css']
+  selector: 'app-patch-optica',
+  templateUrl: './patch-optica.component.html',
+  styleUrls: ['./patch-optica.component.css']
 })
-export class OpticasItemComponent implements OnInit {
+export class PatchOpticaComponent implements OnInit {
 
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
-  @Input() optica: Optica = new OpticaImpl('', '', '', 0);
-  @Output() opticaSeleccionada = new EventEmitter<Optica>();
+  @Input() optica!: OpticaImpl;
+  @Input() negocio!: NegocioImpl;
 
   constructor(
-    private opticaService: OpticaService,
     private asociacionService: AsociacionService,
+    private opticaService: OpticaService,
     private auxService: AuxiliarService
   ) { }
 
@@ -46,27 +45,16 @@ export class OpticasItemComponent implements OnInit {
     });
   }
 
-  borrarOptica(direccion: string): void {
-    if (confirm('¿Quiere borrar esta óptica?')){
-      this.opticaService.deleteOptica(direccion)
-    }
-  }
-
-  modificarOptica(optica: OpticaImpl): void {
+  patchOptica(optica: OpticaImpl){
     this.opticaService.patchOptica(optica).subscribe();
   }
 
-  cambiarOptica(optica: OpticaImpl): void {
-    this.opticaService.putOptica(optica).subscribe();
+  patchOptica2(optica: OpticaImpl){
+    this.opticaService.patchOptica2(optica);
   }
 
-  pencil=faPencil;
-  eye=faEye;
-  trash=faTrashCan;
-  eraser= faEraser;
-  pills= faCapsules;
-  pen=faPenToSquare;
-  cambio=faPenNib;
-  patch=faPenToSquare;
+  patchOptica3(){
+    return this.opticaService.update(this.optica.getIdNegocio(this.optica.urlNegocio), this.optica).subscribe();
+  }
 
 }

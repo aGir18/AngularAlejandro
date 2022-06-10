@@ -52,6 +52,16 @@ export class OpticaService {
     return this.http.patch<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica);
   }
 
+  patchOptica2(optica: OpticaImpl) {
+    return this.http.patch<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica).subscribe();
+  }
+
+// intento de PATCH como Cap
+  update(idOptica: string, optica: OpticaImpl): Observable<any> {
+    return this.http
+      .patch<any>(`${this.urlEndPoint2}${idOptica}`, optica);
+    }
+
   putOptica(optica: OpticaImpl){
     return this.http.put<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica);
   }
