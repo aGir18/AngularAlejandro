@@ -19,7 +19,6 @@ export class FarmaciaModificarComponent implements OnInit {
   numPaginas: number = 0;
   @Input() farmacia!: FarmaciaImpl;
   @Input() negocio!: NegocioImpl;
-  @Output() farmaciaEliminar = new EventEmitter<FarmaciaImpl>();
 
   constructor(
     private asociacionService: AsociacionService,
@@ -45,10 +44,6 @@ export class FarmaciaModificarComponent implements OnInit {
           });
       }
     });
-  }
-
-  eliminar(): void {
-    this.farmaciaEliminar.emit(this.farmacia);
   }
 
   modificarFarmacia(farmacia: FarmaciaImpl): void {

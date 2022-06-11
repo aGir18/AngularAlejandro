@@ -17,8 +17,7 @@ import { OpticaService } from '../service/optica.service';
 })
 export class NegocioFormComponent implements OnInit {
 
-//  negocio: NegocioImpl = new NegocioImpl('', '', '', '');
-  negocio: NegocioImpl = new NegocioImpl('', '', '', '', 0, 0);
+  negocio: NegocioImpl = new NegocioImpl('', '', '', '', 0, 0, '');
   farmacia: FarmaciaImpl = new FarmaciaImpl('','','',0);
   optica: OpticaImpl = new OpticaImpl('', '', '', 0);
   asociaciones: Asociacion[] = [];
@@ -53,9 +52,9 @@ getTodasAsociaciones(): void {
   });
 }
 
-  create(): void {
+  crearNegocio(): void {
     console.info('paso por metodo de formulario');
-    this.negocioService.postNegocio(this.negocio);
+    this.negocioService.postNegocio(this.negocio).subscribe();
   }
 
   crearFarmacia(): void {

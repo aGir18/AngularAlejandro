@@ -24,9 +24,9 @@ export class NegociosItemComponent implements OnInit {
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
-  @Input() negocio: Negocio = new NegocioImpl('', '', '', '', 0, 0);
+  @Input() negocio: Negocio = new NegocioImpl('', '', '', '', 0, 0, '');
   @Input() farmacia: Farmacia = new FarmaciaImpl('','','',0);
-  @Input() negocioNuevo: Negocio = new NegocioImpl('', '', '', '', 0, 0);
+  @Input() negocioNuevo: Negocio = new NegocioImpl('', '', '', '', 0, 0, '');
   @Output() negocioSeleccionado = new EventEmitter<Negocio>();
   @Output() farmaciaSeleccionada = new EventEmitter<Farmacia>();
 
@@ -62,7 +62,7 @@ export class NegociosItemComponent implements OnInit {
   borrarNegocio(direccion: string): void {
     //    this.negocioService.deleteNegocio(this.negocioItem.urlNegocio);
     if (confirm('¿Quiere borrar este negocio?')){
-      this.negocioService.deleteNegocio(direccion);
+      this.negocioService.deleteNegocio(direccion).subscribe();
     }
     this.ngOnInit();
   }
@@ -77,6 +77,10 @@ export class NegociosItemComponent implements OnInit {
 
   cambiarNegocio(negocio: NegocioImpl): void {
     this.negocioService.putNegocio(negocio).subscribe();
+  }
+
+  actualizarNegocio(negocio: NegocioImpl): void {
+    this.negocioService.update(negocio.getIdNegocio(negocio.urlNegocio), negocio).subscribe();
   }
 
   pencil=faPencil;

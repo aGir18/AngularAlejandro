@@ -51,6 +51,10 @@ export class NegocioModificarComponent implements OnInit {
     this.negocioService.putNegocio(negocio).subscribe();
   }
 
+  actualizarNegocio(negocio: NegocioImpl): void {
+    this.negocioService.update(negocio.getIdNegocio(negocio.urlNegocio), negocio).subscribe();
+  }
+
   plus=faCirclePlus;
   cambio=faPenNib;
 

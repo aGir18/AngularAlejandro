@@ -80,79 +80,74 @@
         </div>
       </section>
 
-      <!-- VOY POR AQUÍ -->
-      <!-- <div *ngIf="asociaciones.length > 0">
-        Las asociaciones son {{asociaciones.length}}
-      </div> -->
+      <section *ngIf="negocio.tipoNegocio == '0'">
+        <div class="form-row py-2">
+          <label>Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+          <!-- [(ngModel)]="negocio.asociacion" METERLO EN LA ETIQUETA select -->
+          <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
+              <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+          </select>
+          <!--
+            <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Dirección de la asociación" name="aso"
+              required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
+                'is-invalid': aso.invalid && (aso.dirty || aso.touched),
+                'is-valid': !aso.invalid
+              }" />
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+          -->
+        </div>
+      </section>
 
-  <section *ngIf="negocio.tipoNegocio == '0'">
-    <div class="form-row py-2">
-      <label>Seleccione la asociación<sup class="text-danger">*</sup></label><br>
-      <!-- [(ngModel)]="negocio.asociacion" METERLO EN LA ETIQUETA select -->
-      <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
-          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
-      </select>
-      <!--
-        <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Dirección de la asociación" name="aso"
-          required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
-            'is-invalid': aso.invalid && (aso.dirty || aso.touched),
-            'is-valid': !aso.invalid
-          }" />
-        <div class="invalid-feedback">Por favor, rellene este campo.</div>
-        <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
-      -->
-    </div>
-  </section>
+      <section *ngIf="negocio.tipoNegocio == 'farmacia'">
+        <div class="form-row py-2">
+          <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+          <select name="selectorFormulario" id="selectorAsociacion2" class="form-select" aria-label="Default select example" [(ngModel)]="farmacia.asociacion">
+              <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+          </select>
+        </div>
+      </section>
 
-    <section *ngIf="negocio.tipoNegocio == 'farmacia'">
-      <div class="form-row py-2">
-        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
-        <select name="selectorFormulario" id="selectorAsociacion2" class="form-select" aria-label="Default select example" [(ngModel)]="farmacia.asociacion">
+      <section *ngIf="negocio.tipoNegocio == 'optica'">
+        <div class="form-row py-2">
+          <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+          <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" [(ngModel)]="optica.asociacion" placeholder="Seleccione asociación">
             <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
-        </select>
-      </div>
-    </section>
+          </select>
+        </div>
+      </section>
 
-    <section *ngIf="negocio.tipoNegocio == 'optica'">
-      <div class="form-row py-2">
-        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
-        <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" [(ngModel)]="optica.asociacion" placeholder="Seleccione asociación">
-          <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
-        </select>
-      </div>
-    </section>
+      <section *ngIf="negocio.tipoNegocio == 'farmacia'">
+        <div class="form-row py-2">
+          <label>Introduzca el número de puntos SIGRE de la farmacia:<sup class="text-danger">*</sup></label>
+          <input type="number" class="form-control" [(ngModel)]="farmacia.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg20"
+            required min="0" max="5" #neg20="ngModel" [ngClass]="{
+              'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
+              'is-valid': !neg20.invalid
+            }" />
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+        </div>
+      </section>
 
-    <section *ngIf="negocio.tipoNegocio == 'farmacia'">
-      <div class="form-row py-2">
-        <label>Introduzca el número de puntos SIGRE de la farmacia:<sup class="text-danger">*</sup></label>
-        <input type="number" class="form-control" [(ngModel)]="farmacia.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg20"
-          required min="0" max="5" #neg20="ngModel" [ngClass]="{
-            'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
-            'is-valid': !neg20.invalid
-          }" />
-        <div class="invalid-feedback">Por favor, rellene este campo.</div>
-        <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
-      </div>
-    </section>
-
-    <section *ngIf="negocio.tipoNegocio == 'optica'">
-      <div class="form-row py-2">
-        <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
-        <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
-          required min="0" max="5" #neg20="ngModel" [ngClass]="{
-            'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
-            'is-valid': !neg20.invalid
-          }" />
-        <div class="invalid-feedback">Por favor, rellene este campo.</div>
-        <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
-      </div>
-    </section>
-
-  </div></div>
+      <section *ngIf="negocio.tipoNegocio == 'optica'">
+        <div class="form-row py-2">
+          <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
+          <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
+            required min="0" max="5" #neg20="ngModel" [ngClass]="{
+              'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
+              'is-valid': !neg20.invalid
+            }" />
+          <div class="invalid-feedback">Por favor, rellene este campo.</div>
+          <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
+        </div>
+      </section>
+    </div>
+  </div>
 
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="create()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="crearNegocio()" routerLink='/negocios-asociados/negocios'
           [disabled]="!negocioForm.form.valid">
           Crear Negocio
         </button>
@@ -176,11 +171,5 @@
         </button>
       </div>
     </section>
-<!--   <div class="row">
-    <div class="col-sm-3"></div>
-    <div class="col-sm-6">
-      <pre>{{ negocio | json }}</pre>
-    </div>
-    <div class="col-sm-3"></div>
-  </div> -->
+
 </form>

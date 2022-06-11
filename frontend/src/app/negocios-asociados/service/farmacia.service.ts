@@ -10,7 +10,7 @@ import { FarmaciaImpl } from '../models/farmacia-impl';
   providedIn: 'root'
 })
 export class FarmaciaService {
-  //NO ESTÁ DESDE PRODUCCIÓN, PERO EL VALOR ES EL MISMO
+
   private host: string = environment.host;
   private urlEndPoint1: string = `${this.host}farmacias`;
 
@@ -63,6 +63,8 @@ export class FarmaciaService {
   getFarmaciasPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint1, pagina);
   }
+
+  // Esto para botones dentro del primer modal
 
   // Para cargar en modal
   getAsociacionFarmacia2(direccionConsulta: string){

@@ -53,19 +53,12 @@ export class NegocioService {
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negocios.push(this.mapearNegocio(p));
     });
-    // respuestaApi._embedded.farmacias.forEach((p: any) => {
-    //   negocios.push(this.mapearNegocio(p));
-    // });
-    /*
-    respuestaApi._embedded.opticas.forEach((p: any) => {
-      negocios.push(this.mapearNegocio(p));
-    }); */
+
     return negocios;
   }
 
   mapearNegocio(negocioApi: any): NegocioImpl {
-    //let negocioNuevo : NegocioImpl = new NegocioImpl('','','','');
-    let negocioNuevo : NegocioImpl = new NegocioImpl('','','','', 0, 0);
+    let negocioNuevo : NegocioImpl = new NegocioImpl('','','','', 0, 0, '');
     negocioNuevo.nombre = negocioApi.nombre;
     negocioNuevo.nif = negocioApi.nif;
     negocioNuevo.asociacion = negocioApi._links.asociacion.href;
@@ -75,17 +68,22 @@ export class NegocioService {
     return negocioNuevo;
   }
 
-  postNegocio(negocio: NegocioImpl){
-    this.http.post(this.urlEndPoint, negocio).subscribe();
+  postNegocio(negocio: NegocioImpl): Observable<any>{
+    return this.http.post(this.urlEndPoint, negocio);
   }
+
+  deleteNegocio(direccionEliminar: string): Observable<any>{
+    return this.http.delete(direccionEliminar);
+  }
+
+  update(idNegocio: string, negocio: NegocioImpl): Observable<any> {
+    return this.http
+      .patch<any>(`${this.urlEndPoint}/${idNegocio}`, negocio);
+    }
 
   patchNegocio(direccionEliminar: string) {
     this.http.patch(this.urlEndPoint, direccionEliminar).subscribe();
   }
-
-  // patchNegocio2(direccionEliminar: string) {
-  //   return this.http.patch<any>(this.urlEndPoint);
-  // }
 
   patchNegocio3(negocio: NegocioImpl) {
     return this.http.patch<any>(`${this.urlEndPoint}/${negocio.getIdNegocio(negocio.urlNegocio)}`, negocio);
@@ -93,24 +91,6 @@ export class NegocioService {
 
   putNegocio(negocio: NegocioImpl) {
     return this.http.put<any>(`${this.urlEndPoint}/${negocio.getIdNegocio(negocio.urlNegocio)}`, negocio);
-  }
-
-  // getOpticas(): Observable<any> {
-  //   return this.http.get<any>(this.urlEndPoint2);
-  // }
-
-  postFarmaciaNegocio(farmacia: FarmaciaImpl){
-    this.http.post(this.urlEndPoint1, farmacia).subscribe();
-  }
-
-  deleteNegocio(direccionEliminar: string){
-    this.http.delete(direccionEliminar).subscribe();
-  }
-
-  create(negocio: NegocioImpl): Observable<any> {
-    console.warn('pasando por método crear');
-    return this.http.post(`${this.urlEndPoint}`, negocio);
-    //return this.http.post(`${this.urlEndPoint}`, negocio).subscribe;
   }
 
   getNegociosPagina(pagina: number): Observable<any> {

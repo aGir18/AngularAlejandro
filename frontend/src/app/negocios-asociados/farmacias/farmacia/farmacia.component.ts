@@ -48,12 +48,6 @@ export class FarmaciaComponent implements OnInit {
     });
   }
 
-  eliminar(): void {
-    // if (confirm('¿Quiere borrar la farmacia?')){
-    this.farmaciaEliminar.emit(this.farmacia);
-    // }
-  }
-
   obtenerAsociacion(){
     // this.farmaciaService.getAsociacionFarmacia2(this.farmacia.asociacion)
     return this.farmaciaService.getAsociacionFarmacia2(this.farmacia.asociacion);
@@ -62,21 +56,6 @@ export class FarmaciaComponent implements OnInit {
   asociacionString(){
     return this.farmaciaService.getAsociacionFarmacia3(this.farmacia.asociacion).subscribe();
   }
-
-// hacer bien este GET
-
-  // getAsociacionUrl(url: string) {
-  //   url = this.farmacia.urlNegocio;
-  //   return this.farmaciaService.getAsociacionUrl(url);
-  // }
-
-
-
-  // getId(url:string): string {
-  //   let posicionFinal: number = url.lastIndexOf('/');
-  //   let numId: string = url.slice(posicionFinal + 1, url.length);
-  //   return numId;
-  // }
 
   plus=faCirclePlus;
 

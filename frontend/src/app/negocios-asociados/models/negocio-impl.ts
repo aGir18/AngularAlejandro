@@ -21,13 +21,14 @@ export class NegocioImpl implements Negocio {
     this.tipoNegocio = tipoNegocio;
   } */
 
-  constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string, numeroPuntosSigre: number, numeroAutorefractometros: number){
+  constructor(nombre: string, nif: string, asociacion: string, tipoNegocio: string, numeroPuntosSigre: number, numeroAutorefractometros: number, urlNegocio: string){
     this.nombre = nombre;
     this.nif = nif;
     this.asociacion = asociacion;
     this.tipoNegocio = tipoNegocio;
     this.numeroPuntosSigre = numeroPuntosSigre;
     this.numeroAutorefractometros = numeroAutorefractometros;
+    this.urlNegocio = urlNegocio;
   }
 
   //Para hacer DELETE y PATCH
