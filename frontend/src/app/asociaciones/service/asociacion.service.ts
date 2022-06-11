@@ -20,6 +20,9 @@ export class AsociacionService {
   private opticaService!: OpticaService;
   private host: string = environment.host;
   private urlEndPoint3: string = `${this.host}asociaciones`;
+  private valorPoseeFarmacia!: boolean;
+  private valorPoseeOptica!: boolean;
+  private urlMetodo: string = `${this.urlEndPoint3}/search/por-tipo-negocios?poseeFarmacia=${this.valorPoseeFarmacia}&poseeOptica=${this.valorPoseeOptica}`;
   constructor(
     private http: HttpClient,
     private auxService: AuxiliarService) { }
@@ -94,6 +97,8 @@ export class AsociacionService {
 
     return negocios;
   }
+
+  // metodoPersonalizado
 
   // extraerAsociaciones(respuestaApi: any): Asociacion[] {
   //   const asociaciones: Asociacion[] = [];

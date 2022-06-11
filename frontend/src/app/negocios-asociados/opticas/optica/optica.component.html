@@ -1,17 +1,9 @@
-<!-- <section *ngIf="this.segundoModal == true"  >
-  <div class="form-row py-2">
-    <label>Nombre de la optica<sup class="text-danger">*</sup></label>
-    <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
-    required minlength="3" maxlength="25"/>
-    <div class="invalid-feedback">Por favor, rellene este campo.</div>
-    <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
-  </div>
-</section> -->
-<section id="datosOptica">
+<section id="datosOptica" *ngIf="[optica]">
   - Nombre de la óptica: {{optica.nombre}} <br>
   - NIF de la óptica: {{optica.nif}} <br>
   <!-- Pruebo a ver cómo quedaría con los datos básicos -->
   <!-- - Asociación de la óptica: {{optica.asociacion}} <br> -->
   <!-- - URL de la óptica: {{optica.urlNegocio}} <br> -->
   - Número de autorefractometros: {{optica.numeroAutorefractometros}} <br>
+  - ID de la óptica: {{optica.getIdNegocio(optica.urlNegocio)}}
 </section>

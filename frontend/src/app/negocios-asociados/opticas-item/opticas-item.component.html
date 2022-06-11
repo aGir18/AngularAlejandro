@@ -1,20 +1,15 @@
 <!-- <section *ngIf="negocio.nombre != null; else noExiste"> -->
+<section *ngIf="[optica]">
   <div class="row mb-2">
     <hr class='w-100'>
-    <!-- <div class="col-sm-4">
-    </div> -->
     <div class="col-sm-2"></div>
     <div class="col-sm-4">{{optica.nombre}}, {{optica.nif}}</div>
     <div class="col-sm-4">
       <a class="" data-bs-toggle="modal" data-bs-target="#modalOptica" (click)="opticaSeleccionada.emit(optica)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalPut" (click)="opticaSeleccionada.emit(optica)">
-        &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
-      </a>
-      <!-- Para meter PATCH -->
       <a class="" data-bs-toggle="modal" data-bs-target="#modalPatch" (click)="opticaSeleccionada.emit(optica)">
-        &nbsp;&nbsp;<fa-icon [icon]="patch"></fa-icon>&nbsp;
+        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
       <a role="button" (click)="borrarOptica(this.optica.urlNegocio)" routerLink="/negocios-asociados/opticas">
         &nbsp;&nbsp;
@@ -24,6 +19,7 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
+</section>
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf
 <ng-template #noExiste>

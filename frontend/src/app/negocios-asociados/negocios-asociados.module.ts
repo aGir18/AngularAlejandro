@@ -17,7 +17,6 @@ import { FarmaciaComponent } from './farmacias/farmacia/farmacia.component';
 import { OpticasComponent } from './opticas/opticas.component';
 import { OpticaComponent } from './opticas/optica/optica.component';
 import { OpticasItemComponent } from './opticas-item/opticas-item.component';
-import { OpticaModificarComponent } from './opticas/optica-modificar/optica-modificar.component';
 import { FarmaciaModificarComponent } from './farmacias/farmacia-modificar/farmacia-modificar.component';
 import { NegocioModificarComponent } from './negocios/negocio-modificar/negocio-modificar.component';
 import { PatchOpticaComponent } from './opticas/patch-optica/patch-optica.component';
@@ -36,7 +35,6 @@ import { PatchOpticaComponent } from './opticas/patch-optica/patch-optica.compon
     OpticasComponent,
     OpticaComponent,
     OpticasItemComponent,
-    OpticaModificarComponent,
     FarmaciaModificarComponent,
     NegocioModificarComponent,
     PatchOpticaComponent

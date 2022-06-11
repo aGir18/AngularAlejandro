@@ -26,7 +26,7 @@ export class OpticaImpl implements Optica {
   }
 
   getIdNegocio(url: string): string {
-    url = url.slice(0, url.length - 1)
+    // url = url.slice(0, url.length - 1)
     return url.slice(url.lastIndexOf('/') + 1, url.length);
   }
 }

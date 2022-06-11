@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="[opticas]">
   <div class="row">
     <div class="col-sm-4"></div>
     <div class="col-sm-4">
@@ -14,10 +14,8 @@
   <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-4">NOMBRE Y NIF</div>
-    <!-- <div class="col-sm-4">NIF</div> -->
     <div class="col-sm-4">OPERACIONES</div>
     <div class="col-sm-2"></div>
-
   </div>
   <div *ngIf="opticas.length > 0; else noOpticas">
     <div *ngFor="let optica of opticas">
@@ -29,13 +27,13 @@
       NO EXISTEN OPTICAS
     </div>
   </ng-template>
-
   <!-- Modal OPTICAS -->
   <div class="modal fade" id="modalOptica" tabindex="-1" role="dialog" aria-labelledby="datosOptica" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="datosOptica">Datos Completos Óptica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <app-optica [optica]="opticasVerDatos"></app-optica>
@@ -46,22 +44,6 @@
       </div>
     </div>
   </div>
-
-  <!-- MODAL PUT -->
-  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="formularioOptica" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar óptica</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <app-optica-modificar [optica]="opticasVerDatos"></app-optica-modificar>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- MODAL PATCH -->
   <div class="modal fade" id="modalPatch" tabindex="-1" role="dialog" aria-labelledby="formularioPatch" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -73,11 +55,7 @@
         <div class="modal-body">
           <app-patch-optica [optica]="opticasVerDatos"></app-patch-optica>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-        </div>
       </div>
     </div>
   </div>
-
 </main>

@@ -1,4 +1,4 @@
-<section id="formularioPatch">
+<section id="formularioPatch" *ngIf="[optica]">
   <div class="form-row py-2">
     <label>Nombre de la optica<sup class="text-danger">*</sup></label>
     <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
@@ -34,8 +34,5 @@
     <div class="invalid-feedback">Por favor, rellene este campo.</div>
     <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
   </div> <br>
-  <!-- <button class="btn btn-success" data-bs-toggle="modal" (click)="patchOptica2(this.optica)">Modificar</button> -->
-  <!-- <button class="btn btn-success" data-bs-toggle="modal" (click)="patchOptica3()">Actualizar</button> -->
-  <button class="btn btn-success" data-bs-toggle="modal" (click)="patchOptica4()">Actualizar</button>
-
+  <button class="btn btn-success" data-bs-toggle="modal" (click)="patchOptica()">Actualizar</button>
 </section>

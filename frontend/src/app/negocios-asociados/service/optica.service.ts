@@ -40,31 +40,18 @@ export class OpticaService {
     return opticas;
   }
 
-  postOptica(optica: OpticaImpl){
-    this.http.post(this.urlEndPoint2, optica).subscribe();
+  postOptica(optica: OpticaImpl): Observable<any>{
+    return this.http.post(this.urlEndPoint2, optica);
   }
 
-  deleteOptica(direccionEliminar: string){
-    this.http.delete(direccionEliminar).subscribe();
+  deleteOptica(direccionEliminar: string): Observable<any>{
+    return this.http.delete(direccionEliminar);
   }
 
-  patchOptica(optica: OpticaImpl) {
-    return this.http.patch<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica);
-  }
-
-  patchOptica2(optica: OpticaImpl) {
-    return this.http.patch<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica).subscribe();
-  }
-
-// intento de PATCH como Cap
   update(idOptica: string, optica: OpticaImpl): Observable<any> {
     return this.http
       .patch<any>(`${this.urlEndPoint2}/${idOptica}`, optica);
     }
-
-  putOptica(optica: OpticaImpl){
-    return this.http.put<any>(`${this.urlEndPoint2}/${optica.getIdNegocio(optica.urlNegocio)}`, optica);
-  }
 
   getOpticasPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint2, pagina);

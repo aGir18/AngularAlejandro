@@ -32,7 +32,7 @@ export class NegocioImpl implements Negocio {
 
   //Para hacer DELETE y PATCH
   getIdNegocio(urlNegocio: string): string {
-    urlNegocio = urlNegocio.slice(0, urlNegocio.length - 1)
+    // urlNegocio = urlNegocio.slice(0, urlNegocio.length - 1)
     return urlNegocio.slice(urlNegocio.lastIndexOf('/') + 1, urlNegocio.length);
   }
 

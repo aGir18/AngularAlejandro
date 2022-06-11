@@ -63,8 +63,8 @@ getTodasAsociaciones(): void {
     this.farmaciaService.postFarmacia(this.farmacia);
   }
 
-  crearOptica(): void {
-    this.opticaService.postOptica(this.optica);
+  crearOptica(){
+    this.opticaService.postOptica(this.optica).subscribe();
   }
 
   pencil=faPencil;

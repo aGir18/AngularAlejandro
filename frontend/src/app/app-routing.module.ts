@@ -21,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import("./asociaciones/asociaciones.module").then((m) => m.AsociacionesModule),
   },
   {
+    path: 'filtrado',
+    loadChildren: () => import("./filtrado-asociaciones/filtrado-asociaciones.module").then((m) => m.FiltradoAsociacionesModule),
+  },
+  {
     path: '**',
     redirectTo: "not-found",
   },

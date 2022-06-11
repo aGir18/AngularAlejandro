@@ -46,18 +46,10 @@ export class OpticasItemComponent implements OnInit {
     });
   }
 
-  borrarOptica(direccion: string): void {
+  borrarOptica(direccion: string) {
     if (confirm('¿Quiere borrar esta óptica?')){
-      this.opticaService.deleteOptica(direccion)
+      this.opticaService.deleteOptica(direccion).subscribe();
     }
-  }
-
-  modificarOptica(optica: OpticaImpl): void {
-    this.opticaService.patchOptica(optica).subscribe();
-  }
-
-  cambiarOptica(optica: OpticaImpl): void {
-    this.opticaService.putOptica(optica).subscribe();
   }
 
   pencil=faPencil;

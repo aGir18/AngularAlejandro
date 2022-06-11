@@ -45,19 +45,7 @@ export class PatchOpticaComponent implements OnInit {
     });
   }
 
-  patchOptica(optica: OpticaImpl){
-    this.opticaService.patchOptica(optica).subscribe();
-  }
-
-  patchOptica2(optica: OpticaImpl){
-    this.opticaService.patchOptica2(optica);
-  }
-
-  patchOptica3(){
-    return this.opticaService.update(this.optica.getIdNegocio(this.optica.urlNegocio), this.optica).subscribe();
-  }
-
-  patchOptica4(){
+  patchOptica(){
     this.opticaService.update(this.optica.getIdNegocio(this.optica.urlNegocio), this.optica).subscribe();
   }
 

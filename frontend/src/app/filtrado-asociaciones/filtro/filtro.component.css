@@ -1,0 +1,13 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+p {
+  margin-top: 10em;
+  margin-bottom: -2em;
+  color: var(--amarillo);
+  text-align: center;
+}
