@@ -1,1 +1,126 @@
-<p>filtro works!</p>
+<main>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1>Asociaciones filtradas</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-2">
+      ¿Posee óptica? <br> -->
+      <!-- <select name="selectorOptica" id="selectorOptica" class="form-select" aria-label="Default select example" [(ngModel)]="this.poseeOptica" >
+        <option value="false">No</option>
+        <option value="true">Sí</option>
+      </select> -->
+      <!--
+        <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
+              <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+          </select>
+      -->
+      <!--  value="false" [(ngModel)]="this.poseeFarmacia" -->
+      <!-- <input type="radio" name="food" value=true [(ngModel)]="this.poseeOptica"> Beef
+
+      <div class="form-check" >
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1" [(ngModel)]="this.poseeOptica">
+          Sí
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+          No
+        </label>
+      </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-4"></div>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="form-row py-2">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [(ngModel)]="poseeFarmacia" [ngModelOptions]="{standalone: true}">
+          <label class="form-check-label" for="flexCheckDefault">
+            ¿La asociación tiene farmacias?
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="poseeOptica" [ngModelOptions]="{standalone: true}">
+          <label class="form-check-label" for="flexCheckChecked">
+            ¿La asociación tiene ópticas?
+          </label>
+        </div>
+        <button (click)="hacerMetodoPersonalizado(this.poseeFarmacia, this.poseeOptica)">Exponer asociaciones UNO</button>
+      </div>
+    <div class="col-sm-3"></div>
+  </div> -->
+
+
+
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="form-row py-2">
+        <label for="tipo">¿Posee farmacias?<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario1" id="selector1" class="form-select" aria-label="Default select example" [(ngModel)]="poseeFarmacia">
+          <!-- <option value="0" selected>---</option> -->
+          <option value="true" name="farmacia" (change)="setPoseeFarmacia(true)">Sí</option>
+          <option value="false" (change)="setPoseeFarmacia(false)">No</option>
+        </select> <br>
+        <label for="tipo">¿Posee ópticas?<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario2" id="selector2" class="form-select" aria-label="Default select example" [(ngModel)]="poseeOptica">
+          <!-- <option value="0" selected>---</option> -->
+          <option value="true" name="optica" (change)="setPoseeOptica(true)">Sí</option>
+          <option value="false" (change)="setPoseeOptica(false)">No</option>
+        </select> <br>
+      </div>
+      <div class="form-row justify-content-between pt-5" id="botoncito">
+        <button class="btn btn-primary" (click)="hacerMetodoPersonalizado(poseeFarmacia, poseeOptica)">Filtrar</button>
+      </div>
+      <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">NOMBRE</div>
+    <div class="col-sm-3">OPERACIONES</div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div *ngIf="asociaciones.length > 0; else noAsociaciones">
+    <div *ngFor="let asociacion of asociaciones">
+      <app-asociacion-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-asociacion-item>
+    </div>
+  </div>
+  <ng-template #noAsociaciones id="noExisten">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN ASOCIACIONES CON ESE FILTRADO
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- MODAL LISTADO -->
+  <div class="modal fade" id="modalListado" tabindex="-1" role="dialog" aria-labelledby="negociosLista" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Listado de negocios</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- <div *ngFor="let asociacion of asociaciones"> -->
+            <!-- <app-negocios-listados [asociacion]="asociacionVerDatos"></app-negocios-listados> -->
+          <!-- </div> -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</main>

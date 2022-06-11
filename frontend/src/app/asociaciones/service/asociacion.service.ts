@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Farmacia } from 'src/app/negocios-asociados/models/farmacia';
 import { Negocio } from 'src/app/negocios-asociados/models/negocio';
+import { Optica } from 'src/app/negocios-asociados/models/optica';
 import { FarmaciaService } from 'src/app/negocios-asociados/service/farmacia.service';
 import { NegocioService } from 'src/app/negocios-asociados/service/negocio.service';
 import { OpticaService } from 'src/app/negocios-asociados/service/optica.service';
@@ -23,13 +25,13 @@ export class AsociacionService {
   private valorPoseeFarmacia!: boolean;
   private valorPoseeOptica!: boolean;
   private urlMetodo: string = `${this.urlEndPoint3}/search/por-tipo-negocios?poseeFarmacia=${this.valorPoseeFarmacia}&poseeOptica=${this.valorPoseeOptica}`;
+  private urlMetodo1: string = `${this.urlEndPoint3}/search/por-tipo-negocios?poseeFarmacia=`;
+  private urlMetodo2: string = `&poseeOptica=`;
+
+
   constructor(
     private http: HttpClient,
-    private auxService: AuxiliarService) { }
-
-/*   getAsociacion(id: string): Observable<any> {
-    return this.http.get<any>(`${this.urlEndPoint3}${id}`);
-  } */
+    private auxService: AuxiliarService) {}
 
   getAsociaciones(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint3);
@@ -98,13 +100,25 @@ export class AsociacionService {
     return negocios;
   }
 
-  // metodoPersonalizado
+// Me falta extraer las asociaciones y dentro de ellas los negocios de cada una de ellas que salgan del GET
 
-  // extraerAsociaciones(respuestaApi: any): Asociacion[] {
-  //   const asociaciones: Asociacion[] = [];
-  //   respuestaApi._embedded.asociaciones.forEach((p: any) => {
-  //     asociaciones.push(this.mapearAsociacion(p));
-  //   });
-  //   return asociaciones;
-  // }
+  getMetodoPersonalizado(tieneFarmacia: boolean, tieneOptica: boolean): Observable<any>{
+    this.valorPoseeFarmacia = tieneFarmacia;
+    this.valorPoseeOptica = tieneOptica;
+    console.info('paso por el método personalizado - SERVICIO ');
+    console.debug('El valor de tieneFarmacia es =>', tieneFarmacia);
+    console.debug('El valor de tieneOptica es =>', tieneOptica);
+
+    return this.http.get<any>(`${this.urlMetodo1}${tieneFarmacia}${this.urlMetodo2}${tieneOptica}`);
+
+  }
+
+  extraerAsociacionesMetodo(respuestaApi: any): any[] {
+    let asociacionesMetodo: Asociacion[] =[];
+    respuestaApi._embedded.asociaciones.forEach((p: any) => {
+      asociacionesMetodo.push(this.mapearAsociacion(p));
+    });
+
+    return asociacionesMetodo;
+  }
 }

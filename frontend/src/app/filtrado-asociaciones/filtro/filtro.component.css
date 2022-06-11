@@ -5,9 +5,64 @@
   --blanco: #F5F5F5;
 }
 
-p {
-  margin-top: 10em;
-  margin-bottom: -2em;
+main{
+  margin-top: 7em;
+  margin-bottom: -1em;
+  color: var(--amarillo);
+  font-size: 1.5em;
+  color: var(--amarillo);
+}
+
+h1 {
   color: var(--amarillo);
   text-align: center;
+  margin-top: 0em;
+  margin-bottom: 1em;
+}
+
+.col-sm-3{
+  text-align: center;
+}
+
+.col-sm-4{
+  text-align: center;
+}
+
+.creacion{
+  margin-top:0em;
+  margin-bottom: 2em;
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
+
+.creacion:hover {
+  color: var(--blanco);
+  background-color: var(--verdeClaro);
+  border-color: var(--blanco);
+}
+
+h5{
+  color: var(--verdePrincipal);
+}
+
+.btn{
+  color: var(--verdePrincipal);
+  background-color: var(--amarillo);
+  border-color: var(--amarillo);
+}
+
+form {
+  text-align: center;
+}
+
+#botoncito {
+  text-align: center;
+  margin-top: -2em;
+  margin-bottom: 2em;
+}
+
+#noExisten, .col-sm-12 {
+  text-align: center;
+  margin-top: 2em;
 }

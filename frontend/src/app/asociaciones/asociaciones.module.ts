@@ -31,6 +31,9 @@ import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociado
     FormsModule,
     NegociosAsociadosModule
   ],
-  providers: [AuxiliarService]
+  providers: [AuxiliarService],
+  exports:[
+    AsociacionItemComponent
+  ]
 })
 export class AsociacionesModule { }

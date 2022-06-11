@@ -1,36 +1,19 @@
 <!-- PENDIENTE TERMINAR -->
-<section id="datosFarmacia">
+<section id="datosFarmacia" *ngIf="[farmacia]">
   - Nombre de la farmacia: {{farmacia.nombre}} <br>
   - NIF de la farmacia: {{farmacia.nif}} <br>
-  - Asociación de la farmacia: {{farmacia.asociacion}} <br>
-  - URL de la farmacia: {{farmacia.urlNegocio}} <br>
+  <!-- - Asociación de la farmacia: {{farmacia.asociacion}} <br> -->
+  <!-- - URL de la farmacia: {{farmacia.urlNegocio}} <br> -->
   - Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}} <br>
-  {{asociaciones}} <br>
+  - ID de la farmacia: {{farmacia.getIdNegocio(farmacia.urlNegocio)}}
+  <!-- {{asociaciones}} <br>
   <button (click)="obtenerAsociacion()">
     Obtener asociación
   </button>
-  <!-- <div>{{asociaciones}}</div> -->
   <div *ngFor="let asociacion of asociaciones">
-    <!-- <div *ngIf="asociacion.urlAsociacion == asociacionString()">
-    </div> -->
-    <!-- {{asociacionString()}} -->
     <p>{{asociacion.nombre}}</p>
-    <!-- <p (load)="obtenerAsociacion(this.farmacia.asociacion)">
-    </p>-->
-
-
-
-    <!-- <div *ngIf="obtenerAsociacion() == asociacion.urlAsociacion">
-      {{asociacion.nombre}}
-    </div> -->
-
-
-
     <button (click)="obtenerAsociacion()">
       hola
     </button>
-    <!-- <div *ngIf="this.getAsociacionUrl(farmacia.asociacion) == asociacion.urlAsociacion">
-      {{this.getAsociacionUrl(farmacia.asociacion)}}
-    </div> -->
-  </div>
+  </div> -->
 </section>
