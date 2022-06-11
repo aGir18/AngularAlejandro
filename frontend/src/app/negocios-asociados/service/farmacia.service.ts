@@ -16,8 +16,10 @@ export class FarmaciaService {
 
   constructor(
     private http: HttpClient,
-    private auxService: AuxiliarService) { }
+    private auxService: AuxiliarService
+    ) { }
 
+// GET
   getFarmacias(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint1);
   }
@@ -38,24 +40,25 @@ export class FarmaciaService {
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       farmacias.push(this.mapearFarmacia(p));
     });
+
     return farmacias;
   }
 
-  postFarmacia(farmacia: FarmaciaImpl){
-    this.http.post(this.urlEndPoint1, farmacia).subscribe();
+// POST
+  postFarmacia(farmacia: FarmaciaImpl): Observable<any>{
+    return this.http.post(this.urlEndPoint1, farmacia);
   }
 
-  deleteFarmacia(direccionEliminar: string){
-    this.http.delete(direccionEliminar).subscribe();
+// DELETE
+  deleteFarmacia(direccionEliminar: string): Observable<any>{
+    return this.http.delete(direccionEliminar);
   }
 
-  patchFarmacia(farmacia: FarmaciaImpl) {
-    return this.http.patch<any>(`${this.urlEndPoint1}/${farmacia.getIdNegocio(farmacia.urlNegocio)}`, farmacia);
-  }
-
-  putFarmacia(farmacia: FarmaciaImpl){
-    return this.http.put<any>(`${this.urlEndPoint1}/${farmacia.getIdNegocio(farmacia.urlNegocio)}`, farmacia).subscribe();
-  }
+// PATCH
+  update(idFarmacia: string, farmacia: FarmaciaImpl): Observable<any> {
+    return this.http
+      .patch<any>(`${this.urlEndPoint1}/${idFarmacia}`, farmacia);
+    }
 
   getFarmaciasPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint1, pagina);

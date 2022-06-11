@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faCapsules, faEraser, faEye, faPencil, faPenNib, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faCapsules, faEraser, faEye, faPencil, faPenNib, faPenToSquare, faR, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
@@ -51,19 +51,13 @@ export class FarmaciasItemComponent implements OnInit {
   // DELETE
   borrarFarmacia(direccion: string): void {
     if (confirm('¿Quiere borrar esta farmacia?')){
-      this.farmaciaService.deleteFarmacia(direccion);
+      this.farmaciaService.deleteFarmacia(direccion).subscribe();
     }
   }
 
   // PATCH
   modificarFarmacia(farmacia: FarmaciaImpl): void {
-    this.farmaciaService.patchFarmacia(farmacia).subscribe();
-  }
-
-  // PUT
-  cambiarFarmacia(farmacia: FarmaciaImpl): void {
-    this.farmaciaService.putFarmacia(farmacia);
-    //.subscribe()
+    this.farmaciaService.update(farmacia.getIdNegocio(farmacia.urlNegocio), farmacia).subscribe();
   }
 
   // Para pintar en el MODAL

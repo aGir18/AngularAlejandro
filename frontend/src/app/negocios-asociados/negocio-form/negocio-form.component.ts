@@ -60,7 +60,7 @@ getTodasAsociaciones(): void {
 
   crearFarmacia(): void {
     console.warn('paso por metodo del POST Farmacia');
-    this.farmaciaService.postFarmacia(this.farmacia);
+    this.farmaciaService.postFarmacia(this.farmacia).subscribe();
   }
 
   crearOptica(){

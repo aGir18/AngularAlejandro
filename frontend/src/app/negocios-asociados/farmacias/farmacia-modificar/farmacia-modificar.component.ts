@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { faCirclePlus, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus, faPencil, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { AuxiliarService } from 'src/app/service/auxiliar.service';
@@ -52,15 +52,11 @@ export class FarmaciaModificarComponent implements OnInit {
   }
 
   modificarFarmacia(farmacia: FarmaciaImpl): void {
-    this.farmaciaService.patchFarmacia(farmacia).subscribe();
-  }
-
-  cambiarFarmacia(farmacia: FarmaciaImpl): void {
-    this.farmaciaService.putFarmacia(farmacia);
-    //.subscribe()
+    this.farmaciaService.update(farmacia.getIdNegocio(farmacia.urlNegocio), farmacia).subscribe();
   }
 
   plus=faCirclePlus;
   cambio=faPenNib;
+  pencil=faPencil;
 
 }
