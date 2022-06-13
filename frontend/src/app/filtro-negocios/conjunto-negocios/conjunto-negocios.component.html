@@ -16,6 +16,7 @@
         </select>
         <div class="form-row justify-content-between pt-5" id="botoncito">
           <button class="btn btn-primary" (click)="hacerLlamada(idAsociacionSeleccionada)"
+          (click)="hacerLlamadaFarmacia(idAsociacionSeleccionada)" (click)="hacerLlamadaOptica(idAsociacionSeleccionada)"
           id="botoncito">Listar todos negocios</button>
           <!-- (click)="hacerLlamadaFarmacia(idAsociacionSeleccionada)" (click)="hacerLlamadaOptica(idAsociacionSeleccionada)" -->
         </div>
@@ -30,25 +31,28 @@
     <div class="col-sm-2"></div>
   </div>
   <!-- Lista los NEGOCIOS de la asociación (SI EXISTEN) -->
-  <div *ngIf="negociosAsociados.length > 0; else noNegocios">
+  <div *ngIf="negociosAsociados.length > 0">
+    <!-- ; else noNegocios -->
     <div *ngFor="let negocio of negociosAsociados">
       <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item>
     </div>
   </div>
   <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->
-  <div *ngIf="farmaciasAsociadas.length > 0; else noFarmacias">
+  <div *ngIf="farmaciasAsociadas.length > 0">
+    <!-- ; else noFarmacias -->
     <div *ngFor="let farmacia of farmaciasAsociadas">
       <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item>
     </div>
   </div>
   <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
-  <div *ngIf="opticasAsociadas.length > 0; else noOpticas">
+  <div *ngIf="opticasAsociadas.length > 0">
+    <!-- ; else noOpticas -->
     <div *ngFor="let optica of opticasAsociadas">
       <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
     </div>
   </div>
 
-  <ng-template #noNegocios id="noExisten">
+  <!-- <ng-template #noNegocios id="noExisten">
     <div class="row">
       <div class="col-sm-12">
         NO EXISTEN NEGOCIOS EN ESA ASOCIACIÓN
@@ -68,5 +72,6 @@
         NO EXISTEN OPTICAS EN ESA ASOCIACIÓN
       </div>
     </div>
-  </ng-template>
+  </ng-template> -->
+
 </main>

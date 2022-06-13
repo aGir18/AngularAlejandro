@@ -70,25 +70,11 @@ export class ConjuntoNegociosComponent implements OnInit {
   hacerLlamada(idPasado: string){
     this.asociacionService.getNegociosAsociacionParticular(idPasado).subscribe((response) => {
       this.negociosAsociados = this.asociacionService.extraerNegociosAsociacionParticularNegocios(response);
-      this.farmaciasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularFarmacias(response);
-      this.opticasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularOpticas(response);
     });
     console.info('paso por el GET negociosAsociacion - COMPONENTE');
     console.info('El valor del idPasado es ', idPasado);
   }
 
-  // Voy a intentar que si NO existen negocios continúe, si NO existen farmacias continúe y si NO existen ópticas continúe
-  hacerLlamadaPRUEBA(idPasado: string){
-    this.asociacionService.getNegociosAsociacionParticular(idPasado).subscribe((response) => {
-      this.negociosAsociados = this.asociacionService.extraerNegociosAsociacionParticularNegocios(response);
-      this.farmaciasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularFarmacias(response);
-      this.opticasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularOpticas(response);
-    });
-    console.info('paso por el GET negociosAsociacion - COMPONENTE');
-    console.info('El valor del idPasado es ', idPasado);
-  }
-
-  // Prueba para ver que funcionaban farmacias
   hacerLlamadaFarmacia(idPasado: string){
     this.asociacionService.getNegociosAsociacionParticular(idPasado).subscribe((response) => {
       this.farmaciasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularFarmacias(response);
@@ -97,7 +83,6 @@ export class ConjuntoNegociosComponent implements OnInit {
     console.info('El valor del idPasado es ', idPasado);
   }
 
-  // Prueba para ver que funcionaban ópticas
   hacerLlamadaOptica(idPasado: string){
     this.asociacionService.getNegociosAsociacionParticular(idPasado).subscribe((response) => {
       this.opticasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularOpticas(response);
