@@ -1,0 +1,79 @@
+<main>
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h1>Negocios filtrados por asociación</h1>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+      <div class="form-row py-2">
+        <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+        <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" placeholder="Seleccione asociación" [(ngModel)]="idAsociacionSeleccionada">
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.getIdAsociacion(asociacion.urlAsociacion)}} (change)="setIdAsociacionSeleccionada(asociacion.getIdAsociacion(asociacion.urlAsociacion))">{{asociacion.nombre}}</option>
+        </select>
+        <div class="form-row justify-content-between pt-5" id="botoncito">
+          <button class="btn btn-primary" (click)="hacerLlamada(idAsociacionSeleccionada)"
+          (click)="hacerLlamadaFarmacia(idAsociacionSeleccionada)" (click)="hacerLlamadaOptica(idAsociacionSeleccionada)"
+          id="botoncito">
+          <fa-icon [icon]="lista"></fa-icon>&nbsp;&nbsp;
+          Listar todos negocios</button>
+          <!-- (click)="hacerLlamadaFarmacia(idAsociacionSeleccionada)" (click)="hacerLlamadaOptica(idAsociacionSeleccionada)" -->
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">NOMBRE</div>
+    <div class="col-sm-4">OPERACIONES</div>
+    <div class="col-sm-2"></div>
+  </div>
+  <!-- Lista los NEGOCIOS de la asociación (SI EXISTEN) -->
+  <div *ngIf="negociosAsociados.length > 0">
+    <!-- ; else noNegocios -->
+    <div *ngFor="let negocio of negociosAsociados">
+      <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item>
+    </div>
+  </div>
+  <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->
+  <div *ngIf="farmaciasAsociadas.length > 0">
+    <!-- ; else noFarmacias -->
+    <div *ngFor="let farmacia of farmaciasAsociadas">
+      <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item>
+    </div>
+  </div>
+  <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
+  <div *ngIf="opticasAsociadas.length > 0">
+    <!-- ; else noOpticas -->
+    <div *ngFor="let optica of opticasAsociadas">
+      <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
+    </div>
+  </div>
+
+  <!-- <ng-template #noNegocios id="noExisten">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN NEGOCIOS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #noFarmacias id="noExisten2">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN FARMACIAS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #noOpticas id="noExisten3">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN OPTICAS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template> -->
+
+</main>
