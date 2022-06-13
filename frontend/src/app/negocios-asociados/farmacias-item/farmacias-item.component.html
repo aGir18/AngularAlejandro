@@ -9,7 +9,7 @@
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
       <a class="" data-bs-toggle="modal" data-bs-target="#modalPutFarmacia" (click)="farmaciaSeleccionada.emit(farmacia)">
-        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
+        &nbsp;&nbsp;<fa-icon [icon]="pencil" pe-none></fa-icon>&nbsp;
       </a>
       <a role="button" (click)="borrarFarmacia(this.farmacia.urlNegocio)" routerLink="/negocios-asociados/farmacias">
         &nbsp;&nbsp;

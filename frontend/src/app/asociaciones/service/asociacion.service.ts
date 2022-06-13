@@ -169,7 +169,7 @@ export class AsociacionService {
 
   extraerNegociosAsociacionParticularFarmacias(respuestaApi: any): any[] {
     let farmaciasParticulares: Farmacia[] = [];
-
+// poner aquí la condición de si existe como en el resto de HTML que me dijo Prada
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       farmaciasParticulares.push(this.farmaciaService.mapearFarmacia(p));
     });

@@ -12,7 +12,11 @@
       <div class="form-row py-2">
         <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
         <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" placeholder="Seleccione asociación" [(ngModel)]="idAsociacionSeleccionada">
-          <option *ngFor="let asociacion of asociaciones" value={{asociacion.getIdAsociacion(asociacion.urlAsociacion)}} (change)="setIdAsociacionSeleccionada(asociacion.getIdAsociacion(asociacion.urlAsociacion))">{{asociacion.nombre}}</option>
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.getIdAsociacion(asociacion.urlAsociacion)}}
+          (change)="hacerLlamada(idAsociacionSeleccionada)" (change)="hacerLlamadaFarmacia(idAsociacionSeleccionada)"
+          (change)="hacerLlamadaOptica(idAsociacionSeleccionada)"
+          >{{asociacion.nombre}}</option>
+          <!-- (change)="setIdAsociacionSeleccionada(asociacion.getIdAsociacion(asociacion.urlAsociacion))" -->
         </select>
         <div class="form-row justify-content-between pt-5" id="botoncito">
           <button class="btn btn-primary" (click)="hacerLlamada(idAsociacionSeleccionada)"
@@ -53,6 +57,93 @@
       <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
     </div>
   </div>
+
+  <!-- meter evento de cambio, la logica del botón en (change) meto que lo liste -->
+  <!-- Modal FARMACIAS -->
+  <div class="modal fade" id="modalFarmacia" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosFarmacia">Datos Completos Farmacia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PUT FARMACIA -->
+  <div class="modal fade" id="modalPutFarmacia" tabindex="-1" role="dialog" aria-labelledby="formularioFarmacia" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar farmacia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-farmacia-modificar [farmacia]="farmaciaVerDatos"></app-farmacia-modificar>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal OPTICAS -->
+  <div class="modal fade" id="modalOptica" tabindex="-1" role="dialog" aria-labelledby="datosOptica" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosOptica">Datos Completos Óptica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-optica [optica]="opticaVerDatos"></app-optica>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PATCH OPTICA-->
+  <div class="modal fade" id="modalPatch" tabindex="-1" role="dialog" aria-labelledby="formularioPatch" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Modificar óptica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-patch-optica [optica]="opticaVerDatos"></app-patch-optica>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal NEGOCIOS -->
+    <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
+          </div>
+          <div class="modal-body">
+            <app-negocio [negocio]="negocioVerDatos"></app-negocio>
+            <!-- <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
+            <!-- <button type="button" class="btn btn-primary">¿MODIFICAR?</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   <!-- <ng-template #noNegocios id="noExisten">
     <div class="row">
