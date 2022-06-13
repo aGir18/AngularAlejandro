@@ -17,9 +17,9 @@ import { AsociacionImpl } from '../models/asociacion-impl';
 })
 export class AsociacionService {
 
-  private negocioService!: NegocioService;
-  private farmaciaService!: FarmaciaService;
-  private opticaService!: OpticaService;
+  // private negocioService!: NegocioService;
+  // private farmaciaService!: FarmaciaService;
+  // private opticaService!: OpticaService;
   private host: string = environment.host;
   private urlEndPoint3: string = `${this.host}asociaciones`;
   private valorPoseeFarmacia!: boolean;
@@ -31,6 +31,9 @@ export class AsociacionService {
 
   constructor(
     private http: HttpClient,
+    private farmaciaService: FarmaciaService,
+    private opticaService: OpticaService,
+    private negocioService: NegocioService,
     private auxService: AuxiliarService) {}
 
   getAsociaciones(): Observable<any> {
@@ -121,4 +124,67 @@ export class AsociacionService {
 
     return asociacionesMetodo;
   }
+
+  getNegociosAsociacionParticular(idAsociacion: string): Observable<any> {
+    console.info('paso por el método getNegociosAsociacionParticular - SERVICIO ');
+    console.debug('El valor de idAsociacion es =>', idAsociacion);
+
+    return this.http.get<any>(`${this.urlEndPoint3}/${idAsociacion}/negociosAsociacion`);
+  }
+
+  extraerNegociosAsociacionParticular(respuestaApi: any): any[] {
+    let negociosParticulares: Negocio[] = [];
+    let farmaciasParticulares: Farmacia[] = [];
+    let opticasParticulares: Optica[] = [];
+    let respuestaNegocios: any[] = [];
+
+    respuestaApi._embedded.farmacias.forEach((p: any) => {
+      farmaciasParticulares.push(this.farmaciaService.mapearFarmacia(p));
+    });
+    respuestaNegocios.push(farmaciasParticulares);
+
+    respuestaApi._embedded.opticas.forEach((p: any) => {
+      opticasParticulares.push(this.opticaService.mapearOptica(p));
+    });
+    respuestaNegocios.push(opticasParticulares);
+
+    respuestaApi._embedded.negocios.forEach((p: any) => {
+      negociosParticulares.push(this.negocioService.mapearNegocio(p));
+    });
+    respuestaNegocios.push(negociosParticulares);
+
+
+    return respuestaNegocios;
+  }
+
+  extraerNegociosAsociacionParticularNegocios(respuestaApi: any): any[] {
+    let negociosParticulares: Negocio[] = [];
+
+    respuestaApi._embedded.negocios.forEach((p: any) => {
+      negociosParticulares.push(this.negocioService.mapearNegocio(p));
+    });
+
+    return negociosParticulares;
+  }
+
+  extraerNegociosAsociacionParticularFarmacias(respuestaApi: any): any[] {
+    let farmaciasParticulares: Farmacia[] = [];
+
+    respuestaApi._embedded.farmacias.forEach((p: any) => {
+      farmaciasParticulares.push(this.farmaciaService.mapearFarmacia(p));
+    });
+
+    return farmaciasParticulares;
+  }
+
+  extraerNegociosAsociacionParticularOpticas(respuestaApi: any): any[] {
+    let opticasParticulares: Optica[] = [];
+
+    respuestaApi._embedded.opticas.forEach((p: any) => {
+      opticasParticulares.push(this.opticaService.mapearOptica(p));
+    });
+
+    return opticasParticulares;
+  }
+
 }
