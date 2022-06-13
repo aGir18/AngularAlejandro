@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faList, faListOl } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
 import { Farmacia } from 'src/app/negocios-asociados/models/farmacia';
@@ -90,5 +91,8 @@ export class ConjuntoNegociosComponent implements OnInit {
     console.info('paso por el GET negociosAsociacion - COMPONENTE');
     console.info('El valor del idPasado es ', idPasado);
   }
+
+  lista2=faListOl;
+  lista=faList;
 
 }

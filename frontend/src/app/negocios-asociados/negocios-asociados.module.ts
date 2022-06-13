@@ -52,9 +52,13 @@ import { PatchOpticaComponent } from './opticas/patch-optica/patch-optica.compon
   exports:[
     NegociosItemComponent,
     FarmaciasItemComponent,
-    OpticasItemComponent,
-    FarmaciaComponent,
     FarmaciasComponent,
+    FarmaciaComponent,
+    FarmaciaModificarComponent,
+    OpticasItemComponent,
+    OpticasComponent,
+    OpticaComponent,
+    PatchOpticaComponent,
     NegocioComponent
   ]
 })

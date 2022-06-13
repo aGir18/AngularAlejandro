@@ -5,6 +5,7 @@ import { FiltroNegociosRoutingModule } from './filtro-negocios-routing.module';
 import { ConjuntoNegociosComponent } from './conjunto-negocios/conjunto-negocios.component';
 import { FormsModule } from '@angular/forms';
 import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociados.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociado
     CommonModule,
     FiltroNegociosRoutingModule,
     FormsModule,
-    NegociosAsociadosModule
+    NegociosAsociadosModule,
+    FontAwesomeModule
   ]
 })
 export class FiltroNegociosModule { }
