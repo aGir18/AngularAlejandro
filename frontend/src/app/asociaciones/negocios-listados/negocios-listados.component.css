@@ -8,3 +8,11 @@
 p {
   color: var(--verdePrincipal);
 }
+
+pre {
+  color: var(--verdePrincipal);
+}
+
+#negociosLista{
+  color: var(--verdePrincipal);
+}

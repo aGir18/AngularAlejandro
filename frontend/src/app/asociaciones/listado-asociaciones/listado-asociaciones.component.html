@@ -34,12 +34,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Listado de negocios</h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Atributos de la asociación</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <!-- <div *ngFor="let asociacion of asociaciones"> -->
-            <app-negocios-listados [asociacion]="asociacionVerDatos"></app-negocios-listados>
+            <!-- <app-asociacion-item [asociacion]="asociacionVerDatos" (asociacionSeleccionada)="this.asociacionVerDatos"></app-asociacion-item> -->
+            <app-negocios-listados [asociacion]="asociacionVerDatos" (asociacionSeleccionada)="this.asociacionVerDatos"></app-negocios-listados>
           <!-- </div> -->
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>

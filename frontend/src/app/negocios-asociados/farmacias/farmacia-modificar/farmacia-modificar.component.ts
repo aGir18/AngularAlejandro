@@ -17,6 +17,7 @@ export class FarmaciaModificarComponent implements OnInit {
   asociaciones: Asociacion[] = [];
   todasAsociaciones: Asociacion[] = [];
   numPaginas: number = 0;
+  // @Input() farmacia?: FarmaciaImpl;
   @Input() farmacia!: FarmaciaImpl;
   @Input() negocio!: NegocioImpl;
 

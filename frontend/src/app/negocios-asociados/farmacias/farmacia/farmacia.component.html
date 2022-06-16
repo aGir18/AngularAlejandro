@@ -1,11 +1,11 @@
 <!-- PENDIENTE TERMINAR -->
-<section id="datosFarmacia" *ngIf="[farmacia]">
-  - Nombre de la farmacia: {{farmacia.nombre}} <br>
-  - NIF de la farmacia: {{farmacia.nif}} <br>
+<section id="datosFarmacia" *ngIf=[farmacia]>
+  - Nombre de la farmacia: {{farmacia?.nombre}} <br>
+  - NIF de la farmacia: {{farmacia?.nif}} <br>
   <!-- - Asociación de la farmacia: {{farmacia.asociacion}} <br> -->
   <!-- - URL de la farmacia: {{farmacia.urlNegocio}} <br> -->
-  - Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}} <br>
-  - ID de la farmacia: {{farmacia.getIdNegocio(farmacia.urlNegocio)}}
+  - Número de puntos SIGRE: {{farmacia?.numeroPuntosSigre}} <br>
+  - ID de la farmacia: {{farmacia?.getIdNegocio(farmacia.urlNegocio)}}
   <!-- {{asociaciones}} <br>
   <button (click)="obtenerAsociacion()">
     Obtener asociación

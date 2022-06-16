@@ -1,34 +1,38 @@
-<section id="datosFarmacia" *ngIf="[farmacia]">
+<section id="datosFarmacia" *ngIf=[farmacia]>
   <div class="form-row py-2">
     <label>Nombre de la farmacia<sup class="text-danger">*</sup></label>
-    <input type="text" class="form-control" [(ngModel)]="farmacia.nombre" placeholder="Por ejemplo Farmacia Moncloa" name="neg"
+    <input type="text" class="form-control" *ngIf="[farmacia]" [(ngModel)]="farmacia.nombre" placeholder="Por ejemplo Farmacia Moncloa" name="neg"
     required minlength="3" maxlength="25"/>
+    <!-- *ngIf=[farmacia] -->
     <div class="invalid-feedback">Por favor, rellene este campo.</div>
     <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
   </div>
   <div class="form-row py-2">
     <label>NIF de la farmacia<sup class="text-danger">*</sup></label>
-    <input type="text" class="form-control" [(ngModel)]="farmacia.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+    <input type="text" class="form-control" *ngIf=[farmacia] [(ngModel)]="farmacia.nif" placeholder="Por ejemplo 58798754K" name="neg2"
       required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
         'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
         'is-valid': !neg2.invalid
       }" />
+      <!-- *ngIf=[farmacia] -->
     <div class="invalid-feedback">Por favor, rellene este campo.</div>
     <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
   </div>
   <div class="form-row py-2">
     <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
-    <select name="selectorFormulario" id="selectorAsociacion4" class="form-select" aria-label="Default select example" [(ngModel)]="farmacia.asociacion" placeholder="Seleccione asociación">
+    <select *ngIf=[farmacia] name="selectorFormulario" id="selectorAsociacion4" class="form-select" aria-label="Default select example" [(ngModel)]="farmacia.asociacion" placeholder="Seleccione asociación">
+          <!-- *ngIf=[farmacia] -->
       <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
     </select>
   </div>
   <div class="form-row py-2">
     <label>Introduzca el número de puntos SIGRE de la farmacia:<sup class="text-danger">*</sup></label>
-    <input type="number" class="form-control" [(ngModel)]="farmacia.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg20"
+    <input type="number" class="form-control" *ngIf=[farmacia] [(ngModel)]="farmacia.numeroPuntosSigre" placeholder="Por ejemplo 3" name="neg20"
       required min="0" max="5" #neg20="ngModel" [ngClass]="{
         'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
         'is-valid': !neg20.invalid
       }" />
+      <!-- *ngIf=[farmacia] -->
     <div class="invalid-feedback">Por favor, rellene este campo.</div>
     <div class="valid-feedback">¡Perfecto! ¡Ese es un número válido!</div>
   </div> <br>

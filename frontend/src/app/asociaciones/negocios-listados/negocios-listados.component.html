@@ -1,10 +1,52 @@
-<section id="negociosLista">
-  <pre>
-    {{asociacion}}
-  </pre>
-  <p>
-    Hola qué tal
-  </p>
+<section id="negociosLista" *ngIf="asociacion.nombre != null">
+  <!-- <pre> -->
+    {{asociacion.nombre}} <br>
+    {{asociacion.negocios}} <br>
+
+    <div *ngIf="negociosAsociados.length > 0 else noNegocios">
+      <!-- ; else noNegocios -->
+      <div *ngFor="let negocio of negociosAsociados">
+        <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item>
+      </div>
+    </div>
+    <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->
+    <div *ngIf="farmaciasAsociadas.length > 0; else noFarmacias">
+      <!-- ; else noFarmacias -->
+      <div *ngFor="let farmacia of farmaciasAsociadas">
+        <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item>
+      </div>
+    </div>
+    <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
+    <div *ngIf="opticasAsociadas.length > 0; else noOpticas">
+      <!-- ; else noOpticas -->
+      <div *ngFor="let optica of opticasAsociadas">
+        <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
+      </div>
+    </div>
+
+      <ng-template #noNegocios id="noExisten">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN NEGOCIOS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #noFarmacias id="noExisten2">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN FARMACIAS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #noOpticas id="noExisten3">
+    <div class="row">
+      <div class="col-sm-12">
+        NO EXISTEN OPTICAS EN ESA ASOCIACIÓN
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- </pre> -->
   <!-- <button (click)="listarNegociosSegunda(this.asociacion)">
     obtener negocios
   </button> -->
