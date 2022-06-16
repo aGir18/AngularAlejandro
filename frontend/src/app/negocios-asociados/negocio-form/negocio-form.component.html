@@ -87,15 +87,6 @@
           <select name="selectorFormulario" id="selectorAsociacion" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion">
               <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
           </select>
-          <!--
-            <input type="text" class="form-control" [(ngModel)]="negocio.asociacion" placeholder="Dirección de la asociación" name="aso"
-              required minlength="10" maxlength="60" #aso="ngModel" [ngClass]="{
-                'is-invalid': aso.invalid && (aso.dirty || aso.touched),
-                'is-valid': !aso.invalid
-              }" />
-            <div class="invalid-feedback">Por favor, rellene este campo.</div>
-            <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
-          -->
         </div>
       </section>
 
@@ -147,7 +138,7 @@
 
     <section *ngIf="negocio.tipoNegocio == '0'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearNegocio()" routerLink='/negocios-asociados/negocios'
+        <button class="btn btn-primary" role="button" (click)="crearNegocio()" routerLink='/'
           [disabled]="!negocioForm.form.valid">
           Crear Negocio
         </button>
@@ -156,7 +147,7 @@
 
     <section *ngIf="negocio.tipoNegocio == 'farmacia'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearFarmacia()" routerLink='/negocios-asociados/farmacias'
+        <button class="btn btn-primary" role="button" (click)="crearFarmacia()" routerLink='/'
           [disabled]="!negocioForm.form.valid">
           Crear Farmacia
         </button>
@@ -165,7 +156,7 @@
 
     <section *ngIf="negocio.tipoNegocio == 'optica'">
       <div class="form-row justify-content-between pt-5">
-        <button class="btn btn-primary" role="button" (click)="crearOptica()" routerLink='/negocios-asociados/opticas'
+        <button class="btn btn-primary" role="button" (click)="crearOptica()" routerLink='/'
           [disabled]="!negocioForm.form.valid">
           Crear Optica
         </button>

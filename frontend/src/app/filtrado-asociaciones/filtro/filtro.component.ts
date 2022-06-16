@@ -23,7 +23,6 @@ export class FiltroComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.hacerMetodoPersonalizado();
   }
 
   setPoseeFarmacia(tieneFarmacia: boolean){
@@ -47,12 +46,6 @@ export class FiltroComponent implements OnInit {
       console.debug('El valor de poseeOptica es =>', poseeOpticaPar);
     this.ngOnInit();
   }
-
-  // getMetodoPersonalizado
-
-  // getNegocios(){
-  //   return this.asociacionService.getNegociosAsociadosTercera(this.asociacion.urlAsociacion);
-  // }
 
   pencil=faPencil;
   eye=faEye;
