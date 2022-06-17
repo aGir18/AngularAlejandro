@@ -29,6 +29,7 @@
       </div>
     </div>
   </ng-template>
+
   <!-- MODAL LISTADO -->
   <div class="modal fade" id="modalListado" tabindex="-1" role="dialog" aria-labelledby="negociosLista" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -49,4 +50,19 @@
       </div>
     </div>
   </div>
+
+  <!-- MODAL PATCH -->
+<div class="modal fade" id="modalPatchAsociacion" tabindex="-1" role="dialog" aria-labelledby="formularioAsociacion" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel3">Modificar asociación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-asociacion-modificar [asociacion]="asociacionVerDatos"></app-asociacion-modificar>
+      </div>
+    </div>
+  </div>
+</div>
 </main>

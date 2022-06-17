@@ -13,6 +13,7 @@ import { AsociacionModalComponent } from './listado-asociaciones/asociacion-moda
 import { NegociosListadosComponent } from './negocios-listados/negocios-listados.component';
 import { NegociosItemComponent } from '../negocios-asociados/negocios-item/negocios-item.component';
 import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociados.module';
+import { AsociacionModificarComponent } from './asociacion-modificar/asociacion-modificar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NegociosAsociadosModule } from '../negocios-asociados/negocios-asociado
     AsociacionItemComponent,
     AsociacionFormComponent,
     AsociacionModalComponent,
-    NegociosListadosComponent
+    NegociosListadosComponent,
+    AsociacionModificarComponent
   ],
   imports: [
     CommonModule,

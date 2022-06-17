@@ -64,6 +64,10 @@ export class AsociacionService {
     this.http.post(this.urlEndPoint3, asociacion).subscribe();
   }
 
+  patchAsociacion(idAsociacion: string, asociacion: AsociacionImpl): Observable<any>{
+    return this.http.patch<any>(`${this.urlEndPoint3}/${idAsociacion}`, asociacion);
+  }
+
   getAsociacionesPagina(pagina: number): Observable<any> {
     return this.auxService.getItemsPorPagina(this.urlEndPoint3, pagina);
   }

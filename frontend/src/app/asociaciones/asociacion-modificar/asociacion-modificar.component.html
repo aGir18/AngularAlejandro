@@ -1,0 +1,13 @@
+<section id="datosAsociacion" *ngIf="[asociacion]">
+  <div class="form-row py-2">
+    <label>Nombre de la asociación<sup class="text-danger">*</sup></label>
+    <input type="text" class="form-control" [(ngModel)]="asociacion.nombre" placeholder="Por ejemplo Asociación Madrid" name="neg"
+    required minlength="3" maxlength="45" #neg="ngModel" [ngClass]="{
+      'is-invalid': neg.invalid && (neg.dirty || neg.touched),
+        'is-valid': !neg.invalid
+    }"/>
+    <div class="invalid-feedback">Por favor, rellene este campo.</div>
+    <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+  </div>
+  <button class="btn btn-success" data-bs-toggle="modal" (click)="modificarAsociacion(this.asociacion)" routerLink="/">Modificar</button>
+</section>
