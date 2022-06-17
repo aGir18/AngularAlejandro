@@ -26,7 +26,6 @@ export class FarmaciaImpl implements Farmacia {
   }
 
   getIdNegocio(url: string): string {
-    // url = url.slice(0, url.length - 1)
     return url.slice(url.lastIndexOf('/') + 1, url.length);
   }
 }

@@ -7,14 +7,46 @@
       <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocio" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
-
       <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalModificar" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="modificar"></fa-icon>&nbsp;
       </a> -->
-
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalPut" (click)="negocioSeleccionado.emit(negocio)">
+      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalPatchNegocios" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
+      </a> -->
+      <a class="" data-bs-toggle="collapse" href="#collapseEjemplo" role="button" aria-expanded="false" aria-controls="collapseEjemplo">
+        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
+      <div class="collapse" id="collapseEjemplo">
+        <div class="card card-body" id="fondillo">
+          <div class="form-row py-2">
+            <label>Nombre del negocio<sup class="text-danger">*</sup></label>
+            <input type="text" class="form-control" [(ngModel)]="negocio.nombre" placeholder="Por ejemplo Negocio Juan" name="neg"
+            required minlength="3" maxlength="25" #neg="ngModel" [ngClass]="{
+              'is-invalid': neg.invalid && (neg.dirty || neg.touched),
+                'is-valid': !neg.invalid
+            }"/>
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+          </div>
+          <div class="form-row py-2">
+            <label>NIF del negocio<sup class="text-danger">*</sup></label>
+            <input type="text" class="form-control" [(ngModel)]="negocio.nif" placeholder="Por ejemplo 58798754K" name="neg2"
+              required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
+                'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
+                'is-valid': !neg2.invalid
+              }" />
+            <div class="invalid-feedback">Por favor, rellene este campo.</div>
+            <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
+          </div>
+          <div class="form-row py-2">
+            <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
+            <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" [(ngModel)]="negocio.asociacion" placeholder="Seleccione asociación">
+              <option *ngFor="let asociacion of asociaciones" value={{asociacion.urlAsociacion}}>{{asociacion.nombre}}</option>
+            </select>
+          </div>
+          <button id="botonUpdate" (click)="actualizarNegocio(this.negocio)" routerLink="/">Actualizar</button>
+        </div>
+      </div>
       <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/negocios-asociados/negocios">
         &nbsp;&nbsp;
         <fa-icon [icon]="trash"></fa-icon>
@@ -22,7 +54,6 @@
       </a>
     </div>
     <div class="col-sm-2"></div>
-
   </div>
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf

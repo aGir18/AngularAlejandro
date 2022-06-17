@@ -42,21 +42,20 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <app-negocio [negocio]="negocioVerDatos"></app-negocio>
-          <!-- <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia> -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
-          <!-- <button type="button" class="btn btn-primary">¿MODIFICAR?</button> -->
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL PUT -->
-  <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="formularioNegocio" aria-hidden="true">
+  <!-- MODAL PATCH -->
+  <div class="modal fade" id="modalPatchNegocios" tabindex="-1" role="dialog" aria-labelledby="formularioNegocio" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -64,6 +63,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <!-- {{negocioVerDatos.nif}} -->
           <!-- <app-negocio-modificar [negocio]="verDatos"></app-negocio-modificar> -->
         </div>
       </div>

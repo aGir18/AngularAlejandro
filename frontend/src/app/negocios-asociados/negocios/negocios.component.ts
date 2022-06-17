@@ -14,8 +14,6 @@ import { NegocioService } from '../service/negocio.service';
 })
 export class NegociosComponent implements OnInit {
 
-  //cambiado
-  //negocios: NegocioImpl[] = [];
   negocios: Negocio[] = [];
   farmacias: Farmacia[] = [];
   todosNegocios: Negocio[] = [];
