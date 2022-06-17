@@ -1,12 +1,15 @@
 <section id="negociosLista" *ngIf="asociacion.nombre != null">
   <!-- <pre> -->
-    {{asociacion.nombre}} <br>
+    - Nombre de la asociación: {{asociacion.nombre}} <br>
+    - ID de la asociación: {{asociacion.getIdAsociacion(asociacion.urlAsociacion)}} <br>
     {{asociacion.negocios}} <br>
 
     <div *ngIf="negociosAsociados.length > 0 else noNegocios">
       <!-- ; else noNegocios -->
+      <!-- ¿negociosAsociados o negocios? -->
       <div *ngFor="let negocio of negociosAsociados">
-        <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item>
+        {{negocio.nombre}}
+        <!-- <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item> -->
       </div>
     </div>
     <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->

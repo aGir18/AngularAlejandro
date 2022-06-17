@@ -86,6 +86,10 @@ export class AsociacionService {
       return this.http.get(`${asociacionListar}/negociosAsociacion`).subscribe();
     }
 
+    getNegociosAsociadosCuarta(asociacionListar: string): Observable<any>{
+      return this.http.get(`${asociacionListar}/negociosAsociacion`);
+    }
+
   // Para el listado de negocios, poner los negocios de UNA asociación
 
   obtenerNegociosAsociacion(respuestaApi: any): any[] {
@@ -93,9 +97,11 @@ export class AsociacionService {
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negocios.push(this.negocioService.mapearNegocio(p));
     });
+    console.info('paso a farmacias');
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       negocios.push(this.farmaciaService.mapearFarmacia(p));
     });
+    console.info('paso a ópticas');
     respuestaApi._embedded.opticas.forEach((p: any) => {
       negocios.push(this.opticaService.mapearOptica(p));
     });

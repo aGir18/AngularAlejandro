@@ -26,8 +26,9 @@ export class NegociosListadosComponent implements OnInit {
     private asociacionService: AsociacionService
   ) { }
 
+  // quitar listarNegocios de aquí y asociarlo a pinchar al botón del ojo
   ngOnInit(): void {
-    this.listarNegocios();
+    // this.listarNegocios();
   }
 
   listarNegocios(){

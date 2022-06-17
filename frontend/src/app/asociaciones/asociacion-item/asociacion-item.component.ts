@@ -28,7 +28,7 @@ export class AsociacionItemComponent implements OnInit {
   }
 
   listarNegociosTercera(asociacion: string){
-    return this.asociacionService.getNegociosAsociadosTercera(this.asociacion.urlAsociacion);
+    return this.asociacionService.getNegociosAsociadosCuarta(this.asociacion.urlAsociacion).subscribe();
   }
 
   pencil=faPencil;
