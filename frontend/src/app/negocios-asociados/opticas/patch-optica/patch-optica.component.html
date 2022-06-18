@@ -2,7 +2,10 @@
   <div class="form-row py-2">
     <label>Nombre de la optica<sup class="text-danger">*</sup></label>
     <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
-    required minlength="3" maxlength="25"/>
+    required minlength="3" maxlength="35" #neg="ngModel" [ngClass]="{
+      'is-invalid': neg.invalid && (neg.dirty || neg.touched),
+      'is-valid': !neg.invalid
+    }"/>
     <div class="invalid-feedback">Por favor, rellene este campo.</div>
     <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
   </div>

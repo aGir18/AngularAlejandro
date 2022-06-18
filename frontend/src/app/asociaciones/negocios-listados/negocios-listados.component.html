@@ -1,33 +1,22 @@
 <section id="negociosLista" *ngIf="asociacion.nombre != null">
-  <!-- <pre> -->
     - Nombre de la asociación: {{asociacion.nombre}} <br>
     - ID de la asociación: {{asociacion.getIdAsociacion(asociacion.urlAsociacion)}} <br>
-    {{asociacion.negocios}} <br>
-
-    <div *ngIf="negociosAsociados.length > 0 else noNegocios">
-      <!-- ; else noNegocios -->
-      <!-- ¿negociosAsociados o negocios? -->
+    <!-- <div *ngIf="negociosAsociados.length > 0 else noNegocios">
       <div *ngFor="let negocio of negociosAsociados">
-        {{negocio.nombre}}
-        <!-- <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item> -->
+        <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item>
       </div>
     </div>
-    <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->
     <div *ngIf="farmaciasAsociadas.length > 0; else noFarmacias">
-      <!-- ; else noFarmacias -->
       <div *ngFor="let farmacia of farmaciasAsociadas">
         <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item>
       </div>
     </div>
-    <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
     <div *ngIf="opticasAsociadas.length > 0; else noOpticas">
-      <!-- ; else noOpticas -->
       <div *ngFor="let optica of opticasAsociadas">
         <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
       </div>
-    </div>
-
-      <ng-template #noNegocios id="noExisten">
+    </div> -->
+  <!-- <ng-template #noNegocios id="noExisten">
     <div class="row">
       <div class="col-sm-12">
         NO EXISTEN NEGOCIOS EN ESA ASOCIACIÓN
@@ -47,20 +36,11 @@
         NO EXISTEN OPTICAS EN ESA ASOCIACIÓN
       </div>
     </div>
-  </ng-template>
-
-  <!-- </pre> -->
-  <!-- <button (click)="listarNegociosSegunda(this.asociacion)">
-    obtener negocios
-  </button> -->
-  <button (click)="listarNegociosTercera(this.asociacion.urlAsociacion)">
-    obtener negocios tercera
+  </ng-template> -->
+  <!-- <button (click)="listarNegociosTercera(this.asociacion.urlAsociacion)">
+    GET obtener negocios
   </button>
   <div *ngFor="let negocio of asociacion.negocios">
-    <!-- <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-farmacias-item> -->
     <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="verDatos($event)"></app-negocios-item>
-  </div>
-  <!-- <div *ngFor="let negocio of negocios">
-    {{negocio}}
   </div> -->
 </section>
