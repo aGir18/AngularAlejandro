@@ -50,6 +50,10 @@ form {
   text-align: center;
 }
 
+.col-sm-8{
+  text-align: center;
+}
+
 #noExisten, .col-sm-12 {
   text-align: center;
   margin-top: 2em;

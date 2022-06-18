@@ -21,6 +21,10 @@ import { FarmaciaModificarComponent } from './farmacias/farmacia-modificar/farma
 import { NegocioModificarComponent } from './negocios/negocio-modificar/negocio-modificar.component';
 import { PatchOpticaComponent } from './opticas/patch-optica/patch-optica.component';
 import { FiltradoComponent } from './filtrado/filtrado.component';
+import { FiltradoItemComponent } from './filtrado/filtrado-item/filtrado-item.component';
+import { FiltradoNegocioModalComponent } from './filtrado/filtrado-negocio-modal/filtrado-negocio-modal.component';
+import { FiltradoOpticaItemComponent } from './filtrado/filtrado-optica-item/filtrado-optica-item.component';
+import { FiltradoOpticaComponent } from './filtrado/filtrado-optica/filtrado-optica.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { FiltradoComponent } from './filtrado/filtrado.component';
     FarmaciaModificarComponent,
     NegocioModificarComponent,
     PatchOpticaComponent,
-    FiltradoComponent
+    FiltradoComponent,
+    FiltradoItemComponent,
+    FiltradoNegocioModalComponent,
+    FiltradoOpticaItemComponent,
+    FiltradoOpticaComponent
   ],
   imports: [
     CommonModule,

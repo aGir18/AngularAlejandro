@@ -87,18 +87,19 @@
   <div class="row">
     <div class="col-sm-3"></div>
     <div class="col-sm-3">NOMBRE</div>
-    <div class="col-sm-3">OPERACIONES</div>
+    <div class="col-sm-3">ID</div>
     <div class="col-sm-3"></div>
   </div>
   <div *ngIf="asociaciones.length > 0; else noAsociaciones">
     <div *ngFor="let asociacion of asociaciones">
-      <app-asociacion-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-asociacion-item>
+      <app-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-item>
+      <!-- <app-asociacion-item [asociacion]="asociacion" (asociacionSeleccionada)="this.verDatos($event)"></app-asociacion-item> -->
     </div>
   </div>
   <ng-template #noAsociaciones id="noExisten">
     <div class="row">
       <div class="col-sm-12">
-        NO EXISTEN ASOCIACIONES CON ESE FILTRADO
+        NO EXISTEN ASOCIACIONES CON ESE FILTRO
       </div>
     </div>
   </ng-template>

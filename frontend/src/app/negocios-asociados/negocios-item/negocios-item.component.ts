@@ -67,17 +67,17 @@ export class NegociosItemComponent implements OnInit {
     this.ngOnInit();
   }
 
-  modificarNegocio(negocio: NegocioImpl): void {
-    this.negocioService.patchNegocio3(negocio).subscribe();
-  }
+  // modificarNegocio(negocio: NegocioImpl): void {
+  //   this.negocioService.patchNegocio3(negocio).subscribe();
+  // }
 
-  modificarNegocio3(negocio: NegocioImpl): void {
-    this.negocioService.patchNegocio3(negocio).subscribe();
-  }
+  // modificarNegocio3(negocio: NegocioImpl): void {
+  //   this.negocioService.patchNegocio3(negocio).subscribe();
+  // }
 
-  cambiarNegocio(negocio: NegocioImpl): void {
-    this.negocioService.putNegocio(negocio).subscribe();
-  }
+  // cambiarNegocio(negocio: NegocioImpl): void {
+  //   this.negocioService.putNegocio(negocio).subscribe();
+  // }
 
   actualizarNegocio(negocio: NegocioImpl): void {
     this.negocioService.update(negocio.getIdNegocio(negocio.urlNegocio), negocio).subscribe();

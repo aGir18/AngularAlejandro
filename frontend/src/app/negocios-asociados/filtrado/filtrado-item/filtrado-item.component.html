@@ -4,15 +4,14 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-4">{{negocio.nombre}}, {{negocio.nif}}</div>
     <div class="col-sm-4">
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocio" (click)="negocioSeleccionado.emit(negocio)">
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocioFiltrado2" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
-      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalModificar" (click)="negocioSeleccionado.emit(negocio)">
-        &nbsp;<fa-icon [icon]="modificar"></fa-icon>&nbsp;
-      </a> -->
-      <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalPatchNegocios" (click)="negocioSeleccionado.emit(negocio)">
-        &nbsp;&nbsp;<fa-icon [icon]="cambio"></fa-icon>&nbsp;
-      </a> -->
+      <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/">
+        &nbsp;&nbsp;
+        <fa-icon [icon]="trash"></fa-icon>
+        &nbsp;
+      </a>
       <a class="" data-bs-toggle="collapse" href="#collapseEjemplo" role="button" aria-expanded="false" aria-controls="collapseEjemplo">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
@@ -47,14 +46,42 @@
           <button id="botonUpdate" (click)="actualizarNegocio(this.negocio)" routerLink="/">Actualizar</button>
         </div>
       </div>
-      <a role="button" (click)="borrarNegocio(this.negocio.urlNegocio)" routerLink="/">
-        &nbsp;&nbsp;
-        <fa-icon [icon]="trash"></fa-icon>
-        &nbsp;
-      </a>
     </div>
     <div class="col-sm-2"></div>
   </div>
+    <!-- Modal NEGOCIOS -->
+    <div class="modal fade" id="modalNegocioFiltrado2" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row py-2">
+              <label>Nombre del negocio<sup class="text-danger">*</sup></label>
+              <input readonly type="text" class="form-control" [(ngModel)]="negocio.nombre"
+              (negocioSeleccionado)="this.negocioVerDatos"
+              placeholder="Por ejemplo Negocio Juan" name="neg"
+              required minlength="3" maxlength="25" #neg="ngModel" [ngClass]="{
+                'is-invalid': neg.invalid && (neg.dirty || neg.touched),
+                  'is-valid': !neg.invalid
+              }"/>
+              <div class="invalid-feedback">Por favor, rellene este campo.</div>
+              <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
+            </div>
+
+            <!-- <app-filtrado-negocio-modal [negocio]="negocioVerDatos"></app-filtrado-negocio-modal> -->
+            <!-- <app-negocio [negocio]="negocioVerDatos"></app-negocio> -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 <!-- </section>
 -- ESTO ES NUEVO y el *ngIf
 <ng-template #noExiste>

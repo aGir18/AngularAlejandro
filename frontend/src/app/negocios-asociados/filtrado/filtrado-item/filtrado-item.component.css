@@ -1,0 +1,48 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+section {
+  color: var(--amarillo);
+  font-size: 1em;
+}
+
+.col-sm-3{
+  text-align: center;
+}
+
+.col-sm-4{
+  text-align: center;
+}
+
+a{
+  color: var(--amarillo);
+  text-decoration-line: none;
+}
+
+a:hover{
+  color: var(--blanco);
+}
+
+#seccionModal{
+  color: var(--verdePrincipal);
+}
+
+#collapseEjemplo {
+  color: var(--verdePrincipal);
+  background-color: #062C30;
+  border-color: var(--verdeClaro);
+}
+
+#botonUpdate {
+  background-color: var(--verdeClaro);
+  color: var(--blanco);
+  border-color: var(--verdePrincipal);
+}
+
+#fondillo {
+  background-color: var(--amarillo);
+}

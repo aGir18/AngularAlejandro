@@ -7,11 +7,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AsociacionItemComponent } from '../asociaciones/asociacion-item/asociacion-item.component';
 import { AsociacionesModule } from '../asociaciones/asociaciones.module';
 import { FormsModule } from '@angular/forms';
+import { ItemComponent } from './item/item.component';
 
 
 @NgModule({
   declarations: [
-    FiltroComponent
+    FiltroComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,
