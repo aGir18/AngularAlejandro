@@ -27,10 +27,14 @@ a:hover{
   color: var(--blanco);
 }
 
-#modalDatos{
+#modalDatos, #modalFarmaciaFiltrada2, #modalPatchFarmaciaFiltrada{
   color: var(--verdePrincipal);
 }
 
 #seccionModal{
+  color: var(--verdePrincipal);
+}
+
+h5 {
   color: var(--verdePrincipal);
 }

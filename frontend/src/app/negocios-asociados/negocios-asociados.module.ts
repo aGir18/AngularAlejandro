@@ -32,6 +32,7 @@ import { FarmaciaModalOjoComponent } from './filtrado/farmacia-modal-ojo/farmaci
 import { FarmaciaModalLapizComponent } from './filtrado/farmacia-modal-lapiz/farmacia-modal-lapiz.component';
 import { FiltroOpticaItemComponent } from './filtrado/filtro-optica-item/filtro-optica-item.component';
 import { OpticaModalOjoComponent } from './filtrado/optica-modal-ojo/optica-modal-ojo.component';
+import { OpticaModalLapizComponent } from './filtrado/optica-modal-lapiz/optica-modal-lapiz.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { OpticaModalOjoComponent } from './filtrado/optica-modal-ojo/optica-moda
     FarmaciaModalOjoComponent,
     FarmaciaModalLapizComponent,
     FiltroOpticaItemComponent,
-    OpticaModalOjoComponent
+    OpticaModalOjoComponent,
+    OpticaModalLapizComponent
   ],
   imports: [
     CommonModule,

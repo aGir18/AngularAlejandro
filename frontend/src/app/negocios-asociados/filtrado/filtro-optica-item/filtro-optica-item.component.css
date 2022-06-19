@@ -1,0 +1,36 @@
+:root {
+  --verdePrincipal: #062C30;
+  --verdeClaro:#05595B;
+  --amarillo: #E2D784;
+  --blanco: #F5F5F5;
+}
+
+section {
+  color: var(--amarillo);
+  font-size: 1em;
+}
+
+.col-sm-3{
+  text-align: center;
+}
+
+.col-sm-4{
+  text-align: center;
+}
+
+a{
+  color: var(--amarillo);
+  text-decoration-line: none;
+}
+
+a:hover{
+  color: var(--blanco);
+}
+
+#modalDatos{
+  color: var(--verdePrincipal);
+}
+
+#seccionModal{
+  color: var(--verdePrincipal);
+}

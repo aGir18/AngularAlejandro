@@ -48,9 +48,6 @@
   <div *ngIf="farmaciasAsociadas.length > 0">
     <!-- ; else noFarmacias -->
     <div *ngFor="let farmacia of farmaciasAsociadas">
-      <!-- <app-farmacia-listar-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacia-listar-item> -->
-      <!-- Hacer como en óptica para intenter llevar al formulario relleno con los datos de esa farmacia -->
-      <!-- <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item> -->
       <app-filtro-farmacia-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-filtro-farmacia-item>
     </div>
   </div>
@@ -59,9 +56,6 @@
     <!-- ; else noOpticas -->
     <div *ngFor="let optica of opticasAsociadas">
       <app-filtro-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtro-optica-item>
-      <!-- Usar este comentado para intenter llevar al formulario relleno con los datos de esa óptica -->
-      <!-- <app-filtrado-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtrado-optica-item> -->
-      <!-- <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item> -->
     </div>
   </div>
 
@@ -83,6 +77,7 @@
       </div>
     </div>
   </div>
+
   <!-- Modales para FARMACIAS -->
   <div class="modal fade" id="modalFarmaciaFiltrada2" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -93,7 +88,6 @@
         </div>
         <div class="modal-body">
           <app-farmacia-modal-ojo [farmacia]="farmaciaVerDatos"></app-farmacia-modal-ojo>
-          <!-- <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -106,7 +100,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar farmacia AAA</h5>
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar farmacia</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -126,7 +120,6 @@
         </div>
         <div class="modal-body">
           <app-optica-modal-ojo [optica]="opticaVerDatos"></app-optica-modal-ojo>
-          <!-- <app-optica [optica]="opticasVerDatos"></app-optica> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -135,20 +128,19 @@
     </div>
   </div>
 
-  <!--
-    <div class="modal fade" id="modalPatch" tabindex="-1" role="dialog" aria-labelledby="formularioPatch" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel">Modificar óptica</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <app-patch-optica [optica]="opticaVerDatos"></app-patch-optica>
-          </div>
+  <div class="modal fade" id="modalPatchOpticaFiltrada" tabindex="-1" role="dialog" aria-labelledby="formularioPatch" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel">Modificar óptica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-optica-modal-lapiz [optica]="opticaVerDatos"></app-optica-modal-lapiz>
         </div>
       </div>
-    </div> -->
+    </div>
+  </div>
 
   <!-- <ng-template #noNegocios id="noExisten">
     <div class="row">
