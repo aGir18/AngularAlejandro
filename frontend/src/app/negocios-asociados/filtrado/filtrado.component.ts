@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faListOl, faList } from '@fortawesome/free-solid-svg-icons';
 import { Asociacion } from 'src/app/asociaciones/models/asociacion';
 import { AsociacionService } from 'src/app/asociaciones/service/asociacion.service';
@@ -28,7 +29,8 @@ export class FiltradoComponent implements OnInit {
 
   constructor(
     private asociacionService: AsociacionService,
-    private auxService: AuxiliarService
+    private auxService: AuxiliarService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {

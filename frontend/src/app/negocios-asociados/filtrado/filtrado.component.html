@@ -48,8 +48,9 @@
   <div *ngIf="farmaciasAsociadas.length > 0">
     <!-- ; else noFarmacias -->
     <div *ngFor="let farmacia of farmaciasAsociadas">
+      <app-farmacia-listar-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacia-listar-item>
       <!-- Hacer como en óptica para intenter llevar al formulario relleno con los datos de esa farmacia -->
-      <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item>
+      <!-- <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item> -->
     </div>
   </div>
   <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
@@ -57,8 +58,8 @@
     <!-- ; else noOpticas -->
     <div *ngFor="let optica of opticasAsociadas">
       <!-- Usar este comentado para intenter llevar al formulario relleno con los datos de esa óptica -->
-      <!-- <app-filtrado-optica-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-filtrado-optica-item> -->
-      <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item>
+      <app-filtrado-optica-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-filtrado-optica-item>
+      <!-- <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item> -->
     </div>
   </div>
 
