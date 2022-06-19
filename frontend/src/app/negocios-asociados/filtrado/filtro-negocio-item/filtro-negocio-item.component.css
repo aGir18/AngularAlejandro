@@ -34,3 +34,17 @@ a:hover{
 h5 {
   color: var(--verdePrincipal);
 }
+
+#fondillo {
+  background-color: var(--amarillo);
+}
+
+label {
+  color: var(--verdeClaro);
+}
+
+#botonUpdate {
+  background-color: var(--verdeClaro);
+  border-color: var(--verdeClaro);
+  color: var(--blanco);
+}

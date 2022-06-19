@@ -1,4 +1,4 @@
-<!-- <section *ngIf="negocio.nombre != null; else noExiste"> -->
+<section *ngIf="negocio">
   <div class="row mb-2">
     <hr class='w-100'>
     <div class="col-sm-2"></div>
@@ -10,15 +10,12 @@
       <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalModificar" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="modificar"></fa-icon>&nbsp;
       </a> -->
-
       <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocioFiltradoPatch" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a> -->
-
       <a class="" data-bs-toggle="collapse" href="#collapseEjemplo" role="button" aria-expanded="false" aria-controls="collapseEjemplo">
         &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
       </a>
-
       <div class="collapse" id="collapseEjemplo">
         <div class="card card-body" id="fondillo">
           <div class="form-row py-2">
@@ -58,8 +55,8 @@
     </div>
     <div class="col-sm-2"></div>
   </div>
-<!-- </section>
--- ESTO ES NUEVO y el *ngIf
+</section>
+<!-- ESTO ES NUEVO y el *ngIf
 <ng-template #noExiste>
   <div>
     NO EXISTEN NEGOCIOS

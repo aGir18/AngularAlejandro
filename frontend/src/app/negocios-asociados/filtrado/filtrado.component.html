@@ -23,7 +23,6 @@
           id="botoncito">
           <fa-icon [icon]="lista"></fa-icon>&nbsp;&nbsp;
           Listar todos negocios</button>
-          <!-- (click)="hacerLlamadaFarmacia(idAsociacionSeleccionada)" (click)="hacerLlamadaOptica(idAsociacionSeleccionada)" -->
         </div>
       </div>
     </div>
@@ -37,23 +36,20 @@
   </div>
   <!-- Lista los NEGOCIOS de la asociación (SI EXISTEN) -->
   <div *ngIf="negociosAsociados.length > 0">
-    <!-- ; else noNegocios -->
     <div *ngFor="let negocio of negociosAsociados">
-      <!-- <app-filtrado-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-filtrado-item> -->
       <app-filtro-negocio-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-filtro-negocio-item>
+      <!-- <app-filtrado-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-filtrado-item> -->
       <!-- <app-negocios-item [negocio]="negocio" (negocioSeleccionado)="this.verDatos($event)"></app-negocios-item> -->
     </div>
   </div>
   <!-- Lista las FARMACIAS de la asociación (SI EXISTEN) -->
   <div *ngIf="farmaciasAsociadas.length > 0">
-    <!-- ; else noFarmacias -->
     <div *ngFor="let farmacia of farmaciasAsociadas">
       <app-filtro-farmacia-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-filtro-farmacia-item>
     </div>
   </div>
   <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
   <div *ngIf="opticasAsociadas.length > 0">
-    <!-- ; else noOpticas -->
     <div *ngFor="let optica of opticasAsociadas">
       <app-filtro-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtro-optica-item>
     </div>
@@ -69,7 +65,6 @@
         </div>
         <div class="modal-body">
           <app-filtrado-negocio-modal [negocio]="negocioVerDatos"></app-filtrado-negocio-modal>
-          <!-- <app-negocio [negocio]="negocioVerDatos"></app-negocio> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -160,27 +155,4 @@
       </div>
     </div>
   </div>
-
-  <!-- <ng-template #noNegocios id="noExisten">
-    <div class="row">
-      <div class="col-sm-12">
-        NO EXISTEN NEGOCIOS EN ESA ASOCIACIÓN
-      </div>
-    </div>
-  </ng-template>
-  <ng-template #noFarmacias id="noExisten2">
-    <div class="row">
-      <div class="col-sm-12">
-        NO EXISTEN FARMACIAS EN ESA ASOCIACIÓN
-      </div>
-    </div>
-  </ng-template>
-  <ng-template #noOpticas id="noExisten3">
-    <div class="row">
-      <div class="col-sm-12">
-        NO EXISTEN OPTICAS EN ESA ASOCIACIÓN
-      </div>
-    </div>
-  </ng-template> -->
-
 </main>
