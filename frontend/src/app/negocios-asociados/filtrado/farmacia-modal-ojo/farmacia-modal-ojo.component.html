@@ -1,0 +1,6 @@
+<section id="datosFarmacia" *ngIf=farmacia>
+  - Nombre de la farmacia: {{farmacia.nombre}} <br>
+  - NIF de la farmacia: {{farmacia.nif}} <br>
+  - Número de puntos SIGRE: {{farmacia.numeroPuntosSigre}} <br>
+  - ID de la farmacia: {{farmacia.getIdNegocio(farmacia.urlNegocio)}}
+</section>

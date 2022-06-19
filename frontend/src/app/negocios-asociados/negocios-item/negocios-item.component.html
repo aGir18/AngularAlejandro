@@ -4,7 +4,7 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-4">{{negocio.nombre}}, {{negocio.nif}}</div>
     <div class="col-sm-4">
-      <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocio" (click)="negocioSeleccionado.emit(negocio)">
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalNegocioFiltrado" (click)="negocioSeleccionado.emit(negocio)">
         &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
       </a>
       <!-- <a class="" data-bs-toggle="modal" data-bs-target="#modalModificar" (click)="negocioSeleccionado.emit(negocio)">

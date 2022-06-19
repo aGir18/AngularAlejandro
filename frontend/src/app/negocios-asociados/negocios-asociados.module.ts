@@ -27,6 +27,11 @@ import { FiltradoOpticaItemComponent } from './filtrado/filtrado-optica-item/fil
 import { FiltradoOpticaComponent } from './filtrado/filtrado-optica/filtrado-optica.component';
 import { FarmaciaListarItemComponent } from './filtrado/farmacia-listar-item/farmacia-listar-item.component';
 import { FarmaciaLeerItemComponent } from './filtrado/farmacia-leer-item/farmacia-leer-item.component';
+import { FiltroFarmaciaItemComponent } from './filtrado/filtro-farmacia-item/filtro-farmacia-item.component';
+import { FarmaciaModalOjoComponent } from './filtrado/farmacia-modal-ojo/farmacia-modal-ojo.component';
+import { FarmaciaModalLapizComponent } from './filtrado/farmacia-modal-lapiz/farmacia-modal-lapiz.component';
+import { FiltroOpticaItemComponent } from './filtrado/filtro-optica-item/filtro-optica-item.component';
+import { OpticaModalOjoComponent } from './filtrado/optica-modal-ojo/optica-modal-ojo.component';
 
 
 @NgModule({
@@ -51,7 +56,12 @@ import { FarmaciaLeerItemComponent } from './filtrado/farmacia-leer-item/farmaci
     FiltradoOpticaItemComponent,
     FiltradoOpticaComponent,
     FarmaciaListarItemComponent,
-    FarmaciaLeerItemComponent
+    FarmaciaLeerItemComponent,
+    FiltroFarmaciaItemComponent,
+    FarmaciaModalOjoComponent,
+    FarmaciaModalLapizComponent,
+    FiltroOpticaItemComponent,
+    OpticaModalOjoComponent
   ],
   imports: [
     CommonModule,

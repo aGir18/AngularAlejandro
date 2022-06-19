@@ -1,0 +1,22 @@
+<section *ngIf="[optica]">
+  <div class="row mb-2">
+    <hr class='w-100'>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4">{{optica.nombre}}, {{optica.nif}}</div>
+    <div class="col-sm-4">
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalOpticaFiltrada" (click)="opticaSeleccionada.emit(optica)">
+        &nbsp;<fa-icon [icon]="eye"></fa-icon>&nbsp;
+      </a>
+      <!-- Cambiar este nombre del data-bs!! -->
+      <a class="" data-bs-toggle="modal" data-bs-target="#modalPatch" (click)="opticaSeleccionada.emit(optica)">
+        &nbsp;&nbsp;<fa-icon [icon]="pencil"></fa-icon>&nbsp;
+      </a>
+      <a role="button" (click)="borrarOptica(this.optica.urlNegocio)" routerLink="/">
+        &nbsp;&nbsp;
+        <fa-icon [icon]="trash"></fa-icon>
+        &nbsp;
+      </a>
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</section>

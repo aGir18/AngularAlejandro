@@ -48,21 +48,22 @@
   <div *ngIf="farmaciasAsociadas.length > 0">
     <!-- ; else noFarmacias -->
     <div *ngFor="let farmacia of farmaciasAsociadas">
-      <app-farmacia-listar-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacia-listar-item>
+      <!-- <app-farmacia-listar-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacia-listar-item> -->
       <!-- Hacer como en óptica para intenter llevar al formulario relleno con los datos de esa farmacia -->
       <!-- <app-farmacias-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.farmaciaVerDatos"></app-farmacias-item> -->
+      <app-filtro-farmacia-item [farmacia]="farmacia" (farmaciaSeleccionada)="this.verDatosFarmacia($event)"></app-filtro-farmacia-item>
     </div>
   </div>
   <!-- Lista las ÓPTICAS de la asociación (SI EXISTEN) -->
   <div *ngIf="opticasAsociadas.length > 0">
     <!-- ; else noOpticas -->
     <div *ngFor="let optica of opticasAsociadas">
+      <app-filtro-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtro-optica-item>
       <!-- Usar este comentado para intenter llevar al formulario relleno con los datos de esa óptica -->
-      <app-filtrado-optica-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-filtrado-optica-item>
+      <!-- <app-filtrado-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtrado-optica-item> -->
       <!-- <app-opticas-item [optica]="optica" (opticaSeleccionada)="this.opticaVerDatos"></app-opticas-item> -->
     </div>
   </div>
-
 
   <!-- Modal NEGOCIOS -->
   <div class="modal fade" id="modalNegocioFiltrado" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
@@ -73,7 +74,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- <app-filtrado-negocio-modal [negocio]="negocioVerDatos"></app-filtrado-negocio-modal> -->
+          <app-filtrado-negocio-modal [negocio]="negocioVerDatos"></app-filtrado-negocio-modal>
           <!-- <app-negocio [negocio]="negocioVerDatos"></app-negocio> -->
         </div>
         <div class="modal-footer">
@@ -83,50 +84,49 @@
     </div>
   </div>
   <!-- Modales para FARMACIAS -->
-
-<!-- <div class="modal fade" id="modalFarmacia" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="datosFarmacia">Datos Completos Farmacia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="modalPutFarmacia" tabindex="-1" role="dialog" aria-labelledby="formularioFarmacia" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar farmacia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <app-farmacia-modificar [farmacia]="farmaciaVerDatos"></app-farmacia-modificar>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-  <!-- Modales para OPTICA -->
-  <div class="modal fade" id="modalOpticaFiltrado" tabindex="-1" role="dialog" aria-labelledby="datosOptica" aria-hidden="true">
+  <div class="modal fade" id="modalFarmaciaFiltrada2" tabindex="-1" role="dialog" aria-labelledby="datosFarmacia" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="datosOptica">Datos Completos Óptica FILTRADA</h5>
+          <h5 class="modal-title">Datos Completos Farmacia</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <!-- <app-filtrado-optica  [optica]="this.opticaVerDatos"></app-filtrado-optica> -->
-          <!-- <app-optica [optica]="opticaVerDatos"></app-optica> -->
+          <app-farmacia-modal-ojo [farmacia]="farmaciaVerDatos"></app-farmacia-modal-ojo>
+          <!-- <app-farmacia [farmacia]="farmaciaVerDatos"></app-farmacia> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalPatchFarmaciaFiltrada" tabindex="-1" role="dialog" aria-labelledby="formularioFarmacia" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar farmacia AAA</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-farmacia-modal-lapiz [farmacia]="farmaciaVerDatos"></app-farmacia-modal-lapiz>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modales para OPTICA -->
+  <div class="modal fade" id="modalOpticaFiltrada" tabindex="-1" role="dialog" aria-labelledby="datosOptica" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="datosOptica">Datos Completos Óptica</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-optica-modal-ojo [optica]="opticaVerDatos"></app-optica-modal-ojo>
+          <!-- <app-optica [optica]="opticasVerDatos"></app-optica> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
@@ -149,38 +149,6 @@
         </div>
       </div>
     </div> -->
-
-  <!-- Modales para NEGOCIO -->
-
-    <!-- <div class="modal fade" id="modalNegocio" tabindex="-1" role="dialog" aria-labelledby="datosNegocio" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="datosNegocio">Datos Completos Negocio</h5>
-          </div>
-          <div class="modal-body">
-            <app-negocio [negocio]="negocioVerDatos"></app-negocio>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="modalPut" tabindex="-1" role="dialog" aria-labelledby="formularioNegocio" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalToggleLabel2">Modificar negocio</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-          </div>
-        </div>
-      </div>
-    </div> -->
-
 
   <!-- <ng-template #noNegocios id="noExisten">
     <div class="row">
