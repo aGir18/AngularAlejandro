@@ -59,6 +59,6 @@ form {
   margin-top: 2em;
 }
 
-#modalDatos, #modalFarmaciaFiltrada2, #modalPatchFarmaciaFiltrada, #modalOpticaFiltrada, #modalPatchOpticaFiltrada{
+#modalDatos, #modalFarmaciaFiltrada2, #modalPatchFarmaciaFiltrada, #modalOpticaFiltrada, #modalPatchOpticaFiltrada, #modalNegocioFiltrado, #modalNegocioFiltradoPatch{
   color: var(--verdePrincipal);
 }

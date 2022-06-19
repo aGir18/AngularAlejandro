@@ -1,6 +1,6 @@
 <section id="formularioPatch" *ngIf="[optica]">
   <div class="form-row py-2">
-    <label>Nombre de la optica<sup class="text-danger">*</sup></label>
+    <label>Nombre de la óptica<sup class="text-danger">*</sup></label>
     <input type="text" class="form-control" [(ngModel)]="optica.nombre" placeholder="Por ejemplo Optica Moncloa" name="neg"
     required minlength="3" maxlength="35" #neg="ngModel" [ngClass]="{
       'is-invalid': neg.invalid && (neg.dirty || neg.touched),
@@ -10,7 +10,7 @@
     <div class="valid-feedback">¡Perfecto! ¡Ese es un nombre válido!</div>
   </div>
   <div class="form-row py-2">
-    <label>NIF de la optica<sup class="text-danger">*</sup></label>
+    <label>NIF de la óptica<sup class="text-danger">*</sup></label>
     <input type="text" class="form-control" [(ngModel)]="optica.nif" placeholder="Por ejemplo 58798754K" name="neg2"
       required minlength="9" maxlength="9" #neg2="ngModel" [ngClass]="{
         'is-invalid': neg2.invalid && (neg2.dirty || neg2.touched),
@@ -28,7 +28,7 @@
   </div>
 
   <div class="form-row py-2">
-    <label>Introduzca el número de autorefractometros de la óptica:<sup class="text-danger">*</sup></label>
+    <label>Introduzca el número de autorefractómetros de la óptica:<sup class="text-danger">*</sup></label>
     <input type="number" class="form-control" [(ngModel)]="optica.numeroAutorefractometros" placeholder="Por ejemplo 3" name="neg20"
       required min="0" max="5" #neg20="ngModel" [ngClass]="{
         'is-invalid': neg20.invalid && (neg20.dirty || neg20.touched),
