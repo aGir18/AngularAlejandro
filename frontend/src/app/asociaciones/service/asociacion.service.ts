@@ -17,9 +17,6 @@ import { AsociacionImpl } from '../models/asociacion-impl';
 })
 export class AsociacionService {
 
-  // private negocioService!: NegocioService;
-  // private farmaciaService!: FarmaciaService;
-  // private opticaService!: OpticaService;
   private asociacionPasada!: string;
   private host: string = environment.host;
   private urlEndPoint3: string = `${this.host}asociaciones`;
@@ -179,7 +176,11 @@ export class AsociacionService {
 
   extraerNegociosAsociacionParticularNegocios(respuestaApi: any): any[] {
     let negociosParticulares: Negocio[] = [];
+    let respuesta: any = respuestaApi._embedded.negocios;
 
+    if (respuesta === undefined) {
+      // console.info('NEGOCIOS vacíos');
+    } else
     respuestaApi._embedded.negocios.forEach((p: any) => {
       negociosParticulares.push(this.negocioService.mapearNegocio(p));
     });
@@ -189,7 +190,12 @@ export class AsociacionService {
 
   extraerNegociosAsociacionParticularFarmacias(respuestaApi: any): any[] {
     let farmaciasParticulares: Farmacia[] = [];
-// poner aquí la condición de si existe como en el resto de HTML que me dijo Prada
+    let respuesta: any = respuestaApi._embedded.farmacias;
+
+    if (respuesta === undefined) {
+      // console.info('FARMACIAS vacías');
+
+    } else
     respuestaApi._embedded.farmacias.forEach((p: any) => {
       farmaciasParticulares.push(this.farmaciaService.mapearFarmacia(p));
     });
@@ -199,7 +205,12 @@ export class AsociacionService {
 
   extraerNegociosAsociacionParticularOpticas(respuestaApi: any): any[] {
     let opticasParticulares: Optica[] = [];
+    let respuesta: any = respuestaApi._embedded.opticas;
 
+    if (respuesta === undefined) {
+      // console.info('ÓPTICAS vacías');
+
+    } else
     respuestaApi._embedded.opticas.forEach((p: any) => {
       opticasParticulares.push(this.opticaService.mapearOptica(p));
     });

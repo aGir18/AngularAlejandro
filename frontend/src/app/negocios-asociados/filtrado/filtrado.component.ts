@@ -136,12 +136,6 @@ export class FiltradoComponent implements OnInit {
     this.opticaService.postOptica(this.optica).subscribe();
   }
 
-  // setAsociacionSeleccionada(){
-  //   this.asociacionPasada = `${environment.host}/asociaciones/${idp}`;
-  // }
-
-  // Para meter botón de crear negocio de ESTA asociación
-
   pencil=faPencil;
   eye=faEye;
   trash=faTrashCan;

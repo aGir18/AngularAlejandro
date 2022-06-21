@@ -32,9 +32,6 @@
           <div class="invalid-feedback">Por favor, rellene este campo.</div>
           <div class="valid-feedback">¡Perfecto! ¡Ese es un NIF válido!</div>
         </div>
-        <!-- <pre>
-          {{negocio | json}}
-        </pre> -->
         <div class="form-row justify-content-between pt-5">
           <button class="btn btn-primary" role="button" (click)="crearNegocio()" routerLink='/'
             [disabled]="!negocioForm2.form.valid">

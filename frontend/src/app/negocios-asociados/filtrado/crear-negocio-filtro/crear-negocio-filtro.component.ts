@@ -57,13 +57,13 @@ getTodasAsociaciones(): void {
 }
 
   crearNegocio(): void {
-    console.info('paso por metodo de formulario');
+    // console.info('paso por metodo de formulario');
     // this.negocio.asociacion = asociacionPasada;
     this.negocioService.postNegocio(this.negocio).subscribe();
   }
 
   crearFarmacia(): void {
-    console.warn('paso por metodo del POST Farmacia');
+    // console.warn('paso por metodo del POST Farmacia');
     this.farmaciaService.postFarmacia(this.farmacia).subscribe();
   }
 
@@ -72,10 +72,10 @@ getTodasAsociaciones(): void {
   }
 
   traerAsociacion(): string {
-    console.log('Paso por traer asociación');
-    console.info('El valor de asociación es => ' + this.asociacionService.getAsociacionPasada());
+    // console.log('Paso por traer asociación');
+    // console.info('El valor de asociación es => ' + this.asociacionService.getAsociacionPasada());
     this.asociacionTraida = this.asociacionService.getAsociacionPasada();
-    console.info('El valor de la asociación es => ' + this.asociacionTraida);
+    // console.info('El valor de la asociación es => ' + this.asociacionTraida);
     this.negocio.asociacion = this.asociacionTraida;
     this.farmacia.asociacion = this.asociacionTraida;
     this.optica.asociacion = this.asociacionTraida;
