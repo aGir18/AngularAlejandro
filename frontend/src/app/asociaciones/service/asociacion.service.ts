@@ -128,9 +128,9 @@ export class AsociacionService {
   getMetodoPersonalizado(tieneFarmacia: boolean, tieneOptica: boolean): Observable<any>{
     this.valorPoseeFarmacia = tieneFarmacia;
     this.valorPoseeOptica = tieneOptica;
-    console.info('paso por el método personalizado - SERVICIO ');
-    console.debug('El valor de tieneFarmacia es =>', tieneFarmacia);
-    console.debug('El valor de tieneOptica es =>', tieneOptica);
+    // console.info('paso por el método personalizado - SERVICIO ');
+    // console.debug('El valor de tieneFarmacia es =>', tieneFarmacia);
+    // console.debug('El valor de tieneOptica es =>', tieneOptica);
 
     return this.http.get<any>(`${this.urlMetodo1}${tieneFarmacia}${this.urlMetodo2}${tieneOptica}`);
 
@@ -146,8 +146,8 @@ export class AsociacionService {
   }
 
   getNegociosAsociacionParticular(idAsociacion: string): Observable<any> {
-    console.info('paso por el método getNegociosAsociacionParticular - SERVICIO ');
-    console.debug('El valor de idAsociacion es =>', idAsociacion);
+    // console.info('paso por el método getNegociosAsociacionParticular - SERVICIO ');
+    // console.debug('El valor de idAsociacion es =>', idAsociacion);
 
     return this.http.get<any>(`${this.urlEndPoint3}/${idAsociacion}/negociosAsociacion`);
   }

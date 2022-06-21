@@ -34,7 +34,7 @@ export class FiltroNegocioItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('negocio = ', this.negocio);
+    // console.log('negocio = ', this.negocio);
     this.asociacionService.getAsociaciones().subscribe((response) => {
       this.asociaciones = this.asociacionService.extraerAsociaciones(response);
   });

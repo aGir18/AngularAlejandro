@@ -93,8 +93,8 @@ export class FiltradoComponent implements OnInit {
       this.negociosAsociados = this.asociacionService.extraerNegociosAsociacionParticularNegocios(response);
     });
     this.asociacionService.setAsociacionPasada(this.asociacionPasada = `${environment.host}asociaciones/${idPasado}`);
-    console.info('paso por el GET negociosAsociacion - COMPONENTE');
-    console.info('El valor del idPasado es ', idPasado);
+    // console.info('paso por el GET negociosAsociacion - COMPONENTE');
+    // console.info('El valor del idPasado es ', idPasado);
   }
 
   hacerLlamadaFarmacia(idPasado: string){
@@ -102,8 +102,8 @@ export class FiltradoComponent implements OnInit {
       this.farmaciasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularFarmacias(response);
     });
     this.asociacionService.setAsociacionPasada(this.asociacionPasada = `${environment.host}asociaciones/${idPasado}`);
-    console.info('paso por el GET negociosAsociacion - COMPONENTE');
-    console.info('El valor del idPasado es ', idPasado);
+    // console.info('paso por el GET negociosAsociacion - COMPONENTE');
+    // console.info('El valor del idPasado es ', idPasado);
   }
 
   hacerLlamadaOptica(idPasado: string){
@@ -111,8 +111,8 @@ export class FiltradoComponent implements OnInit {
       this.opticasAsociadas = this.asociacionService.extraerNegociosAsociacionParticularOpticas(response);
     });
     this.asociacionService.setAsociacionPasada(this.asociacionPasada = `${environment.host}asociaciones/${idPasado}`);
-    console.info('paso por el GET negociosAsociacion - COMPONENTE');
-    console.info('El valor del idPasado es ', idPasado);
+    // console.info('paso por el GET negociosAsociacion - COMPONENTE');
+    // console.info('El valor del idPasado es ', idPasado);
   }
 
   // Para meter botón de crear negocio de ESTA asociación

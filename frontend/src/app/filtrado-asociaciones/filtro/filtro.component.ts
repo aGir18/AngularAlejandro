@@ -41,9 +41,9 @@ export class FiltroComponent implements OnInit {
     this.asociacionService.getMetodoPersonalizado(poseeFarmaciaPar, poseeOpticaPar).subscribe((response) => {
       this.asociaciones = this.asociacionService.extraerAsociacionesMetodo(response);
       });
-      console.info('paso por el método personalizado - COMPONENTE');
-      console.debug('El valor de poseeFarmacia es =>', poseeFarmaciaPar);
-      console.debug('El valor de poseeOptica es =>', poseeOpticaPar);
+      // console.info('paso por el método personalizado - COMPONENTE');
+      // console.debug('El valor de poseeFarmacia es =>', poseeFarmaciaPar);
+      // console.debug('El valor de poseeOptica es =>', poseeOpticaPar);
     this.ngOnInit();
   }
 
