@@ -35,6 +35,7 @@ import { OpticaModalOjoComponent } from './filtrado/optica-modal-ojo/optica-moda
 import { OpticaModalLapizComponent } from './filtrado/optica-modal-lapiz/optica-modal-lapiz.component';
 import { NegocioModalLapizComponent } from './filtrado/negocio-modal-lapiz/negocio-modal-lapiz.component';
 import { FiltroNegocioItemComponent } from './filtrado/filtro-negocio-item/filtro-negocio-item.component';
+import { CrearNegocioFiltroComponent } from './filtrado/crear-negocio-filtro/crear-negocio-filtro.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { FiltroNegocioItemComponent } from './filtrado/filtro-negocio-item/filtr
     OpticaModalOjoComponent,
     OpticaModalLapizComponent,
     NegocioModalLapizComponent,
-    FiltroNegocioItemComponent
+    FiltroNegocioItemComponent,
+    CrearNegocioFiltroComponent
   ],
   imports: [
     CommonModule,

@@ -20,6 +20,7 @@ export class AsociacionService {
   // private negocioService!: NegocioService;
   // private farmaciaService!: FarmaciaService;
   // private opticaService!: OpticaService;
+  private asociacionPasada!: string;
   private host: string = environment.host;
   private urlEndPoint3: string = `${this.host}asociaciones`;
   private valorPoseeFarmacia!: boolean;
@@ -35,6 +36,15 @@ export class AsociacionService {
     private opticaService: OpticaService,
     private negocioService: NegocioService,
     private auxService: AuxiliarService) {}
+
+
+  getAsociacionPasada(){
+    return this.asociacionPasada;
+  }
+
+  setAsociacionPasada(url: string){
+    this.asociacionPasada = url;
+  }
 
   getAsociaciones(): Observable<any> {
     return this.http.get<any>(this.urlEndPoint3);

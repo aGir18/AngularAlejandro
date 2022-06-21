@@ -13,7 +13,10 @@
         <label for="tipo">Seleccione la asociación<sup class="text-danger">*</sup></label><br>
         <select name="selectorFormulario" id="selectorAsociacion3" class="form-select" aria-label="Default select example" placeholder="Seleccione asociación" [(ngModel)]="idAsociacionSeleccionada">
           <option selected>---</option>
-          <option *ngFor="let asociacion of asociaciones" value={{asociacion.getIdAsociacion(asociacion.urlAsociacion)}} (change)="setIdAsociacionSeleccionada(asociacion.getIdAsociacion(asociacion.urlAsociacion))">{{asociacion.nombre}}</option>
+          <option *ngFor="let asociacion of asociaciones" value={{asociacion.getIdAsociacion(asociacion.urlAsociacion)}}
+          (change)="setIdAsociacionSeleccionada(asociacion.getIdAsociacion(asociacion.urlAsociacion))"
+          (change)="setAsociacionSeleccionada(idAsociacionSeleccionada)"
+          >{{asociacion.nombre}}</option>
         </select>
         <div class="form-row justify-content-between pt-5" id="botoncito">
           <button class="btn btn-primary"
@@ -52,6 +55,19 @@
   <div *ngIf="opticasAsociadas.length > 0">
     <div *ngFor="let optica of opticasAsociadas">
       <app-filtro-optica-item [optica]="optica" (opticaSeleccionada)="this.verDatosOptica($event)"></app-filtro-optica-item>
+    </div>
+  </div>
+
+  <div *ngIf="negociosAsociados.length > 0 || farmaciasAsociadas.length > 0 || opticasAsociadas.length > 0">
+    <div>
+      <!-- CAMBIAR LA RUTA AL NUEVO COMPONENTE -->
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="creacion btn btn-primary" id="boton2" type="button" routerLink="/negocios-asociados/crear-negocio-nuevo">
+            <fa-icon [icon]="plus"></fa-icon> Agregar negocio
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
