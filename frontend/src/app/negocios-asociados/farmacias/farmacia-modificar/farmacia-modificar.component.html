@@ -1,4 +1,4 @@
-<section id="datosFarmacia" *ngIf=[farmacia]>
+<section id="datosFarmacia" *ngIf=farmacia>
   <div class="form-row py-2">
     <label>Nombre de la farmacia<sup class="text-danger">*</sup></label>
     <input type="text" class="form-control" *ngIf="[farmacia]" [(ngModel)]="farmacia.nombre" placeholder="Por ejemplo Farmacia Moncloa" name="neg"
